@@ -1,196 +1,66 @@
+aid: azure-networking-services
 name: Azure Networking Services
-description: A comprehensive collection of Azure networking APIs for managing virtual networks, load balancers, application gateways, and other networking resources
-url: https://azure.microsoft.com/en-us/services/networking/
-created: '2024-01-15'
-modified: '2024-01-15'
-specificationVersion: '0.18'
-apis:
-- name: Azure Virtual Networks API
-  description: API for creating and managing Azure Virtual Networks (VNets), subnets, and network peering
-  image: https://azure.microsoft.com/svghandler/virtual-network/
-  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - virtual-network
-  - vnet
-  - subnets
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/virtualNetwork.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/virtual-network/
-- name: Azure Load Balancer API
-  description: API for managing Azure Load Balancers for distributing network traffic across multiple resources
-  image: https://azure.microsoft.com/svghandler/load-balancer/
-  humanURL: https://azure.microsoft.com/en-us/services/load-balancer/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - load-balancer
-  - traffic-distribution
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/loadBalancer.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/load-balancer/
-- name: Azure Application Gateway API
-  description: API for managing Application Gateway for web traffic load balancing and application-level routing
-  image: https://azure.microsoft.com/svghandler/application-gateway/
-  humanURL: https://azure.microsoft.com/en-us/services/application-gateway/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - application-gateway
-  - web-traffic
-  - layer-7
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/application-gateway/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/applicationGateway.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/application-gateway/
-- name: Azure VPN Gateway API
-  description: API for managing VPN Gateways to establish secure cross-premises connectivity
-  image: https://azure.microsoft.com/svghandler/vpn-gateway/
-  humanURL: https://azure.microsoft.com/en-us/services/vpn-gateway/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - vpn
-  - gateway
-  - secure-connectivity
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/network-gateway/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/virtualNetworkGateway.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/
-- name: Azure ExpressRoute API
-  description: API for managing ExpressRoute connections for private connectivity to Azure
-  image: https://azure.microsoft.com/svghandler/expressroute/
-  humanURL: https://azure.microsoft.com/en-us/services/expressroute/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - expressroute
-  - private-connectivity
-  - dedicated
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/expressroute/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/expressRouteCircuit.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/expressroute/
-- name: Azure DNS API
-  description: API for managing DNS zones and records in Azure
-  image: https://azure.microsoft.com/svghandler/dns/
-  humanURL: https://azure.microsoft.com/en-us/services/dns/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - dns
-  - domain-management
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/dns/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/dns/resource-manager/Microsoft.Network/stable/2018-05-01/dns.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/dns/
-- name: Azure Traffic Manager API
-  description: API for managing Traffic Manager for DNS-based traffic routing
-  image: https://azure.microsoft.com/svghandler/traffic-manager/
-  humanURL: https://azure.microsoft.com/en-us/services/traffic-manager/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - traffic-manager
-  - routing
-  - dns
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/trafficmanager/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/trafficmanager/resource-manager/Microsoft.Network/stable/2022-04-01/trafficmanager.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/traffic-manager/
-- name: Azure Network Security Groups API
-  description: API for managing Network Security Groups (NSGs) to control network traffic
-  image: https://azure.microsoft.com/svghandler/network-watcher/
-  humanURL: https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - security
-  - nsg
-  - firewall-rules
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/virtualnetwork/network-security-groups
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/networkSecurityGroup.json
-- name: Azure Firewall API
-  description: API for managing Azure Firewall for cloud-native network security
-  image: https://azure.microsoft.com/svghandler/azure-firewall/
-  humanURL: https://azure.microsoft.com/en-us/services/azure-firewall/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - security
-  - firewall
-  - protection
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/firewall/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/azureFirewall.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/azure-firewall/
-- name: Azure Network Watcher API
-  description: API for monitoring, diagnosing, and gaining insights into Azure network health
-  image: https://azure.microsoft.com/svghandler/network-watcher/
-  humanURL: https://azure.microsoft.com/en-us/services/network-watcher/
-  baseURL: https://management.azure.com
-  tags:
-  - networking
-  - monitoring
-  - diagnostics
-  - network-watcher
-  properties:
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/network-watcher/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/network/resource-manager/Microsoft.Network/stable/2023-09-01/networkWatcher.json
-  - type: Pricing
-    url: https://azure.microsoft.com/en-us/pricing/details/network-watcher/
-common:
-- type: Portal
-  url: https://portal.azure.com
-- type: Getting Started
-  url: https://learn.microsoft.com/en-us/azure/networking/
-- type: Authentication
-  url: https://learn.microsoft.com/en-us/rest/api/azure/
-- type: Status
-  url: https://status.azure.com/
-- type: Support
-  url: https://azure.microsoft.com/en-us/support/
-- type: Terms of Service
-  url: https://azure.microsoft.com/en-us/support/legal/
-maintainers:
-- FN: Microsoft Azure
-  email: azuresupport@microsoft.com
-  url: https://azure.microsoft.com
+description: >-
+  A comprehensive collection of Azure networking APIs for managing virtual
+  networks, load balancers, application gateways, VPN gateways, DNS, and other
+  networking resources in the Microsoft Azure cloud.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- networking
-- cloud
-- infrastructure
-- azure
-- microsoft
+  - Networking
+  - Cloud
+  - Infrastructure
+  - Azure
+  - Microsoft
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/apis.yml
+created: '2024-01-15'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: azure-networking-services:azure-virtual-networks-api
+    name: Azure Virtual Networks API
+    description: >-
+      API for creating and managing Azure Virtual Networks (VNets), subnets,
+      and network peering.
+    humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+    baseURL: https://management.azure.com
+    tags:
+      - Networking
+      - Virtual Network
+      - Subnets
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - aid: azure-networking-services:azure-load-balancer-api
+    name: Azure Load Balancer API
+    description: API for managing Azure Load Balancers for distributing network traffic.
+    humanURL: https://azure.microsoft.com/en-us/services/load-balancer/
+    baseURL: https://management.azure.com
+    tags:
+      - Networking
+      - Load Balancer
+      - Traffic Distribution
+    properties:
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+common:
+  - type: Portal
+    url: https://portal.azure.com
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/networking/
+  - type: Getting Started
+    url: https://learn.microsoft.com/en-us/azure/networking/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: Status
+    url: https://status.azure.com/
+  - type: Support
+    url: https://azure.microsoft.com/en-us/support/
+  - type: Terms of Service
+    url: https://azure.microsoft.com/en-us/support/legal/
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
