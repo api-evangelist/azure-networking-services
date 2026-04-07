@@ -7,11 +7,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Networking
+  - Azure
   - Cloud
   - Infrastructure
-  - Azure
   - Microsoft
+  - Networking
 url: >-
   https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/apis.yml
 created: '2024-01-15'
@@ -27,8 +27,8 @@ apis:
     baseURL: https://management.azure.com
     tags:
       - Networking
-      - Virtual Network
       - Subnets
+      - Virtual Network
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
@@ -38,8 +38,8 @@ apis:
     humanURL: https://azure.microsoft.com/en-us/services/load-balancer/
     baseURL: https://management.azure.com
     tags:
-      - Networking
       - Load Balancer
+      - Networking
       - Traffic Distribution
     properties:
       - type: Documentation
