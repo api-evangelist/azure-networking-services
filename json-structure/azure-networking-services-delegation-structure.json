@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-delegation-structure.json",
+  "description": "Details the service to which the subnet is delegated.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the resource that is unique within a subnet. This name can be used to access the resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of a service delegation.",
+      "properties": {
+        "actions": {
+          "description": "Describes the actions permitted to the service upon delegation.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "provisioningState": {
+          "description": "The current provisioning state.",
+          "enum": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ],
+          "readOnly": true,
+          "type": "string",
+          "x-ms-enum": {
+            "modelAsString": true,
+            "name": "ProvisioningState"
+          }
+        },
+        "serviceName": {
+          "description": "The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "name": "Delegation"
+}

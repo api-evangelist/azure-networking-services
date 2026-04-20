@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-service-association-link-structure.json",
+  "description": "ServiceAssociationLink resource.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the resource that is unique within a resource group. This name can be used to access the resource.",
+      "type": "string"
+    },
+    "properties": {
+      "description": "Properties of ServiceAssociationLink.",
+      "properties": {
+        "allowDelete": {
+          "description": "If true, the resource can be deleted.",
+          "type": "boolean"
+        },
+        "link": {
+          "description": "Link to the external resource.",
+          "type": "string"
+        },
+        "linkedResourceType": {
+          "description": "Resource type of the linked resource.",
+          "type": "string"
+        },
+        "locations": {
+          "description": "A list of locations.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "provisioningState": {
+          "description": "The current provisioning state.",
+          "enum": [
+            "Succeeded",
+            "Updating",
+            "Deleting",
+            "Failed"
+          ],
+          "readOnly": true,
+          "type": "string",
+          "x-ms-enum": {
+            "modelAsString": true,
+            "name": "ProvisioningState"
+          }
+        }
+      }
+    },
+    "type": {
+      "description": "Resource type.",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "ServiceAssociationLink"
+}

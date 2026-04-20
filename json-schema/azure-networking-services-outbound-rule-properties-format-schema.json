@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-outbound-rule-properties-format-schema.json",
+  "title": "OutboundRulePropertiesFormat",
+  "description": "Outbound rule of the load balancer.",
+  "properties": {
+    "allocatedOutboundPorts": {
+      "description": "The number of outbound ports to be used for NAT.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "backendAddressPool": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "enableTcpReset": {
+      "description": "Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.",
+      "type": "boolean"
+    },
+    "frontendIPConfigurations": {
+      "description": "The Frontend IP addresses of the load balancer.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "type": "array"
+    },
+    "idleTimeoutInMinutes": {
+      "description": "The timeout for the TCP idle connection.",
+      "type": "integer"
+    },
+    "protocol": {
+      "description": "The protocol for the outbound rule in load balancer.",
+      "enum": [
+        "Tcp",
+        "Udp",
+        "All"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "LoadBalancerOutboundRuleProtocol"
+      }
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "backendAddressPool",
+    "frontendIPConfigurations",
+    "protocol"
+  ]
+}

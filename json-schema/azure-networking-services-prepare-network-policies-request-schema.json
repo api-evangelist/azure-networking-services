@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-prepare-network-policies-request-schema.json",
+  "title": "PrepareNetworkPoliciesRequest",
+  "description": "Details of PrepareNetworkPolicies for Subnet.",
+  "properties": {
+    "networkIntentPolicyConfigurations": {
+      "description": "A list of NetworkIntentPolicyConfiguration.",
+      "items": {
+        "$ref": "#/definitions/NetworkIntentPolicyConfiguration"
+      },
+      "type": "array"
+    },
+    "serviceName": {
+      "description": "The name of the service for which subnet is being prepared for.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

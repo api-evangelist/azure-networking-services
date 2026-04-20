@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-virtual-network-schema.json",
+  "title": "VirtualNetwork",
+  "description": "Virtual Network resource.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "properties": {
+      "$ref": "#/definitions/VirtualNetworkPropertiesFormat",
+      "description": "Properties of the virtual network.",
+      "x-ms-client-flatten": true
+    }
+  },
+  "type": "object"
+}

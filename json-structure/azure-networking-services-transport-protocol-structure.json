@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-transport-protocol-structure.json",
+  "description": "The transport protocol for the endpoint.",
+  "type": "string",
+  "name": "TransportProtocol"
+}

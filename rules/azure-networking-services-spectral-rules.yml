@@ -1,0 +1,127 @@
+extends: spectral:oas
+rules:
+  info-title-format:
+    description: API title must start with "Azure Networking Services"
+    severity: warn
+    given: $.info.title
+    then:
+      function: pattern
+      functionOptions:
+        match: ^Azure
+
+  operation-summary-prefix:
+    description: Operation summaries must start with "Azure Networking Services"
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: ^Azure
+
+  operation-id-required:
+    description: All operations must have an operationId
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy
+
+  operation-summary-required:
+    description: All operations must have a summary
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: summary
+      function: truthy
+
+  operation-description-required:
+    description: All operations must have a description
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: description
+      function: truthy
+
+  operation-tags-required:
+    description: All operations must have at least one tag
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: tags
+      function: truthy
+
+  paths-no-trailing-slash:
+    description: Paths must not end with a trailing slash
+    severity: error
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "/$"
+
+  openapi-version:
+    description: Must use OpenAPI 3.x or Swagger 2.x
+    severity: warn
+    given: $
+    then:
+      function: truthy
+
+  servers-https:
+    description: All server URLs must use HTTPS
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  response-success-required:
+    description: Operations must define at least one 2xx response
+    severity: error
+    given: $.paths[*][get,post,put,patch,delete].responses
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          anyOf:
+            - required: ['200']
+            - required: ['201']
+            - required: ['202']
+            - required: ['204']
+
+  parameter-description-required:
+    description: All inline parameters must have descriptions
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(!@.$ref)]
+    then:
+      field: description
+      function: truthy
+
+  schema-properties-description:
+    description: Top-level schema properties should have descriptions
+    severity: info
+    given: $.components.schemas[*].properties[*]
+    then:
+      field: description
+      function: truthy
+
+  tags-global-definition:
+    description: All tags used in operations should be defined globally
+    severity: info
+    given: $.tags
+    then:
+      function: truthy
+
+  operation-id-camel-case:
+    description: OperationIds should use consistent naming
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: truthy
+
+  security-defined:
+    description: Security schemes should be defined
+    severity: info
+    given: $.components.securitySchemes
+    then:
+      function: truthy

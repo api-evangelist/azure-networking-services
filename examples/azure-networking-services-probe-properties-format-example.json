@@ -1,0 +1,13 @@
+{
+  "intervalInSeconds": 1,
+  "loadBalancingRules": [
+    {
+      "id": {}
+    }
+  ],
+  "numberOfProbes": 1,
+  "port": 1,
+  "protocol": "Http",
+  "provisioningState": "Succeeded",
+  "requestPath": "example-string"
+}

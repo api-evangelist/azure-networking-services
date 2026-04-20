@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-subnet-list-result-schema.json",
+  "title": "SubnetListResult",
+  "description": "Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "type": "string"
+    },
+    "value": {
+      "description": "The subnets in a virtual network.",
+      "items": {
+        "$ref": "#/definitions/Subnet"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

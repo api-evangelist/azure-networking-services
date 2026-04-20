@@ -1,0 +1,93 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Azure Networking Services Management"
+  description: "Workflow capability for managing Azure Networking Services resources. Used by cloud engineers and DevOps teams."
+  tags:
+    - Azure
+    - Cloud
+    - Management
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AZURE_SUBSCRIPTION_ID: AZURE_SUBSCRIPTION_ID
+      AZURE_ACCESS_TOKEN: AZURE_ACCESS_TOKEN
+
+capability:
+  consumes:
+    - import: azure-networking-services
+      location: ./shared/azure-networking-services.yaml
+
+  exposes:
+    - type: rest
+      port: 8088
+      namespace: azure-networking-services-management-api
+      description: "Unified REST API for Azure Networking Services management."
+      resources:
+        - path: /v1/resources
+          name: resources
+          description: "Resource management"
+          operations:
+            - method: GET
+              name: list
+              description: "List all resources"
+              call: "azure-networking-services.list-virtual-networks"
+              with:
+                subscriptionId: "rest.subscriptionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9098
+      namespace: azure-networking-services-management-mcp
+      transport: http
+      description: "MCP server for AI-assisted Azure Networking Services management."
+      tools:
+        - name: list-virtual-networks
+          description: "List VirtualNetwork resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-networking-services.list-virtual-networks"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-subnets
+          description: "List Subnet resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-networking-services.list-subnets"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-load-balancers
+          description: "List LoadBalancer resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-networking-services.list-load-balancers"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-network-interfaces
+          description: "List NetworkInterface resources"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "azure-networking-services.list-network-interfaces"
+          with:
+            subscriptionId: "tools.subscriptionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

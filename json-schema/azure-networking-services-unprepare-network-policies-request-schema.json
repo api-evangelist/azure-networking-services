@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-unprepare-network-policies-request-schema.json",
+  "title": "UnprepareNetworkPoliciesRequest",
+  "description": "Details of UnprepareNetworkPolicies for Subnet.",
+  "properties": {
+    "serviceName": {
+      "description": "The name of the service for which subnet is being unprepared for.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

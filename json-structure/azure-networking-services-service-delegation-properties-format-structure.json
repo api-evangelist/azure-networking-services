@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-service-delegation-properties-format-structure.json",
+  "description": "Properties of a service delegation.",
+  "properties": {
+    "actions": {
+      "description": "Describes the actions permitted to the service upon delegation.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "serviceName": {
+      "description": "The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "ServiceDelegationPropertiesFormat"
+}

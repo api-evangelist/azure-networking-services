@@ -1,0 +1,19 @@
+{
+  "backendAddressPool": {
+    "id": "example-string"
+  },
+  "backendPort": 1,
+  "disableOutboundSnat": true,
+  "enableFloatingIP": true,
+  "enableTcpReset": true,
+  "frontendIPConfiguration": {
+    "id": "example-string"
+  },
+  "frontendPort": 1,
+  "idleTimeoutInMinutes": 1,
+  "loadDistribution": "Default",
+  "probe": {
+    "id": "example-string"
+  },
+  "provisioningState": "Succeeded"
+}

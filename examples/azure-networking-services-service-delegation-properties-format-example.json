@@ -1,0 +1,7 @@
+{
+  "actions": [
+    "example-string"
+  ],
+  "provisioningState": "Succeeded",
+  "serviceName": "example-string"
+}

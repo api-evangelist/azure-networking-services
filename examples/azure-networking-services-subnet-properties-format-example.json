@@ -1,0 +1,56 @@
+{
+  "addressPrefix": "example-string",
+  "addressPrefixes": [
+    "example-string"
+  ],
+  "delegations": [
+    {
+      "etag": {},
+      "name": {},
+      "properties": {}
+    }
+  ],
+  "ipConfigurationProfiles": [
+    {}
+  ],
+  "ipConfigurations": [
+    {}
+  ],
+  "natGateway": {
+    "id": "example-string"
+  },
+  "privateEndpointNetworkPolicies": "example-string",
+  "privateEndpoints": [
+    {}
+  ],
+  "privateLinkServiceNetworkPolicies": "example-string",
+  "provisioningState": "Succeeded",
+  "purpose": "example-string",
+  "resourceNavigationLinks": [
+    {
+      "etag": {},
+      "id": {},
+      "name": {},
+      "properties": {},
+      "type": {}
+    }
+  ],
+  "serviceAssociationLinks": [
+    {
+      "etag": {},
+      "name": {},
+      "properties": {},
+      "type": {}
+    }
+  ],
+  "serviceEndpointPolicies": [
+    {}
+  ],
+  "serviceEndpoints": [
+    {
+      "locations": {},
+      "provisioningState": {},
+      "service": {}
+    }
+  ]
+}

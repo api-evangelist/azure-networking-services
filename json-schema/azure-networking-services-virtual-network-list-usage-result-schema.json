@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-virtual-network-list-usage-result-schema.json",
+  "title": "VirtualNetworkListUsageResult",
+  "description": "Response for the virtual networks GetUsage API service call.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "type": "string"
+    },
+    "value": {
+      "description": "VirtualNetwork usage stats.",
+      "items": {
+        "$ref": "#/definitions/VirtualNetworkUsage"
+      },
+      "readOnly": true,
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

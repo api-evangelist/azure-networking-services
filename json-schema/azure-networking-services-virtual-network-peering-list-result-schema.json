@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-virtual-network-peering-list-result-schema.json",
+  "title": "VirtualNetworkPeeringListResult",
+  "description": "Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "type": "string"
+    },
+    "value": {
+      "description": "The peerings in a virtual network.",
+      "items": {
+        "$ref": "#/definitions/VirtualNetworkPeering"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

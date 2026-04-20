@@ -1,0 +1,6 @@
+{
+  "networkIntentPolicyConfigurations": [
+    {}
+  ],
+  "serviceName": "example-string"
+}

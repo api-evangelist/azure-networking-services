@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-usage-structure.json",
+  "description": "Usage details for subnet.",
+  "properties": {
+    "currentValue": {
+      "description": "Indicates number of IPs used from the Subnet.",
+      "format": "double",
+      "readOnly": true,
+      "type": "number"
+    },
+    "id": {
+      "description": "Subnet identifier.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "limit": {
+      "description": "Indicates the size of the subnet.",
+      "format": "double",
+      "readOnly": true,
+      "type": "number"
+    },
+    "name": {
+      "$ref": "#/definitions/VirtualNetworkUsageName",
+      "description": "The name containing common and localized value for usage.",
+      "readOnly": true
+    },
+    "unit": {
+      "description": "Usage units. Returns 'Count'.",
+      "readOnly": true,
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "VirtualNetworkUsage"
+}

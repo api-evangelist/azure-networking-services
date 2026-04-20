@@ -1,0 +1,25 @@
+{
+  "backendAddressPools": [
+    {}
+  ],
+  "frontendIPConfigurations": [
+    {}
+  ],
+  "inboundNatPools": [
+    {}
+  ],
+  "inboundNatRules": [
+    {}
+  ],
+  "loadBalancingRules": [
+    {}
+  ],
+  "outboundRules": [
+    {}
+  ],
+  "probes": [
+    {}
+  ],
+  "provisioningState": "Succeeded",
+  "resourceGuid": "example-string"
+}

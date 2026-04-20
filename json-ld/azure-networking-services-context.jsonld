@@ -1,0 +1,189 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "azurenetworkingservices": "https://azure.microsoft.com/azure-networking-services/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AddressSpace": "azurenetworkingservices:AddressSpace",
+    "Delegation": "azurenetworkingservices:Delegation",
+    "DhcpOptions": "azurenetworkingservices:DhcpOptions",
+    "IPAddressAvailabilityResult": "azurenetworkingservices:IPAddressAvailabilityResult",
+    "NetworkIntentPolicy": "azurenetworkingservices:NetworkIntentPolicy",
+    "NetworkIntentPolicyConfiguration": "azurenetworkingservices:NetworkIntentPolicyConfiguration",
+    "PrepareNetworkPoliciesRequest": "azurenetworkingservices:PrepareNetworkPoliciesRequest",
+    "ResourceNavigationLink": "azurenetworkingservices:ResourceNavigationLink",
+    "ResourceNavigationLinkFormat": "azurenetworkingservices:ResourceNavigationLinkFormat",
+    "ResourceNavigationLinksListResult": "azurenetworkingservices:ResourceNavigationLinksListResult",
+    "ServiceAssociationLink": "azurenetworkingservices:ServiceAssociationLink",
+    "ServiceAssociationLinkPropertiesFormat": "azurenetworkingservices:ServiceAssociationLinkPropertiesFormat",
+    "ServiceAssociationLinksListResult": "azurenetworkingservices:ServiceAssociationLinksListResult",
+    "ServiceDelegationPropertiesFormat": "azurenetworkingservices:ServiceDelegationPropertiesFormat",
+    "ServiceEndpointPropertiesFormat": "azurenetworkingservices:ServiceEndpointPropertiesFormat",
+    "Subnet": "azurenetworkingservices:Subnet",
+    "SubnetListResult": "azurenetworkingservices:SubnetListResult",
+    "SubnetPropertiesFormat": "azurenetworkingservices:SubnetPropertiesFormat",
+    "UnprepareNetworkPoliciesRequest": "azurenetworkingservices:UnprepareNetworkPoliciesRequest",
+    "VirtualNetwork": "azurenetworkingservices:VirtualNetwork",
+    "addressPrefixes": {
+      "@id": "azurenetworkingservices:addressPrefixes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "etag": {
+      "@id": "azurenetworkingservices:etag",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "properties": {
+      "@id": "azurenetworkingservices:properties",
+      "@type": "xsd:string"
+    },
+    "dnsServers": {
+      "@id": "azurenetworkingservices:dnsServers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "available": {
+      "@id": "azurenetworkingservices:available",
+      "@type": "xsd:boolean"
+    },
+    "availableIPAddresses": {
+      "@id": "azurenetworkingservices:availableIPAddresses",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "networkIntentPolicyName": {
+      "@id": "azurenetworkingservices:networkIntentPolicyName",
+      "@type": "xsd:string"
+    },
+    "sourceNetworkIntentPolicy": {
+      "@id": "azurenetworkingservices:sourceNetworkIntentPolicy",
+      "@type": "xsd:string"
+    },
+    "networkIntentPolicyConfigurations": {
+      "@id": "azurenetworkingservices:networkIntentPolicyConfigurations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "serviceName": {
+      "@id": "azurenetworkingservices:serviceName",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "azurenetworkingservices:id",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "azurenetworkingservices:type",
+      "@type": "xsd:string"
+    },
+    "link": {
+      "@id": "azurenetworkingservices:link",
+      "@type": "xsd:string"
+    },
+    "linkedResourceType": {
+      "@id": "azurenetworkingservices:linkedResourceType",
+      "@type": "xsd:string"
+    },
+    "provisioningState": {
+      "@id": "azurenetworkingservices:provisioningState",
+      "@type": "xsd:string"
+    },
+    "nextLink": {
+      "@id": "azurenetworkingservices:nextLink",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "azurenetworkingservices:value",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "allowDelete": {
+      "@id": "azurenetworkingservices:allowDelete",
+      "@type": "xsd:boolean"
+    },
+    "locations": {
+      "@id": "azurenetworkingservices:locations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "actions": {
+      "@id": "azurenetworkingservices:actions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "service": {
+      "@id": "azurenetworkingservices:service",
+      "@type": "xsd:string"
+    },
+    "addressPrefix": {
+      "@id": "azurenetworkingservices:addressPrefix",
+      "@type": "xsd:string"
+    },
+    "delegations": {
+      "@id": "azurenetworkingservices:delegations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ipConfigurationProfiles": {
+      "@id": "azurenetworkingservices:ipConfigurationProfiles",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ipConfigurations": {
+      "@id": "azurenetworkingservices:ipConfigurations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "natGateway": {
+      "@id": "azurenetworkingservices:natGateway",
+      "@type": "xsd:string"
+    },
+    "networkSecurityGroup": {
+      "@id": "azurenetworkingservices:networkSecurityGroup",
+      "@type": "xsd:string"
+    },
+    "privateEndpointNetworkPolicies": {
+      "@id": "azurenetworkingservices:privateEndpointNetworkPolicies",
+      "@type": "xsd:string"
+    },
+    "privateEndpoints": {
+      "@id": "azurenetworkingservices:privateEndpoints",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "privateLinkServiceNetworkPolicies": {
+      "@id": "azurenetworkingservices:privateLinkServiceNetworkPolicies",
+      "@type": "xsd:string"
+    },
+    "purpose": {
+      "@id": "azurenetworkingservices:purpose",
+      "@type": "xsd:string"
+    },
+    "resourceNavigationLinks": {
+      "@id": "azurenetworkingservices:resourceNavigationLinks",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "routeTable": {
+      "@id": "azurenetworkingservices:routeTable",
+      "@type": "xsd:string"
+    },
+    "serviceAssociationLinks": {
+      "@id": "azurenetworkingservices:serviceAssociationLinks",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "serviceEndpointPolicies": {
+      "@id": "azurenetworkingservices:serviceEndpointPolicies",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "serviceEndpoints": {
+      "@id": "azurenetworkingservices:serviceEndpoints",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

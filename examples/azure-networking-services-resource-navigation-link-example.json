@@ -1,0 +1,11 @@
+{
+  "etag": "example-string",
+  "id": "example-string",
+  "name": "example-string",
+  "properties": {
+    "link": "example-string",
+    "linkedResourceType": "example-string",
+    "provisioningState": "Succeeded"
+  },
+  "type": "example-string"
+}

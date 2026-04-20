@@ -1,0 +1,12 @@
+{
+  "backendPort": 1,
+  "enableFloatingIP": true,
+  "enableTcpReset": true,
+  "frontendIPConfiguration": {
+    "id": "example-string"
+  },
+  "frontendPort": 1,
+  "idleTimeoutInMinutes": 1,
+  "protocol": "Udp",
+  "provisioningState": "Succeeded"
+}

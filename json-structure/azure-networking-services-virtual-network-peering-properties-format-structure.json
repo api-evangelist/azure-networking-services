@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-peering-properties-format-structure.json",
+  "description": "Properties of the virtual network peering.",
+  "properties": {
+    "allowForwardedTraffic": {
+      "description": "Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network.",
+      "type": "boolean"
+    },
+    "allowGatewayTransit": {
+      "description": "If gateway links can be used in remote virtual networking to link to this virtual network.",
+      "type": "boolean"
+    },
+    "allowVirtualNetworkAccess": {
+      "description": "Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space.",
+      "type": "boolean"
+    },
+    "peeringState": {
+      "description": "The status of the virtual network peering.",
+      "enum": [
+        "Initiated",
+        "Connected",
+        "Disconnected"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "VirtualNetworkPeeringState"
+      }
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "remoteAddressSpace": {
+      "$ref": "#/definitions/AddressSpace",
+      "description": "The reference of the remote virtual network address space."
+    },
+    "remoteVirtualNetwork": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "useRemoteGateways": {
+      "description": "If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.",
+      "type": "boolean"
+    }
+  },
+  "type": "object",
+  "name": "VirtualNetworkPeeringPropertiesFormat"
+}

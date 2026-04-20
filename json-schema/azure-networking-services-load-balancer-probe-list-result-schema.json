@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancer-probe-list-result-schema.json",
+  "title": "LoadBalancerProbeListResult",
+  "description": "Response for ListProbe API service call.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "A list of probes in a load balancer.",
+      "items": {
+        "$ref": "#/definitions/Probe"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

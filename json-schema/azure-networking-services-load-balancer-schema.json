@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancer-schema.json",
+  "title": "LoadBalancer",
+  "description": "LoadBalancer resource.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "properties": {
+      "$ref": "#/definitions/LoadBalancerPropertiesFormat",
+      "description": "Properties of load balancer.",
+      "x-ms-client-flatten": true
+    },
+    "sku": {
+      "$ref": "#/definitions/LoadBalancerSku",
+      "description": "The load balancer SKU."
+    }
+  },
+  "type": "object"
+}

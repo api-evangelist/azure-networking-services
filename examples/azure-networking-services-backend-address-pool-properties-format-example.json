@@ -1,0 +1,19 @@
+{
+  "backendIPConfigurations": [
+    {}
+  ],
+  "loadBalancingRules": [
+    {
+      "id": {}
+    }
+  ],
+  "outboundRule": {
+    "id": "example-string"
+  },
+  "outboundRules": [
+    {
+      "id": {}
+    }
+  ],
+  "provisioningState": "Succeeded"
+}

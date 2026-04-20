@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-probe-properties-format-schema.json",
+  "title": "ProbePropertiesFormat",
+  "description": "Load balancer probe resource.",
+  "properties": {
+    "intervalInSeconds": {
+      "description": "The interval, in seconds, for how frequently to probe the endpoint for health status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "loadBalancingRules": {
+      "description": "The load balancer rules that use this probe.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "numberOfProbes": {
+      "description": "The number of probes where if no response, will result in stopping further traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or slower than the typical times used in Azure.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "port": {
+      "description": "The port for communicating the probe. Possible values range from 1 to 65535, inclusive.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "protocol": {
+      "description": "The protocol of the end point. If 'Tcp' is specified, a received ACK is required for the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.",
+      "enum": [
+        "Http",
+        "Tcp",
+        "Https"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProbeProtocol"
+      }
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "requestPath": {
+      "description": "The URI used for requesting health status from the VM. Path is required if a protocol is set to http. Otherwise, it is not allowed. There is no default value.",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "protocol",
+    "port"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-ip-address-availability-result-structure.json",
+  "description": "Response for CheckIPAddressAvailability API service call.",
+  "properties": {
+    "available": {
+      "description": "Private IP address availability.",
+      "type": "boolean"
+    },
+    "availableIPAddresses": {
+      "description": "Contains other available private IP addresses if the asked for address is taken.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "name": "IPAddressAvailabilityResult"
+}

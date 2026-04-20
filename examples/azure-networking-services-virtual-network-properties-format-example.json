@@ -1,0 +1,15 @@
+{
+  "ddosProtectionPlan": {
+    "id": "example-string"
+  },
+  "enableDdosProtection": true,
+  "enableVmProtection": true,
+  "provisioningState": "Succeeded",
+  "resourceGuid": "example-string",
+  "subnets": [
+    {}
+  ],
+  "virtualNetworkPeerings": [
+    {}
+  ]
+}

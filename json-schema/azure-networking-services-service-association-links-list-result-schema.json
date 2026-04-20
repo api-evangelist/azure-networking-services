@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-service-association-links-list-result-schema.json",
+  "title": "ServiceAssociationLinksListResult",
+  "description": "Response for ServiceAssociationLinks_List operation.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "The service association links in a subnet.",
+      "items": {
+        "$ref": "#/definitions/ServiceAssociationLink"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

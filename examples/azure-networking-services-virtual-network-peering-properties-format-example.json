@@ -1,0 +1,11 @@
+{
+  "allowForwardedTraffic": true,
+  "allowGatewayTransit": true,
+  "allowVirtualNetworkAccess": true,
+  "peeringState": "Initiated",
+  "provisioningState": "Succeeded",
+  "remoteVirtualNetwork": {
+    "id": "example-string"
+  },
+  "useRemoteGateways": true
+}

@@ -1,0 +1,9 @@
+{
+  "allowDelete": true,
+  "link": "example-string",
+  "linkedResourceType": "example-string",
+  "locations": [
+    "example-string"
+  ],
+  "provisioningState": "Succeeded"
+}

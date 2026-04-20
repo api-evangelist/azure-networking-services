@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancer-properties-format-schema.json",
+  "title": "LoadBalancerPropertiesFormat",
+  "description": "Properties of the load balancer.",
+  "properties": {
+    "backendAddressPools": {
+      "description": "Collection of backend address pools used by a load balancer.",
+      "items": {
+        "$ref": "#/definitions/BackendAddressPool"
+      },
+      "type": "array"
+    },
+    "frontendIPConfigurations": {
+      "description": "Object representing the frontend IPs to be used for the load balancer.",
+      "items": {
+        "$ref": "#/definitions/FrontendIPConfiguration"
+      },
+      "type": "array"
+    },
+    "inboundNatPools": {
+      "description": "Defines an external port range for inbound NAT to a single backend port on NICs associated with a load balancer. Inbound NAT rules are created automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Load Balancer is mutually exclusive with defining inbound Nat rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules.",
+      "items": {
+        "$ref": "#/definitions/InboundNatPool"
+      },
+      "type": "array"
+    },
+    "inboundNatRules": {
+      "description": "Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT rules on your load balancer is mutually exclusive with defining an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules.",
+      "items": {
+        "$ref": "#/definitions/InboundNatRule"
+      },
+      "type": "array"
+    },
+    "loadBalancingRules": {
+      "description": "Object collection representing the load balancing rules Gets the provisioning.",
+      "items": {
+        "$ref": "#/definitions/LoadBalancingRule"
+      },
+      "type": "array"
+    },
+    "outboundRules": {
+      "description": "The outbound rules.",
+      "items": {
+        "$ref": "#/definitions/OutboundRule"
+      },
+      "type": "array"
+    },
+    "probes": {
+      "description": "Collection of probe objects used in the load balancer.",
+      "items": {
+        "$ref": "#/definitions/Probe"
+      },
+      "type": "array"
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "resourceGuid": {
+      "description": "The resource GUID property of the load balancer resource.",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

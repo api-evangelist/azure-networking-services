@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-address-space-structure.json",
+  "description": "AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.",
+  "properties": {
+    "addressPrefixes": {
+      "description": "A list of address blocks reserved for this virtual network in CIDR notation.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "name": "AddressSpace"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-network-intent-policy-structure.json",
+  "description": "Network Intent Policy resource.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "NetworkIntentPolicy"
+}

@@ -1,0 +1,14 @@
+{
+  "etag": "example-string",
+  "name": "example-string",
+  "properties": {
+    "allowDelete": true,
+    "link": "example-string",
+    "linkedResourceType": "example-string",
+    "locations": [
+      {}
+    ],
+    "provisioningState": "Succeeded"
+  },
+  "type": "example-string"
+}

@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-subnet-properties-format-schema.json",
+  "title": "SubnetPropertiesFormat",
+  "description": "Properties of the subnet.",
+  "properties": {
+    "addressPrefix": {
+      "description": "The address prefix for the subnet.",
+      "type": "string"
+    },
+    "addressPrefixes": {
+      "description": "List of address prefixes for the subnet.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "delegations": {
+      "description": "An array of references to the delegations on the subnet.",
+      "items": {
+        "allOf": [
+          {
+            "description": "Reference to another subresource.",
+            "properties": {
+              "id": {
+                "description": "Resource ID.",
+                "type": "string"
+              }
+            },
+            "x-ms-azure-resource": true
+          }
+        ],
+        "description": "Details the service to which the subnet is delegated.",
+        "properties": {
+          "etag": {
+            "description": "A unique read-only string that changes whenever the resource is updated.",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the resource that is unique within a subnet. This name can be used to access the resource.",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Properties of a service delegation.",
+            "properties": {
+              "actions": {
+                "description": "Describes the actions permitted to the service upon delegation.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "provisioningState": {
+                "description": "The current provisioning state.",
+                "enum": [
+                  "Succeeded",
+                  "Updating",
+                  "Deleting",
+                  "Failed"
+                ],
+                "readOnly": true,
+                "type": "string",
+                "x-ms-enum": {
+                  "modelAsString": true,
+                  "name": "ProvisioningState"
+                }
+              },
+              "serviceName": {
+                "description": "The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "type": "array"
+    },
+    "ipConfigurationProfiles": {
+      "description": "Array of IP configuration profiles which reference this subnet.",
+      "items": {
+        "$ref": "./networkProfile.json#/definitions/IPConfigurationProfile"
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "ipConfigurations": {
+      "description": "An array of references to the network interface IP configurations using subnet.",
+      "items": {
+        "$ref": "./networkInterface.json#/definitions/IPConfiguration"
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "natGateway": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "networkSecurityGroup": {
+      "$ref": "./networkSecurityGroup.json#/definitions/NetworkSecurityGroup",
+      "description": "The reference of the NetworkSecurityGroup resource."
+    },
+    "privateEndpointNetworkPolicies": {
+      "description": "Enable or Disable apply network policies on private end point in the subnet.",
+      "type": "string"
+    },
+    "privateEndpoints": {
+      "description": "An array of references to private endpoints.",
+      "items": {
+        "$ref": "./privateEndpoint.json#/definitions/PrivateEndpoint"
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "privateLinkServiceNetworkPolicies": {
+      "description": "Enable or Disable apply network policies on private link service in the subnet.",
+      "type": "string"
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "purpose": {
+      "description": "A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "resourceNavigationLinks": {
+      "description": "An array of references to the external resources using subnet.",
+      "items": {
+        "allOf": [
+          {
+            "description": "Reference to another subresource.",
+            "properties": {
+              "id": {
+                "description": "Resource ID.",
+                "type": "string"
+              }
+            },
+            "x-ms-azure-resource": true
+          }
+        ],
+        "description": "ResourceNavigationLink resource.",
+        "properties": {
+          "etag": {
+            "description": "A unique read-only string that changes whenever the resource is updated.",
+            "readOnly": true,
+            "type": "string"
+          },
+          "id": {
+            "description": "Resource navigation link identifier.",
+            "readOnly": true,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Properties of ResourceNavigationLink.",
+            "properties": {
+              "link": {
+                "description": "Link to the external resource.",
+                "type": "string"
+              },
+              "linkedResourceType": {
+                "description": "Resource type of the linked resource.",
+                "type": "string"
+              },
+              "provisioningState": {
+                "description": "The current provisioning state.",
+                "enum": [
+                  "Succeeded",
+                  "Updating",
+                  "Deleting",
+                  "Failed"
+                ],
+                "readOnly": true,
+                "type": "string",
+                "x-ms-enum": {
+                  "modelAsString": true,
+                  "name": "ProvisioningState"
+                }
+              }
+            }
+          },
+          "type": {
+            "description": "Resource type.",
+            "readOnly": true,
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    },
+    "routeTable": {
+      "$ref": "./routeTable.json#/definitions/RouteTable",
+      "description": "The reference of the RouteTable resource."
+    },
+    "serviceAssociationLinks": {
+      "description": "An array of references to services injecting into this subnet.",
+      "items": {
+        "allOf": [
+          {
+            "description": "Reference to another subresource.",
+            "properties": {
+              "id": {
+                "description": "Resource ID.",
+                "type": "string"
+              }
+            },
+            "x-ms-azure-resource": true
+          }
+        ],
+        "description": "ServiceAssociationLink resource.",
+        "properties": {
+          "etag": {
+            "description": "A unique read-only string that changes whenever the resource is updated.",
+            "readOnly": true,
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the resource that is unique within a resource group. This name can be used to access the resource.",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Properties of ServiceAssociationLink.",
+            "properties": {
+              "allowDelete": {
+                "description": "If true, the resource can be deleted.",
+                "type": "boolean"
+              },
+              "link": {
+                "description": "Link to the external resource.",
+                "type": "string"
+              },
+              "linkedResourceType": {
+                "description": "Resource type of the linked resource.",
+                "type": "string"
+              },
+              "locations": {
+                "description": "A list of locations.",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "provisioningState": {
+                "description": "The current provisioning state.",
+                "enum": [
+                  "Succeeded",
+                  "Updating",
+                  "Deleting",
+                  "Failed"
+                ],
+                "readOnly": true,
+                "type": "string",
+                "x-ms-enum": {
+                  "modelAsString": true,
+                  "name": "ProvisioningState"
+                }
+              }
+            }
+          },
+          "type": {
+            "description": "Resource type.",
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    },
+    "serviceEndpointPolicies": {
+      "description": "An array of service endpoint policies.",
+      "items": {
+        "$ref": "./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy"
+      },
+      "type": "array"
+    },
+    "serviceEndpoints": {
+      "description": "An array of service endpoints.",
+      "items": {
+        "description": "The service endpoint properties.",
+        "properties": {
+          "locations": {
+            "description": "A list of locations.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "provisioningState": {
+            "description": "The current provisioning state.",
+            "enum": [
+              "Succeeded",
+              "Updating",
+              "Deleting",
+              "Failed"
+            ],
+            "readOnly": true,
+            "type": "string",
+            "x-ms-enum": {
+              "modelAsString": true,
+              "name": "ProvisioningState"
+            }
+          },
+          "service": {
+            "description": "The type of the endpoint service.",
+            "type": "string"
+          }
+        }
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

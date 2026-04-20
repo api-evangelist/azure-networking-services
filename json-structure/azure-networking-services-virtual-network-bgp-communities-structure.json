@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-bgp-communities-structure.json",
+  "description": "Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.",
+  "properties": {
+    "regionalCommunity": {
+      "description": "The BGP community associated with the region of the virtual network",
+      "readOnly": true,
+      "type": "string"
+    },
+    "virtualNetworkCommunity": {
+      "description": "The BGP community associated with the virtual network",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "required": [
+    "virtualNetworkCommunity"
+  ],
+  "name": "VirtualNetworkBgpCommunities"
+}

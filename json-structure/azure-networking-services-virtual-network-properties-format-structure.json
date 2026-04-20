@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-properties-format-structure.json",
+  "description": "Properties of the virtual network.",
+  "properties": {
+    "addressSpace": {
+      "$ref": "#/definitions/AddressSpace",
+      "description": "The AddressSpace that contains an array of IP address ranges that can be used by subnets."
+    },
+    "bgpCommunities": {
+      "$ref": "#/definitions/VirtualNetworkBgpCommunities",
+      "description": "Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET."
+    },
+    "ddosProtectionPlan": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "dhcpOptions": {
+      "$ref": "#/definitions/DhcpOptions",
+      "description": "The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network."
+    },
+    "enableDdosProtection": {
+      "default": false,
+      "description": "Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.",
+      "type": "boolean"
+    },
+    "enableVmProtection": {
+      "default": false,
+      "description": "Indicates if VM protection is enabled for all the subnets in the virtual network.",
+      "type": "boolean"
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "resourceGuid": {
+      "description": "The resourceGuid property of the Virtual Network resource.",
+      "type": "string"
+    },
+    "subnets": {
+      "description": "A list of subnets in a Virtual Network.",
+      "items": {
+        "$ref": "#/definitions/Subnet"
+      },
+      "type": "array"
+    },
+    "virtualNetworkPeerings": {
+      "description": "A list of peerings in a Virtual Network.",
+      "items": {
+        "$ref": "#/definitions/VirtualNetworkPeering"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "name": "VirtualNetworkPropertiesFormat"
+}

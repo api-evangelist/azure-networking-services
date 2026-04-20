@@ -1,0 +1,15 @@
+{
+  "allocatedOutboundPorts": 1,
+  "backendAddressPool": {
+    "id": "example-string"
+  },
+  "enableTcpReset": true,
+  "frontendIPConfigurations": [
+    {
+      "id": {}
+    }
+  ],
+  "idleTimeoutInMinutes": 1,
+  "protocol": "Tcp",
+  "provisioningState": "Succeeded"
+}

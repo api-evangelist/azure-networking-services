@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-peering-structure.json",
+  "description": "Peerings in a virtual network resource.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the resource that is unique within a resource group. This name can be used to access the resource.",
+      "type": "string"
+    },
+    "properties": {
+      "$ref": "#/definitions/VirtualNetworkPeeringPropertiesFormat",
+      "description": "Properties of the virtual network peering.",
+      "x-ms-client-flatten": true
+    }
+  },
+  "type": "object",
+  "name": "VirtualNetworkPeering"
+}

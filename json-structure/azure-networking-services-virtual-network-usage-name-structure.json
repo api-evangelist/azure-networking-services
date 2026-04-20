@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-virtual-network-usage-name-structure.json",
+  "description": "Usage strings container.",
+  "properties": {
+    "localizedValue": {
+      "description": "Localized subnet size and usage string.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "Subnet size and usage string.",
+      "readOnly": true,
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "VirtualNetworkUsageName"
+}

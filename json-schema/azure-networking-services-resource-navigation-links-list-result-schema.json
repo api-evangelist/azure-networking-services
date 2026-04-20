@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-resource-navigation-links-list-result-schema.json",
+  "title": "ResourceNavigationLinksListResult",
+  "description": "Response for ResourceNavigationLinks_List operation.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "The resource navigation links in a subnet.",
+      "items": {
+        "$ref": "#/definitions/ResourceNavigationLink"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

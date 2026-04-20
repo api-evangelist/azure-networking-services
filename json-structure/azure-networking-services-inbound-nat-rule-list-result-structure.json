@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-inbound-nat-rule-list-result-structure.json",
+  "description": "Response for ListInboundNatRule API service call.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "A list of inbound nat rules in a load balancer.",
+      "items": {
+        "$ref": "#/definitions/InboundNatRule"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "name": "InboundNatRuleListResult"
+}

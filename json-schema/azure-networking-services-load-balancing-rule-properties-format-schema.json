@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancing-rule-properties-format-schema.json",
+  "title": "LoadBalancingRulePropertiesFormat",
+  "description": "Properties of the load balancer.",
+  "properties": {
+    "backendAddressPool": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "backendPort": {
+      "description": "The port used for internal connections on the endpoint. Acceptable values are between 0 and 65535. Note that value 0 enables \"Any Port\".",
+      "format": "int32",
+      "type": "integer"
+    },
+    "disableOutboundSnat": {
+      "description": "Configures SNAT for the VMs in the backend pool to use the publicIP address specified in the frontend of the load balancing rule.",
+      "type": "boolean"
+    },
+    "enableFloatingIP": {
+      "description": "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.",
+      "type": "boolean"
+    },
+    "enableTcpReset": {
+      "description": "Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.",
+      "type": "boolean"
+    },
+    "frontendIPConfiguration": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "frontendPort": {
+      "description": "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values are between 0 and 65534. Note that value 0 enables \"Any Port\".",
+      "format": "int32",
+      "type": "integer"
+    },
+    "idleTimeoutInMinutes": {
+      "description": "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "loadDistribution": {
+      "description": "The load distribution policy for this rule.",
+      "enum": [
+        "Default",
+        "SourceIP",
+        "SourceIPProtocol"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "LoadDistribution"
+      }
+    },
+    "probe": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "protocol": {
+      "$ref": "#/definitions/TransportProtocol",
+      "description": "The reference to the transport protocol used by the load balancing rule."
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "protocol",
+    "frontendPort"
+  ]
+}

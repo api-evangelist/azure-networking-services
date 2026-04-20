@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-outbound-rule-schema.json",
+  "title": "OutboundRule",
+  "description": "Outbound rule of the load balancer.",
+  "properties": {
+    "etag": {
+      "description": "A unique read-only string that changes whenever the resource is updated.",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the resource that is unique within the set of outbound rules used by the load balancer. This name can be used to access the resource.",
+      "type": "string"
+    },
+    "properties": {
+      "$ref": "#/definitions/OutboundRulePropertiesFormat",
+      "description": "Properties of load balancer outbound rule.",
+      "x-ms-client-flatten": true
+    },
+    "type": {
+      "description": "Type of the resource.",
+      "readOnly": true,
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

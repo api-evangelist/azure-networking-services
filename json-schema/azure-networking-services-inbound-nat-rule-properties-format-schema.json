@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-inbound-nat-rule-properties-format-schema.json",
+  "title": "InboundNatRulePropertiesFormat",
+  "description": "Properties of the inbound NAT rule.",
+  "properties": {
+    "backendIPConfiguration": {
+      "$ref": "./networkInterface.json#/definitions/NetworkInterfaceIPConfiguration",
+      "description": "A reference to a private IP address defined on a network interface of a VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.",
+      "readOnly": true
+    },
+    "backendPort": {
+      "description": "The port used for the internal endpoint. Acceptable values range from 1 to 65535.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "enableFloatingIP": {
+      "description": "Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.",
+      "type": "boolean"
+    },
+    "enableTcpReset": {
+      "description": "Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.",
+      "type": "boolean"
+    },
+    "frontendIPConfiguration": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "frontendPort": {
+      "description": "The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "idleTimeoutInMinutes": {
+      "description": "The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.",
+      "format": "int32",
+      "type": "integer"
+    },
+    "protocol": {
+      "description": "The transport protocol for the endpoint.",
+      "enum": [
+        "Udp",
+        "Tcp",
+        "All"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "TransportProtocol"
+      }
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    }
+  },
+  "type": "object"
+}

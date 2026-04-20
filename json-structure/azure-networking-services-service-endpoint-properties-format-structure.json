@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-service-endpoint-properties-format-structure.json",
+  "description": "The service endpoint properties.",
+  "properties": {
+    "locations": {
+      "description": "A list of locations.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "service": {
+      "description": "The type of the endpoint service.",
+      "type": "string"
+    }
+  },
+  "type": "object",
+  "name": "ServiceEndpointPropertiesFormat"
+}

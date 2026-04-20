@@ -1,0 +1,11 @@
+{
+  "etag": "example-string",
+  "name": "example-string",
+  "properties": {
+    "actions": [
+      {}
+    ],
+    "provisioningState": "Succeeded",
+    "serviceName": "example-string"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancer-sku-schema.json",
+  "title": "LoadBalancerSku",
+  "description": "SKU of a load balancer.",
+  "properties": {
+    "name": {
+      "description": "Name of a load balancer SKU.",
+      "enum": [
+        "Basic",
+        "Standard"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "LoadBalancerSkuName"
+      }
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,29 @@
+{
+  "inboundNatPools": [
+    {
+      "id": {}
+    }
+  ],
+  "inboundNatRules": [
+    {
+      "id": {}
+    }
+  ],
+  "loadBalancingRules": [
+    {
+      "id": {}
+    }
+  ],
+  "outboundRules": [
+    {
+      "id": {}
+    }
+  ],
+  "privateIPAddress": "example-string",
+  "privateIPAddressVersion": "IPv4",
+  "privateIPAllocationMethod": "Static",
+  "provisioningState": "Succeeded",
+  "publicIPPrefix": {
+    "id": "example-string"
+  }
+}

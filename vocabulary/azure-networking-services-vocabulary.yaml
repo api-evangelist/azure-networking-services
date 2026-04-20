@@ -1,0 +1,63 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Azure Networking Services"
+  description: "Unified taxonomy for Azure Networking Services APIs."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: azure-networking-services
+      version: "2019-01-01"
+      baseUrl: https://management.azure.com
+      status: active
+
+  resources:
+    - name: VirtualNetwork
+    - name: Subnet
+    - name: LoadBalancer
+    - name: NetworkInterface
+
+  actions:
+    - name: list
+      http_method: GET
+      pattern: read
+    - name: get
+      http_method: GET
+      pattern: read
+    - name: create
+      http_method: PUT
+      pattern: write
+    - name: update
+      http_method: PATCH
+      pattern: write
+    - name: delete
+      http_method: DELETE
+      pattern: destructive
+
+  authentication:
+    schemes:
+      - type: oauth2
+        name: azure_auth
+        flows: [implicit, client_credentials]
+
+capability:
+  workflows:
+    - name: Network Infrastructure Management
+
+  personas:
+    - id: network-engineer
+      name: Network Engineer
+    - id: cloud-architect
+      name: Cloud Architect
+
+  domains:
+    - name: Cloud Management
+      description: Azure resource management
+
+  binds:
+    - name: AZURE_SUBSCRIPTION_ID
+    - name: AZURE_ACCESS_TOKEN
+
+crossReference: []

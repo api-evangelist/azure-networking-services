@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-network-intent-policy-configuration-schema.json",
+  "title": "NetworkIntentPolicyConfiguration",
+  "description": "Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest.",
+  "properties": {
+    "networkIntentPolicyName": {
+      "description": "The name of the Network Intent Policy for storing in target subscription.",
+      "type": "string"
+    },
+    "sourceNetworkIntentPolicy": {
+      "$ref": "#/definitions/NetworkIntentPolicy",
+      "description": "Source network intent policy."
+    }
+  },
+  "type": "object"
+}

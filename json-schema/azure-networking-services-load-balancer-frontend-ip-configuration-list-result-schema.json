@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-load-balancer-frontend-ip-configuration-list-result-schema.json",
+  "title": "LoadBalancerFrontendIPConfigurationListResult",
+  "description": "Response for ListFrontendIPConfiguration API service call.",
+  "properties": {
+    "nextLink": {
+      "description": "The URL to get the next set of results.",
+      "readOnly": true,
+      "type": "string"
+    },
+    "value": {
+      "description": "A list of frontend IP configurations in a load balancer.",
+      "items": {
+        "$ref": "#/definitions/FrontendIPConfiguration"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object"
+}

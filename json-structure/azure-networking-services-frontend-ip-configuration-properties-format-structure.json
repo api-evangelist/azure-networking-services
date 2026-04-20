@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-structure/azure-networking-services-frontend-ip-configuration-properties-format-structure.json",
+  "description": "Properties of Frontend IP Configuration of the load balancer.",
+  "properties": {
+    "inboundNatPools": {
+      "description": "An array of references to inbound pools that use this frontend IP.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "inboundNatRules": {
+      "description": "An array of references to inbound rules that use this frontend IP.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "loadBalancingRules": {
+      "description": "An array of references to load balancing rules that use this frontend IP.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "outboundRules": {
+      "description": "An array of references to outbound rules that use this frontend IP.",
+      "items": {
+        "description": "Reference to another subresource.",
+        "properties": {
+          "id": {
+            "description": "Resource ID.",
+            "type": "string"
+          }
+        },
+        "x-ms-azure-resource": true
+      },
+      "readOnly": true,
+      "type": "array"
+    },
+    "privateIPAddress": {
+      "description": "The private IP address of the IP configuration.",
+      "type": "string"
+    },
+    "privateIPAddressVersion": {
+      "description": "IP address version.",
+      "enum": [
+        "IPv4",
+        "IPv6"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "IPVersion"
+      }
+    },
+    "privateIPAllocationMethod": {
+      "description": "IP address allocation method.",
+      "enum": [
+        "Static",
+        "Dynamic"
+      ],
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "IPAllocationMethod"
+      }
+    },
+    "provisioningState": {
+      "description": "The current provisioning state.",
+      "enum": [
+        "Succeeded",
+        "Updating",
+        "Deleting",
+        "Failed"
+      ],
+      "readOnly": true,
+      "type": "string",
+      "x-ms-enum": {
+        "modelAsString": true,
+        "name": "ProvisioningState"
+      }
+    },
+    "publicIPAddress": {
+      "$ref": "./publicIpAddress.json#/definitions/PublicIPAddress",
+      "description": "The reference of the Public IP resource."
+    },
+    "publicIPPrefix": {
+      "description": "Reference to another subresource.",
+      "properties": {
+        "id": {
+          "description": "Resource ID.",
+          "type": "string"
+        }
+      },
+      "x-ms-azure-resource": true
+    },
+    "subnet": {
+      "$ref": "./virtualNetwork.json#/definitions/Subnet",
+      "description": "The reference of the subnet resource."
+    }
+  },
+  "type": "object",
+  "name": "FrontendIPConfigurationPropertiesFormat"
+}

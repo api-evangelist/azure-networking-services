@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-schema/azure-networking-services-network-interface-properties-format-schema.json",
+  "title": "NetworkInterfacePropertiesFormat",
+  "description": "NetworkInterfacePropertiesFormat schema from Azure Networking Services API"
+}
