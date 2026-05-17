@@ -57,17 +57,17 @@ common:
   url: https://portal.azure.com
 - type: Documentation
   url: https://learn.microsoft.com/en-us/azure/networking/
-- type: Getting Started
+- type: GettingStarted
   url: https://learn.microsoft.com/en-us/azure/networking/
 - type: Authentication
   url: https://learn.microsoft.com/en-us/rest/api/azure/
-- type: Status
+- type: StatusPage
   url: https://status.azure.com/
 - type: Support
   url: https://azure.microsoft.com/en-us/support/
-- type: Terms of Service
+- type: TermsOfService
   url: https://azure.microsoft.com/en-us/support/legal/
-- type: Privacy Policy
+- type: PrivacyPolicy
   url: https://privacy.microsoft.com/en-us/privacystatement
 - type: SpectralRules
   url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/rules/azure-networking-services-spectral-rules.yml
