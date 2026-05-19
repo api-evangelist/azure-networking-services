@@ -1,0 +1,467 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NetworkManagementClient
+  description: 'NetworkManagementClient. 6 operations. Lead operation: Azure Networking Services Virtual Networks_ Check I
+    P Address Availability. Self-contained Naftiko capability covering one Azure Networking Services business surface.'
+  tags:
+  - Azure Networking Services
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_NETWORKING_SERVICES_API_KEY: AZURE_NETWORKING_SERVICES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: virtual-network-general
+    baseUri: https://management.azure.com
+    description: NetworkManagementClient business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/CheckIPAddressAvailability
+      operations:
+      - name: virtualnetworkscheckipaddressavailability
+        method: GET
+        description: Azure Networking Services Virtual Networks_ Check I P Address Availability
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: ipAddress
+          in: query
+          type: string
+          description: The private IP address to be verified.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/PrepareNetworkPolicies
+      operations:
+      - name: subnetspreparenetworkpolicies
+        method: POST
+        description: Azure Networking Services Subnets_ Prepare Network Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: prepareNetworkPoliciesRequestParameters
+          in: body
+          type: string
+          description: Parameters supplied to prepare subnet by applying network intent policies.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/ResourceNavigationLinks
+      operations:
+      - name: resourcenavigationlinkslist
+        method: GET
+        description: Azure Networking Services Resource Navigation Links_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/ServiceAssociationLinks
+      operations:
+      - name: serviceassociationlinkslist
+        method: GET
+        description: Azure Networking Services Service Association Links_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/UnprepareNetworkPolicies
+      operations:
+      - name: subnetsunpreparenetworkpolicies
+        method: POST
+        description: Azure Networking Services Subnets_ Unprepare Network Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: unprepareNetworkPoliciesRequestParameters
+          in: body
+          type: string
+          description: Parameters supplied to unprepare subnet to remove network intent policies.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/usages
+      operations:
+      - name: virtualnetworkslistusage
+        method: GET
+        description: Azure Networking Services Virtual Networks_ List Usage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+  exposes:
+  - type: rest
+    namespace: virtual-network-general-rest
+    port: 8080
+    description: REST adapter for NetworkManagementClient. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/checkipaddressavailability
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: virtualnetworkscheckipaddressavailability
+        description: Azure Networking Services Virtual Networks_ Check I P Address Availability
+        call: virtual-network-general.virtualnetworkscheckipaddressavailability
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          ipAddress: rest.ipAddress
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets/{subnetname}/preparenetworkpolicies
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: subnetspreparenetworkpolicies
+        description: Azure Networking Services Subnets_ Prepare Network Policies
+        call: virtual-network-general.subnetspreparenetworkpolicies
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          prepareNetworkPoliciesRequestParameters: rest.prepareNetworkPoliciesRequestParameters
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets/{subnetname}/resourcenavigationlinks
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: resourcenavigationlinkslist
+        description: Azure Networking Services Resource Navigation Links_ List
+        call: virtual-network-general.resourcenavigationlinkslist
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets/{subnetname}/serviceassociationlinks
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: serviceassociationlinkslist
+        description: Azure Networking Services Service Association Links_ List
+        call: virtual-network-general.serviceassociationlinkslist
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets/{subnetname}/unpreparenetworkpolicies
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: subnetsunpreparenetworkpolicies
+        description: Azure Networking Services Subnets_ Unprepare Network Policies
+        call: virtual-network-general.subnetsunpreparenetworkpolicies
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          unprepareNetworkPoliciesRequestParameters: rest.unprepareNetworkPoliciesRequestParameters
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/usages
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: virtualnetworkslistusage
+        description: Azure Networking Services Virtual Networks_ List Usage
+        call: virtual-network-general.virtualnetworkslistusage
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: virtual-network-general-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NetworkManagementClient. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: azure-networking-services-virtual-networks
+      description: Azure Networking Services Virtual Networks_ Check I P Address Availability
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-general.virtualnetworkscheckipaddressavailability
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        ipAddress: tools.ipAddress
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-subnets-prepare
+      description: Azure Networking Services Subnets_ Prepare Network Policies
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: virtual-network-general.subnetspreparenetworkpolicies
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        prepareNetworkPoliciesRequestParameters: tools.prepareNetworkPoliciesRequestParameters
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-resource-navigation
+      description: Azure Networking Services Resource Navigation Links_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-general.resourcenavigationlinkslist
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-service-association
+      description: Azure Networking Services Service Association Links_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-general.serviceassociationlinkslist
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-subnets-unprepare
+      description: Azure Networking Services Subnets_ Unprepare Network Policies
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: virtual-network-general.subnetsunpreparenetworkpolicies
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        unprepareNetworkPoliciesRequestParameters: tools.unprepareNetworkPoliciesRequestParameters
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-virtual-networks-2
+      description: Azure Networking Services Virtual Networks_ List Usage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-general.virtualnetworkslistusage
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.

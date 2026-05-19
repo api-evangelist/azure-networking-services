@@ -1,0 +1,311 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NetworkManagementClient — Subnets
+  description: 'NetworkManagementClient — Subnets. 4 operations. Lead operation: Azure Networking Services Subnets_ List.
+    Self-contained Naftiko capability covering one Azure Networking Services business surface.'
+  tags:
+  - Azure Networking Services
+  - Subnets
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AZURE_NETWORKING_SERVICES_API_KEY: AZURE_NETWORKING_SERVICES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: virtual-network-subnets
+    baseUri: https://management.azure.com
+    description: NetworkManagementClient — Subnets business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets
+      operations:
+      - name: subnetslist
+        method: GET
+        description: Azure Networking Services Subnets_ List
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}
+      operations:
+      - name: subnetsdelete
+        method: DELETE
+        description: Azure Networking Services Subnets_ Delete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+      - name: subnetsget
+        method: GET
+        description: Azure Networking Services Subnets_ Get
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+        - name: $expand
+          in: query
+          type: string
+          description: Expands referenced resources.
+      - name: subnetscreateorupdate
+        method: PUT
+        description: Azure Networking Services Subnets_ Create or Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceGroupName
+          in: path
+          type: string
+          description: The name of the resource group.
+          required: true
+        - name: virtualNetworkName
+          in: path
+          type: string
+          description: The name of the virtual network.
+          required: true
+        - name: subnetName
+          in: path
+          type: string
+          description: The name of the subnet.
+          required: true
+        - name: subnetParameters
+          in: body
+          type: string
+          description: Parameters supplied to the create or update subnet operation.
+          required: true
+        - name: api-version
+          in: query
+          type: string
+          description: Client API version.
+          required: true
+        - name: subscriptionId
+          in: path
+          type: string
+          description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription
+            ID forms part of the URI for every service call.
+          required: true
+  exposes:
+  - type: rest
+    namespace: virtual-network-subnets-rest
+    port: 8080
+    description: REST adapter for NetworkManagementClient — Subnets. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: subnetslist
+        description: Azure Networking Services Subnets_ List
+        call: virtual-network-subnets.subnetslist
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-network/virtualnetworks/{virtualnetworkname}/subnets/{subnetname}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: DELETE
+        name: subnetsdelete
+        description: Azure Networking Services Subnets_ Delete
+        call: virtual-network-subnets.subnetsdelete
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: subnetsget
+        description: Azure Networking Services Subnets_ Get
+        call: virtual-network-subnets.subnetsget
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+          $expand: rest.$expand
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: subnetscreateorupdate
+        description: Azure Networking Services Subnets_ Create or Update
+        call: virtual-network-subnets.subnetscreateorupdate
+        with:
+          resourceGroupName: rest.resourceGroupName
+          virtualNetworkName: rest.virtualNetworkName
+          subnetName: rest.subnetName
+          subnetParameters: rest.subnetParameters
+          api-version: rest.api-version
+          subscriptionId: rest.subscriptionId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: virtual-network-subnets-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NetworkManagementClient — Subnets. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: azure-networking-services-subnets-list
+      description: Azure Networking Services Subnets_ List
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-subnets.subnetslist
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-subnets-delete
+      description: Azure Networking Services Subnets_ Delete
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: virtual-network-subnets.subnetsdelete
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-subnets-get
+      description: Azure Networking Services Subnets_ Get
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: virtual-network-subnets.subnetsget
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+        $expand: tools.$expand
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-networking-services-subnets-create
+      description: Azure Networking Services Subnets_ Create or Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: virtual-network-subnets.subnetscreateorupdate
+      with:
+        resourceGroupName: tools.resourceGroupName
+        virtualNetworkName: tools.virtualNetworkName
+        subnetName: tools.subnetName
+        subnetParameters: tools.subnetParameters
+        api-version: tools.api-version
+        subscriptionId: tools.subscriptionId
+      outputParameters:
+      - type: object
+        mapping: $.
