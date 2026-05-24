@@ -80,6 +80,8 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/vocabulary/azure-networking-services-vocabulary.yaml
 - type: JSONLD
   url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-ld/azure-networking-services-context.jsonld
+- type: LLMsTxt
+  url: https://portal.azure.com/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
