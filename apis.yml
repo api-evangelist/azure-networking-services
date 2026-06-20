@@ -3,7 +3,7 @@ name: Azure Networking Services
 description: A comprehensive collection of Azure networking APIs for managing virtual networks, load balancers, application
   gateways, VPN gateways, DNS, and other networking resources in the Microsoft Azure cloud.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Azure
 - Cloud
