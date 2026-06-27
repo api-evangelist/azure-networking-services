@@ -31,15 +31,15 @@ apis:
     url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-virtual-network-openapi.yaml
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-load-balancer-openapi.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/load-balancer-loadbalancers.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/virtual-network-general.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/virtual-network-subnets.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/virtual-network-virtualnetworks.yaml
 - aid: azure-networking-services:azure-load-balancer-api
   name: Azure Load Balancer API
@@ -80,7 +80,7 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/vocabulary/azure-networking-services-vocabulary.yaml
 - type: JSONLD
   url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/json-ld/azure-networking-services-context.jsonld
-- type: LLMsTxt
+- type: LlmsText
   url: https://portal.azure.com/llms.txt
 maintainers:
 - FN: Kin Lane
