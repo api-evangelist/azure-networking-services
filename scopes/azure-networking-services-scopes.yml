@@ -1,0 +1,24 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-networking-services-load-balancer-openapi.yaml, openapi/azure-networking-services-virtual-network-openapi.yaml
+schemes:
+- name: azure_auth
+  source: openapi/azure-networking-services-load-balancer-openapi.yaml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+  description: Azure Active Directory OAuth2 Flow.
+- name: azure_auth
+  source: openapi/azure-networking-services-virtual-network-openapi.yaml
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+  description: Azure Active Directory OAuth2 Flow.
+scopes:
+- scope: user_impersonation
+  description: impersonate your user account
+  flows:
+  - implicit
+  sources:
+  - openapi/azure-networking-services-load-balancer-openapi.yaml
+  - openapi/azure-networking-services-virtual-network-openapi.yaml
