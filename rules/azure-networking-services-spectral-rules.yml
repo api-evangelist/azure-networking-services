@@ -1,4 +1,15 @@
-extends: spectral:oas
+# azure-networking-services — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - path-params-casing: camel @ 100% (n=135)
+#   - query-params-casing: kebab @ 89% (n=46)
+#   - merge: kept 15 existing, added 3 measured, upgraded 0
+#   - added: path-params-casing, query-params-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   info-title-format:
     description: API title must start with "Azure Networking Services"
@@ -8,7 +19,6 @@ rules:
       function: pattern
       functionOptions:
         match: ^Azure
-
   operation-summary-prefix:
     description: Operation summaries must start with "Azure Networking Services"
     severity: warn
@@ -17,7 +27,6 @@ rules:
       function: pattern
       functionOptions:
         match: ^Azure
-
   operation-id-required:
     description: All operations must have an operationId
     severity: error
@@ -25,7 +34,6 @@ rules:
     then:
       field: operationId
       function: truthy
-
   operation-summary-required:
     description: All operations must have a summary
     severity: error
@@ -33,7 +41,6 @@ rules:
     then:
       field: summary
       function: truthy
-
   operation-description-required:
     description: All operations must have a description
     severity: warn
@@ -41,7 +48,6 @@ rules:
     then:
       field: description
       function: truthy
-
   operation-tags-required:
     description: All operations must have at least one tag
     severity: warn
@@ -49,7 +55,6 @@ rules:
     then:
       field: tags
       function: truthy
-
   paths-no-trailing-slash:
     description: Paths must not end with a trailing slash
     severity: error
@@ -57,15 +62,13 @@ rules:
     then:
       function: pattern
       functionOptions:
-        notMatch: "/$"
-
+        notMatch: /$
   openapi-version:
     description: Must use OpenAPI 3.x or Swagger 2.x
     severity: warn
     given: $
     then:
       function: truthy
-
   servers-https:
     description: All server URLs must use HTTPS
     severity: error
@@ -73,8 +76,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
+        match: ^https://
   response-success-required:
     description: Operations must define at least one 2xx response
     severity: error
@@ -84,11 +86,14 @@ rules:
       functionOptions:
         schema:
           anyOf:
-            - required: ['200']
-            - required: ['201']
-            - required: ['202']
-            - required: ['204']
-
+          - required:
+            - '200'
+          - required:
+            - '201'
+          - required:
+            - '202'
+          - required:
+            - '204'
   parameter-description-required:
     description: All inline parameters must have descriptions
     severity: warn
@@ -96,7 +101,6 @@ rules:
     then:
       field: description
       function: truthy
-
   schema-properties-description:
     description: Top-level schema properties should have descriptions
     severity: info
@@ -104,24 +108,44 @@ rules:
     then:
       field: description
       function: truthy
-
   tags-global-definition:
     description: All tags used in operations should be defined globally
     severity: info
     given: $.tags
     then:
       function: truthy
-
   operation-id-camel-case:
     description: OperationIds should use consistent naming
     severity: info
     given: $.paths[*][get,post,put,patch,delete].operationId
     then:
       function: truthy
-
   security-defined:
     description: Security schemes should be defined
     severity: info
     given: $.components.securitySchemes
+    then:
+      function: truthy
+  path-params-casing:
+    description: Path parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: pattern
+      functionOptions:
+        match: ^[a-z][A-Za-z0-9]*$
+  query-params-casing:
+    description: Query parameters should be kebab-case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: kebab
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
     then:
       function: truthy
