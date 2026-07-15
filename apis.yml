@@ -58,6 +58,8 @@ apis:
   - type: OpenAPI
     url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-load-balancer-openapi.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/azure-networking-services-agentic-access.yml
 - type: DomainSecurity
   url: security/azure-networking-services-domain-security.yml
 - type: Authentication
