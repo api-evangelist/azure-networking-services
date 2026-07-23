@@ -1,0 +1,449 @@
+swagger: '2.0'
+info:
+  description: The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.
+  title: NetworkManagementClient LoadBalancers VirtualNetworkPeerings API
+  version: '2019-08-01'
+  x-apisguru-categories:
+  - cloud
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png
+  x-origin:
+  - format: swagger
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/network/resource-manager/Microsoft.Network/stable/2019-08-01/loadBalancer.json
+    version: '2.0'
+  x-preferred: true
+  x-providerName: azure.com
+  x-serviceName: network-loadBalancer
+  x-tags:
+  - Azure
+  - Microsoft
+host: management.azure.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: VirtualNetworkPeerings
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings
+  : get:
+      description: Gets all virtual network peerings in a virtual network.
+      operationId: VirtualNetworkPeerings_List
+      parameters:
+      - description: The name of the resource group.
+        in: path
+        name: resourceGroupName
+        required: true
+        type: string
+        example: my-resource-group
+      - description: The name of the virtual network.
+        in: path
+        name: virtualNetworkName
+        required: true
+        type: string
+        example: example-value
+      - description: Client API version.
+        in: query
+        name: api-version
+        required: true
+        type: string
+        example: '2019-06-01'
+      - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+        in: path
+        name: subscriptionId
+        required: true
+        type: string
+        example: 00000000-0000-0000-0000-000000000000
+      responses:
+        '200':
+          description: Request successful. The operation returns a list of VirtualNetworkPeering resources.
+          schema:
+            $ref: '#/definitions/VirtualNetworkPeeringListResult'
+      tags:
+      - VirtualNetworkPeerings
+      x-ms-examples:
+        List peerings:
+          parameters:
+            api-version: '2019-08-01'
+            resourceGroupName: peerTest
+            subscriptionId: subid
+            virtualNetworkName: vnet1
+          responses:
+            '200':
+              body:
+                value:
+                - id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer
+                  name: peer
+                  properties:
+                    allowForwardedTraffic: true
+                    allowGatewayTransit: false
+                    allowVirtualNetworkAccess: true
+                    peeringState: Initiated
+                    provisioningState: Succeeded
+                    remoteAddressSpace:
+                      addressPrefixes:
+                      - 12.0.0.0/8
+                    remoteVirtualNetwork:
+                      id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2
+                    useRemoteGateways: false
+                - id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer2
+                  name: peer
+                  properties:
+                    allowForwardedTraffic: false
+                    allowGatewayTransit: false
+                    allowVirtualNetworkAccess: true
+                    peeringState: Initiated
+                    provisioningState: Succeeded
+                    remoteAddressSpace:
+                      addressPrefixes:
+                      - 13.0.0.0/8
+                    remoteVirtualNetwork:
+                      id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet3
+                    useRemoteGateways: false
+      x-ms-pageable:
+        nextLinkName: nextLink
+      summary: Azure Networking Services Virtual Network Peerings_ List
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}
+  : delete:
+      description: Deletes the specified virtual network peering.
+      operationId: VirtualNetworkPeerings_Delete
+      parameters:
+      - description: The name of the resource group.
+        in: path
+        name: resourceGroupName
+        required: true
+        type: string
+        example: my-resource-group
+      - description: The name of the virtual network.
+        in: path
+        name: virtualNetworkName
+        required: true
+        type: string
+        example: example-value
+      - description: The name of the virtual network peering.
+        in: path
+        name: virtualNetworkPeeringName
+        required: true
+        type: string
+        example: example-value
+      - description: Client API version.
+        in: query
+        name: api-version
+        required: true
+        type: string
+        example: '2019-06-01'
+      - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+        in: path
+        name: subscriptionId
+        required: true
+        type: string
+        example: 00000000-0000-0000-0000-000000000000
+      responses:
+        '200':
+          description: Delete successful.
+        '202':
+          description: Accepted and the operation will complete asynchronously.
+        '204':
+          description: Delete successful.
+      tags:
+      - VirtualNetworkPeerings
+      x-ms-examples:
+        Delete peering:
+          parameters:
+            api-version: '2019-08-01'
+            resourceGroupName: peerTest
+            subscriptionId: subid
+            virtualNetworkName: vnet1
+            virtualNetworkPeeringName: peer
+          responses:
+            '200': {}
+            '202': {}
+            '204': {}
+      x-ms-long-running-operation: true
+      x-ms-long-running-operation-options:
+        final-state-via: location
+      summary: Azure Networking Services Virtual Network Peerings_ Delete
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      description: Gets the specified virtual network peering.
+      operationId: VirtualNetworkPeerings_Get
+      parameters:
+      - description: The name of the resource group.
+        in: path
+        name: resourceGroupName
+        required: true
+        type: string
+        example: my-resource-group
+      - description: The name of the virtual network.
+        in: path
+        name: virtualNetworkName
+        required: true
+        type: string
+        example: example-value
+      - description: The name of the virtual network peering.
+        in: path
+        name: virtualNetworkPeeringName
+        required: true
+        type: string
+        example: example-value
+      - description: Client API version.
+        in: query
+        name: api-version
+        required: true
+        type: string
+        example: '2019-06-01'
+      - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+        in: path
+        name: subscriptionId
+        required: true
+        type: string
+        example: 00000000-0000-0000-0000-000000000000
+      responses:
+        '200':
+          description: Request successful. The operation returns the resulting VirtualNetworkPeering resource.
+          schema:
+            $ref: '#/definitions/VirtualNetworkPeering'
+      tags:
+      - VirtualNetworkPeerings
+      x-ms-examples:
+        Get peering:
+          parameters:
+            api-version: '2019-08-01'
+            resourceGroupName: peerTest
+            subscriptionId: subid
+            virtualNetworkName: vnet1
+            virtualNetworkPeeringName: peer
+          responses:
+            '200':
+              body:
+                id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer
+                name: peer
+                properties:
+                  allowForwardedTraffic: true
+                  allowGatewayTransit: false
+                  allowVirtualNetworkAccess: true
+                  peeringState: Initiated
+                  provisioningState: Succeeded
+                  remoteAddressSpace:
+                    addressPrefixes:
+                    - 12.0.0.0/8
+                  remoteVirtualNetwork:
+                    id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2
+                  useRemoteGateways: false
+      summary: Azure Networking Services Virtual Network Peerings_ Get
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    put:
+      description: Creates or updates a peering in the specified virtual network.
+      operationId: VirtualNetworkPeerings_CreateOrUpdate
+      parameters:
+      - description: The name of the resource group.
+        in: path
+        name: resourceGroupName
+        required: true
+        type: string
+        example: my-resource-group
+      - description: The name of the virtual network.
+        in: path
+        name: virtualNetworkName
+        required: true
+        type: string
+        example: example-value
+      - description: The name of the peering.
+        in: path
+        name: virtualNetworkPeeringName
+        required: true
+        type: string
+        example: example-value
+      - description: Parameters supplied to the create or update virtual network peering operation.
+        in: body
+        name: VirtualNetworkPeeringParameters
+        required: true
+        schema:
+          $ref: '#/definitions/VirtualNetworkPeering'
+        example: example-value
+      - description: Client API version.
+        in: query
+        name: api-version
+        required: true
+        type: string
+        example: '2019-06-01'
+      - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+        in: path
+        name: subscriptionId
+        required: true
+        type: string
+        example: 00000000-0000-0000-0000-000000000000
+      responses:
+        '200':
+          description: Update successful. The operation returns the resulting VirtualNetworkPeering resource.
+          schema:
+            $ref: '#/definitions/VirtualNetworkPeering'
+        '201':
+          description: Create successful. The operation returns the resulting VirtualNetworkPeering resource.
+          schema:
+            $ref: '#/definitions/VirtualNetworkPeering'
+      tags:
+      - VirtualNetworkPeerings
+      x-ms-examples:
+        Create peering:
+          parameters:
+            VirtualNetworkPeeringParameters:
+              properties:
+                allowForwardedTraffic: true
+                allowGatewayTransit: false
+                allowVirtualNetworkAccess: true
+                remoteVirtualNetwork:
+                  id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2
+                useRemoteGateways: false
+            api-version: '2019-08-01'
+            resourceGroupName: peerTest
+            subscriptionId: subid
+            virtualNetworkName: vnet1
+            virtualNetworkPeeringName: peer
+          responses:
+            '200':
+              body:
+                id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer
+                name: peer
+                properties:
+                  allowForwardedTraffic: true
+                  allowGatewayTransit: false
+                  allowVirtualNetworkAccess: true
+                  peeringState: Initiated
+                  provisioningState: Succeeded
+                  remoteAddressSpace:
+                    addressPrefixes:
+                    - 12.0.0.0/8
+                  remoteVirtualNetwork:
+                    id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2
+                  useRemoteGateways: false
+            '201':
+              body:
+                id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer
+                name: peer
+                properties:
+                  allowForwardedTraffic: true
+                  allowGatewayTransit: false
+                  allowVirtualNetworkAccess: true
+                  peeringState: Initiated
+                  provisioningState: Succeeded
+                  remoteAddressSpace:
+                    addressPrefixes:
+                    - 12.0.0.0/8
+                  remoteVirtualNetwork:
+                    id: /subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2
+                  useRemoteGateways: false
+      x-ms-long-running-operation: true
+      x-ms-long-running-operation-options:
+        final-state-via: azure-async-operation
+      summary: Azure Networking Services Virtual Network Peerings_ Create or Update
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  VirtualNetworkPeering:
+    allOf:
+    - description: Reference to another subresource.
+      properties:
+        id:
+          description: Resource ID.
+          type: string
+      x-ms-azure-resource: true
+    description: Peerings in a virtual network resource.
+    properties:
+      etag:
+        description: A unique read-only string that changes whenever the resource is updated.
+        type: string
+      name:
+        description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+        type: string
+      properties:
+        $ref: '#/definitions/VirtualNetworkPeeringPropertiesFormat'
+        description: Properties of the virtual network peering.
+        x-ms-client-flatten: true
+  AddressSpace:
+    description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
+    properties:
+      addressPrefixes:
+        description: A list of address blocks reserved for this virtual network in CIDR notation.
+        items:
+          type: string
+        type: array
+  VirtualNetworkPeeringListResult:
+    description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
+    properties:
+      nextLink:
+        description: The URL to get the next set of results.
+        type: string
+      value:
+        description: The peerings in a virtual network.
+        items:
+          $ref: '#/definitions/VirtualNetworkPeering'
+        type: array
+  VirtualNetworkPeeringPropertiesFormat:
+    description: Properties of the virtual network peering.
+    properties:
+      allowForwardedTraffic:
+        description: Whether the forwarded traffic from the VMs in the local virtual network will be allowed/disallowed in remote virtual network.
+        type: boolean
+      allowGatewayTransit:
+        description: If gateway links can be used in remote virtual networking to link to this virtual network.
+        type: boolean
+      allowVirtualNetworkAccess:
+        description: Whether the VMs in the local virtual network space would be able to access the VMs in remote virtual network space.
+        type: boolean
+      peeringState:
+        description: The status of the virtual network peering.
+        enum:
+        - Initiated
+        - Connected
+        - Disconnected
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: VirtualNetworkPeeringState
+      provisioningState:
+        description: The current provisioning state.
+        enum:
+        - Succeeded
+        - Updating
+        - Deleting
+        - Failed
+        readOnly: true
+        type: string
+        x-ms-enum:
+          modelAsString: true
+          name: ProvisioningState
+      remoteAddressSpace:
+        $ref: '#/definitions/AddressSpace'
+        description: The reference of the remote virtual network address space.
+      remoteVirtualNetwork:
+        description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+        x-ms-azure-resource: true
+      useRemoteGateways:
+        description: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
+        type: boolean
+securityDefinitions:
+  azure_auth:
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    description: Azure Active Directory OAuth2 Flow.
+    flow: implicit
+    scopes:
+      user_impersonation: impersonate your user account
+    type: oauth2
