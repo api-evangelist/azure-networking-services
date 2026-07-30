@@ -3,7 +3,20 @@ name: Azure Networking Services
 description: A comprehensive collection of Azure networking APIs for managing virtual networks, load balancers, application
   gateways, VPN gateways, DNS, and other networking resources in the Microsoft Azure cloud.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-networking-services.png
 tags:
 - Azure
 - Cloud
@@ -15,22 +28,19 @@ created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: azure-networking-services:azure-virtual-networks-api
-  name: Azure Virtual Networks API
-  description: API for creating and managing Azure Virtual Networks (VNets), subnets, and network peering.
+- aid: azure-networking-services:azure-networking-services-loadbalancers-api
+  name: Azure Networking Services LoadBalancers API
+  description: >-
+    The LoadBalancers API from Azure Networking Services — 16 operation(s) for loadbalancers.
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Networking
-  - Subnets
-  - Virtual Network
+  - LoadBalancers
   properties:
+  - type: OpenAPI
+    url: openapi/azure-networking-services-loadbalancers-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-virtual-network-openapi.yaml
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-load-balancer-openapi.yaml
   - type: X-NaftikoCapability
     url: capabilities/load-balancer-loadbalancers.yaml
   - type: X-NaftikoCapability
@@ -41,23 +51,109 @@ apis:
     url: capabilities/virtual-network-virtualnetworkpeerings.yaml
   - type: X-NaftikoCapability
     url: capabilities/virtual-network-virtualnetworks.yaml
-- aid: azure-networking-services:azure-load-balancer-api
-  name: Azure Load Balancer API
-  description: API for managing Azure Load Balancers for distributing network traffic.
-  humanURL: https://azure.microsoft.com/en-us/services/load-balancer/
-  baseURL: https://management.azure.com
-  tags:
-  - Load Balancer
-  - Networking
-  - Traffic Distribution
-  properties:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+- aid: azure-networking-services:azure-networking-services-subnets-api
+  name: Azure Networking Services Subnets API
+  description: The Subnets API from Azure Networking Services — 2 operation(s) for subnets.
+  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+  baseURL: https://management.azure.com
+  tags:
+  - Subnets
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-virtual-network-openapi.yaml
+    url: openapi/azure-networking-services-subnets-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - type: X-NaftikoCapability
+    url: capabilities/load-balancer-loadbalancers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-general.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-subnets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworks.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+- aid: azure-networking-services:azure-networking-services-subscriptions-api
+  name: Azure Networking Services Subscriptions API
+  description: The Subscriptions API from Azure Networking Services — 6 operation(s) for subscriptions.
+  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+  baseURL: https://management.azure.com
+  tags:
+  - Subscriptions
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/openapi/azure-networking-services-load-balancer-openapi.yaml
+    url: openapi/azure-networking-services-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - type: X-NaftikoCapability
+    url: capabilities/load-balancer-loadbalancers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-general.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-subnets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworks.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+- aid: azure-networking-services:azure-networking-services-virtualnetworkpeerings-api
+  name: Azure Networking Services VirtualNetworkPeerings API
+  description: >-
+    The VirtualNetworkPeerings API from Azure Networking Services — 2 operation(s) for virtualnetworkpeerings.
+  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+  baseURL: https://management.azure.com
+  tags:
+  - VirtualNetworkPeerings
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-networking-services-virtualnetworkpeerings-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - type: X-NaftikoCapability
+    url: capabilities/load-balancer-loadbalancers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-general.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-subnets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworks.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
+- aid: azure-networking-services:azure-networking-services-virtualnetworks-api
+  name: Azure Networking Services VirtualNetworks API
+  description: >-
+    The VirtualNetworks API from Azure Networking Services — 3 operation(s) for virtualnetworks.
+  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+  baseURL: https://management.azure.com
+  tags:
+  - VirtualNetworks
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-networking-services-virtualnetworks-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - type: X-NaftikoCapability
+    url: capabilities/load-balancer-loadbalancers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-general.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-subnets.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/virtual-network-virtualnetworks.yaml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/azure-networking-services/overview
 - type: AgenticAccess
   url: agentic-access/azure-networking-services-agentic-access.yml
 - type: DomainSecurity
