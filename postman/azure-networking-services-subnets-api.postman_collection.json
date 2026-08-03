@@ -1,0 +1,935 @@
+{
+  "info": {
+    "_postman_id": "934e4b07-8b75-4ef9-9e90-1a4b8baaf76a",
+    "name": "NetworkManagementClient LoadBalancers Subnets API",
+    "description": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:53:18.000Z",
+    "updatedAt": "2026-07-28T10:53:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-934e4b07-8b75-4ef9-9e90-1a4b8baaf76a"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Network",
+                          "item": [
+                            {
+                              "name": "virtualNetworks",
+                              "item": [
+                                {
+                                  "name": "{virtualNetworkName}",
+                                  "item": [
+                                    {
+                                      "name": "subnets",
+                                      "item": [
+                                        {
+                                          "name": "{subnetName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Networking Services Subnets_ Delete",
+                                              "id": "7fd74c81-33c0-409a-b27d-23f25a8a1fd2",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "subnets",
+                                                    ":subnetName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "ba6ac5df-84c1-47c1-916e-7061b37f0d5c",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "1e7d622a-b9b7-4945-8e91-f3a6fd9a9057",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "72478125-7b27-4461-a78f-6b01ece88575",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "ce676ac5-91fd-42fd-bdc8-ccb0ff8d5874",
+                                                      "key": "subnetName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the subnet."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes the specified subnet."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "8b07ecf6-a852-4a7f-a7e0-f5329f2152c3",
+                                                  "name": "Delete successful.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-8b07ecf6-a852-4a7f-a7e0-f5329f2152c3"
+                                                },
+                                                {
+                                                  "id": "11f4e5b5-f921-480a-be14-4c2cf61677ce",
+                                                  "name": "Accepted and the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-11f4e5b5-f921-480a-be14-4c2cf61677ce"
+                                                },
+                                                {
+                                                  "id": "b0068494-9027-4e73-8ed2-42e31ff82002",
+                                                  "name": "Request successful. Resource does not exist.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-b0068494-9027-4e73-8ed2-42e31ff82002"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:18.000Z",
+                                              "updatedAt": "2026-07-28T10:53:18.000Z",
+                                              "uid": "35240-7fd74c81-33c0-409a-b27d-23f25a8a1fd2"
+                                            },
+                                            {
+                                              "name": "Azure Networking Services Subnets_ Get",
+                                              "id": "e667fff5-5e1f-41c4-8312-4a7ffa689847",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>&$expand=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "subnets",
+                                                    ":subnetName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    },
+                                                    {
+                                                      "description": "Expands referenced resources.",
+                                                      "key": "$expand",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "d744ef73-6d41-4e60-89a9-1d62e862b3d1",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "9fa46d27-95ef-44f2-9805-c3ed26c05915",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "cc38eb21-69aa-4499-a391-a05e21b4e7ca",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "4af9ca87-5d17-4474-87fc-cce3c077a82c",
+                                                      "key": "subnetName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the subnet."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets the specified subnet by virtual network and resource group."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "c8caa076-292b-4fef-bbec-678f1dda9eea",
+                                                  "name": "Request successful. The operation returns the resulting Subnet resource.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>&$expand=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        },
+                                                        {
+                                                          "description": "Expands referenced resources.",
+                                                          "key": "$expand",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-c8caa076-292b-4fef-bbec-678f1dda9eea"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:18.000Z",
+                                              "updatedAt": "2026-07-28T10:53:18.000Z",
+                                              "uid": "35240-e667fff5-5e1f-41c4-8312-4a7ffa689847"
+                                            },
+                                            {
+                                              "name": "Azure Networking Services Subnets_ Create or Update",
+                                              "id": "268bc94a-a24f-4917-9309-ce0911054b4d",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "subnets",
+                                                    ":subnetName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "0ebad329-901d-4d44-9dc1-b206d63a3d1a",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "25eaccfb-3f07-4c17-be76-00ce1ad01d35",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "0359b568-9fe6-4b1f-bb10-59a8dbb58001",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "7457b191-3167-44f7-bf22-1bc66ee568d8",
+                                                      "key": "subnetName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the subnet."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates or updates a subnet in the specified virtual network."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "f9a2477f-5ed1-448b-bded-6b0136e411ed",
+                                                  "name": "Update successful. The operation returns the resulting Subnet resource.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-f9a2477f-5ed1-448b-bded-6b0136e411ed"
+                                                },
+                                                {
+                                                  "id": "a00f4222-ff89-458f-ba14-a68a3c39d8c0",
+                                                  "name": "Create successful. The operation returns the resulting Subnet resource.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "subnets",
+                                                        ":subnetName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "subnetName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"sit Lorem in\",\n  \"name\": \"elit sint cupidatat\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                                  "uid": "35240-a00f4222-ff89-458f-ba14-a68a3c39d8c0"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:18.000Z",
+                                              "updatedAt": "2026-07-28T10:53:18.000Z",
+                                              "uid": "35240-268bc94a-a24f-4917-9309-ce0911054b4d"
+                                            }
+                                          ],
+                                          "id": "d119669b-afe6-4450-987e-5c787f0ca281",
+                                          "createdAt": "2026-07-28T10:53:18.000Z",
+                                          "updatedAt": "2026-07-28T10:53:18.000Z",
+                                          "uid": "35240-d119669b-afe6-4450-987e-5c787f0ca281"
+                                        },
+                                        {
+                                          "name": "Azure Networking Services Subnets_ List",
+                                          "id": "108ba558-52b9-403e-a1cb-ec22e63ab5a8",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Network",
+                                                "virtualNetworks",
+                                                ":virtualNetworkName",
+                                                "subnets"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) Client API version.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "a8b6689a-8ccc-480f-80e5-c76bbd3b4e1f",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                },
+                                                {
+                                                  "id": "a7d26fb1-e49c-4926-94d0-79363335b03c",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group."
+                                                },
+                                                {
+                                                  "id": "3a62ca80-c424-4b88-8668-7698de365cd1",
+                                                  "key": "virtualNetworkName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the virtual network."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets all subnets in a virtual network."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "e0b8dbf6-a3a8-4bfd-926d-e510948f2bb1",
+                                              "name": "Request successful. The operation returns a list of Subnet resources.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "subnets"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "virtualNetworkName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"etag\": \"ut Excepteur anim ex\",\n      \"name\": \"sed dolore aute incididunt\",\n      \"properties\": {},\n      \"id\": \"<string>\"\n    },\n    {\n      \"etag\": \"iru\",\n      \"name\": \"ip\",\n      \"properties\": {},\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-07-28T10:53:18.000Z",
+                                              "updatedAt": "2026-07-28T10:53:18.000Z",
+                                              "uid": "35240-e0b8dbf6-a3a8-4bfd-926d-e510948f2bb1"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T10:53:18.000Z",
+                                          "updatedAt": "2026-07-28T10:53:18.000Z",
+                                          "uid": "35240-108ba558-52b9-403e-a1cb-ec22e63ab5a8"
+                                        }
+                                      ],
+                                      "id": "90091537-1856-4a13-b09d-dc5ca2243efb",
+                                      "createdAt": "2026-07-28T10:53:18.000Z",
+                                      "updatedAt": "2026-07-28T10:53:18.000Z",
+                                      "uid": "35240-90091537-1856-4a13-b09d-dc5ca2243efb"
+                                    }
+                                  ],
+                                  "id": "4598fbf6-527b-468d-8497-a30d2716ec0c",
+                                  "createdAt": "2026-07-28T10:53:18.000Z",
+                                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                                  "uid": "35240-4598fbf6-527b-468d-8497-a30d2716ec0c"
+                                }
+                              ],
+                              "id": "76c08b6d-fc3c-4c43-ba58-eea2c2ae3ea2",
+                              "createdAt": "2026-07-28T10:53:18.000Z",
+                              "updatedAt": "2026-07-28T10:53:18.000Z",
+                              "uid": "35240-76c08b6d-fc3c-4c43-ba58-eea2c2ae3ea2"
+                            }
+                          ],
+                          "id": "feda2ce0-1454-4d98-ac6d-ca77409be900",
+                          "createdAt": "2026-07-28T10:53:18.000Z",
+                          "updatedAt": "2026-07-28T10:53:18.000Z",
+                          "uid": "35240-feda2ce0-1454-4d98-ac6d-ca77409be900"
+                        }
+                      ],
+                      "id": "f1786003-6ded-4ba7-82a5-63ab535721f1",
+                      "createdAt": "2026-07-28T10:53:18.000Z",
+                      "updatedAt": "2026-07-28T10:53:18.000Z",
+                      "uid": "35240-f1786003-6ded-4ba7-82a5-63ab535721f1"
+                    }
+                  ],
+                  "id": "d1a1bef0-e72d-49d2-a830-e858de45c2a8",
+                  "createdAt": "2026-07-28T10:53:18.000Z",
+                  "updatedAt": "2026-07-28T10:53:18.000Z",
+                  "uid": "35240-d1a1bef0-e72d-49d2-a830-e858de45c2a8"
+                }
+              ],
+              "id": "236baf53-5cb9-402f-beef-b44690460d2e",
+              "createdAt": "2026-07-28T10:53:18.000Z",
+              "updatedAt": "2026-07-28T10:53:18.000Z",
+              "uid": "35240-236baf53-5cb9-402f-beef-b44690460d2e"
+            }
+          ],
+          "id": "5e8a79bf-608e-4602-b3f9-3e9c93f36105",
+          "createdAt": "2026-07-28T10:53:18.000Z",
+          "updatedAt": "2026-07-28T10:53:18.000Z",
+          "uid": "35240-5e8a79bf-608e-4602-b3f9-3e9c93f36105"
+        }
+      ],
+      "id": "d2232358-82a9-4cc7-9cf1-2a981637e83b",
+      "createdAt": "2026-07-28T10:53:18.000Z",
+      "updatedAt": "2026-07-28T10:53:18.000Z",
+      "uid": "35240-d2232358-82a9-4cc7-9cf1-2a981637e83b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

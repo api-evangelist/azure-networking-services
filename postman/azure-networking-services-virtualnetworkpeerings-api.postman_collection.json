@@ -1,0 +1,925 @@
+{
+  "info": {
+    "_postman_id": "7825704f-88be-4326-aa5c-d717b6373f98",
+    "name": "NetworkManagementClient LoadBalancers VirtualNetworkPeerings API",
+    "description": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:53:20.000Z",
+    "updatedAt": "2026-07-28T10:53:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7825704f-88be-4326-aa5c-d717b6373f98"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Network",
+                          "item": [
+                            {
+                              "name": "virtualNetworks",
+                              "item": [
+                                {
+                                  "name": "{virtualNetworkName}",
+                                  "item": [
+                                    {
+                                      "name": "virtualNetworkPeerings",
+                                      "item": [
+                                        {
+                                          "name": "{virtualNetworkPeeringName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Networking Services Virtual Network Peerings_ Delete",
+                                              "id": "0dcb636e-e27d-4093-880d-c6c69074ada4",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "virtualNetworkPeerings",
+                                                    ":virtualNetworkPeeringName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "ea76a520-2ce5-463e-96af-141afa30f43c",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "67361c26-c755-41b0-ac1d-2469fc280592",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "ada2b897-258f-4fac-b336-bc78087f9c2d",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "308655fa-e99a-4891-b54b-44aaee612d56",
+                                                      "key": "virtualNetworkPeeringName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network peering."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes the specified virtual network peering."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "86380593-5072-4cf7-9015-0da905b2be93",
+                                                  "name": "Delete successful.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-86380593-5072-4cf7-9015-0da905b2be93"
+                                                },
+                                                {
+                                                  "id": "9ee6934a-ddf8-4c46-8f2b-e72bb74b47a3",
+                                                  "name": "Accepted and the operation will complete asynchronously.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-9ee6934a-ddf8-4c46-8f2b-e72bb74b47a3"
+                                                },
+                                                {
+                                                  "id": "6973bd0f-dc92-4777-b24a-0965ab82fa25",
+                                                  "name": "Delete successful.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-6973bd0f-dc92-4777-b24a-0965ab82fa25"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:21.000Z",
+                                              "updatedAt": "2026-07-28T10:53:21.000Z",
+                                              "uid": "35240-0dcb636e-e27d-4093-880d-c6c69074ada4"
+                                            },
+                                            {
+                                              "name": "Azure Networking Services Virtual Network Peerings_ Get",
+                                              "id": "1ba952ae-54bb-4459-8aff-61ae71f47b0a",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "virtualNetworkPeerings",
+                                                    ":virtualNetworkPeeringName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "62b048b2-3f47-49c1-99d9-7f71d64b4d40",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "f1b39bb1-c2af-490a-91c5-baf725747ad9",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "41a0febe-fc5c-47eb-a928-bd9e5711afd3",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "bbd2bf42-2a17-43e2-a943-60f5ddef972e",
+                                                      "key": "virtualNetworkPeeringName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network peering."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets the specified virtual network peering."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "cd2cc4d0-bc58-4301-a66f-31cb77a9ab39",
+                                                  "name": "Request successful. The operation returns the resulting VirtualNetworkPeering resource.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-cd2cc4d0-bc58-4301-a66f-31cb77a9ab39"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:21.000Z",
+                                              "updatedAt": "2026-07-28T10:53:21.000Z",
+                                              "uid": "35240-1ba952ae-54bb-4459-8aff-61ae71f47b0a"
+                                            },
+                                            {
+                                              "name": "Azure Networking Services Virtual Network Peerings_ Create or Update",
+                                              "id": "4575c03e-87a6-4a66-846d-775b130f9ba2",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "virtualNetworkPeerings",
+                                                    ":virtualNetworkPeeringName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "55a0dfef-5bec-4eb9-b0d7-fa0d1fc3def9",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                    },
+                                                    {
+                                                      "id": "e09f367f-3671-4c49-8021-67f8d15d883d",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the resource group."
+                                                    },
+                                                    {
+                                                      "id": "5ca23a5d-8d60-4c09-9d4a-82e1e18bb813",
+                                                      "key": "virtualNetworkName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the virtual network."
+                                                    },
+                                                    {
+                                                      "id": "df992030-0bc5-46b5-aa78-581185aea5db",
+                                                      "key": "virtualNetworkPeeringName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the peering."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates or updates a peering in the specified virtual network."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "398cb93f-8984-425a-a2ca-c3a0c7442f24",
+                                                  "name": "Update successful. The operation returns the resulting VirtualNetworkPeering resource.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-398cb93f-8984-425a-a2ca-c3a0c7442f24"
+                                                },
+                                                {
+                                                  "id": "3e5ef75d-8000-4e0e-a3ed-7e4fb5e7db9f",
+                                                  "name": "Create successful. The operation returns the resulting VirtualNetworkPeering resource.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings/:virtualNetworkPeeringName?api-version=<string>",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Network",
+                                                        "virtualNetworks",
+                                                        ":virtualNetworkName",
+                                                        "virtualNetworkPeerings",
+                                                        ":virtualNetworkPeeringName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) Client API version.",
+                                                          "key": "api-version",
+                                                          "value": "<string>"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkName"
+                                                        },
+                                                        {
+                                                          "key": "virtualNetworkPeeringName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"etag\": \"commodo ut pariatur dolore\",\n  \"name\": \"adipisicing amet eiusmod inc\",\n  \"properties\": {},\n  \"id\": \"<string>\"\n}",
+                                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                                  "uid": "35240-3e5ef75d-8000-4e0e-a3ed-7e4fb5e7db9f"
+                                                }
+                                              ],
+                                              "createdAt": "2026-07-28T10:53:21.000Z",
+                                              "updatedAt": "2026-07-28T10:53:21.000Z",
+                                              "uid": "35240-4575c03e-87a6-4a66-846d-775b130f9ba2"
+                                            }
+                                          ],
+                                          "id": "d55c01e3-02bc-4289-b96f-f3e449970d8d",
+                                          "createdAt": "2026-07-28T10:53:21.000Z",
+                                          "updatedAt": "2026-07-28T10:53:21.000Z",
+                                          "uid": "35240-d55c01e3-02bc-4289-b96f-f3e449970d8d"
+                                        },
+                                        {
+                                          "name": "Azure Networking Services Virtual Network Peerings_ List",
+                                          "id": "24137d25-c551-44c6-b42f-2fd82bde4b69",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings?api-version=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Network",
+                                                "virtualNetworks",
+                                                ":virtualNetworkName",
+                                                "virtualNetworkPeerings"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) Client API version.",
+                                                  "key": "api-version",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "cd5e489b-8bf8-4f3b-b62c-0dc89e1e5c9c",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                                                },
+                                                {
+                                                  "id": "1ab49a14-2920-40b5-9d6a-91a5dcd6674b",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the resource group."
+                                                },
+                                                {
+                                                  "id": "06a5aea9-5134-4809-9be6-d766af20ce5e",
+                                                  "key": "virtualNetworkName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) The name of the virtual network."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets all virtual network peerings in a virtual network."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "0a5871f6-de7c-4e1c-bd21-70572cdc5563",
+                                              "name": "Request successful. The operation returns a list of VirtualNetworkPeering resources.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/virtualNetworkPeerings?api-version=<string>",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Network",
+                                                    "virtualNetworks",
+                                                    ":virtualNetworkName",
+                                                    "virtualNetworkPeerings"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) Client API version.",
+                                                      "key": "api-version",
+                                                      "value": "<string>"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "virtualNetworkName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"nextLink\": \"<string>\",\n  \"value\": [\n    {\n      \"etag\": \"enim Excepteur cupidatat\",\n      \"name\": \"dolore ad laboris dolor\",\n      \"properties\": {},\n      \"id\": \"<string>\"\n    },\n    {\n      \"etag\": \"ut aute reprehenderit proident\",\n      \"name\": \"ullamco do\",\n      \"properties\": {},\n      \"id\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-07-28T10:53:21.000Z",
+                                              "updatedAt": "2026-07-28T10:53:21.000Z",
+                                              "uid": "35240-0a5871f6-de7c-4e1c-bd21-70572cdc5563"
+                                            }
+                                          ],
+                                          "createdAt": "2026-07-28T10:53:21.000Z",
+                                          "updatedAt": "2026-07-28T10:53:21.000Z",
+                                          "uid": "35240-24137d25-c551-44c6-b42f-2fd82bde4b69"
+                                        }
+                                      ],
+                                      "id": "daecddb2-0d44-480d-a3b2-c0914468bfcf",
+                                      "createdAt": "2026-07-28T10:53:21.000Z",
+                                      "updatedAt": "2026-07-28T10:53:21.000Z",
+                                      "uid": "35240-daecddb2-0d44-480d-a3b2-c0914468bfcf"
+                                    }
+                                  ],
+                                  "id": "aa2fa0de-4891-41df-88f8-023a1cc60072",
+                                  "createdAt": "2026-07-28T10:53:21.000Z",
+                                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                                  "uid": "35240-aa2fa0de-4891-41df-88f8-023a1cc60072"
+                                }
+                              ],
+                              "id": "1f16b58d-98cf-4348-9eb7-3892bdc63caa",
+                              "createdAt": "2026-07-28T10:53:21.000Z",
+                              "updatedAt": "2026-07-28T10:53:21.000Z",
+                              "uid": "35240-1f16b58d-98cf-4348-9eb7-3892bdc63caa"
+                            }
+                          ],
+                          "id": "7390605b-d8a3-4d47-b6e1-eaae0b6b6ace",
+                          "createdAt": "2026-07-28T10:53:21.000Z",
+                          "updatedAt": "2026-07-28T10:53:21.000Z",
+                          "uid": "35240-7390605b-d8a3-4d47-b6e1-eaae0b6b6ace"
+                        }
+                      ],
+                      "id": "147dfb19-861a-40b0-8e0a-201e185c1509",
+                      "createdAt": "2026-07-28T10:53:21.000Z",
+                      "updatedAt": "2026-07-28T10:53:21.000Z",
+                      "uid": "35240-147dfb19-861a-40b0-8e0a-201e185c1509"
+                    }
+                  ],
+                  "id": "cc61f29f-50c9-4b6d-ac6f-f7eec0b4da7b",
+                  "createdAt": "2026-07-28T10:53:21.000Z",
+                  "updatedAt": "2026-07-28T10:53:21.000Z",
+                  "uid": "35240-cc61f29f-50c9-4b6d-ac6f-f7eec0b4da7b"
+                }
+              ],
+              "id": "ac3a61a1-fef5-4c5f-ba68-b9d4d0cfd7a0",
+              "createdAt": "2026-07-28T10:53:21.000Z",
+              "updatedAt": "2026-07-28T10:53:21.000Z",
+              "uid": "35240-ac3a61a1-fef5-4c5f-ba68-b9d4d0cfd7a0"
+            }
+          ],
+          "id": "a408119a-30f0-4644-9e5e-8ba4bcafacda",
+          "createdAt": "2026-07-28T10:53:21.000Z",
+          "updatedAt": "2026-07-28T10:53:21.000Z",
+          "uid": "35240-a408119a-30f0-4644-9e5e-8ba4bcafacda"
+        }
+      ],
+      "id": "5b8e2c98-2dd8-4523-ad8a-9db48506df80",
+      "createdAt": "2026-07-28T10:53:21.000Z",
+      "updatedAt": "2026-07-28T10:53:21.000Z",
+      "uid": "35240-5b8e2c98-2dd8-4523-ad8a-9db48506df80"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

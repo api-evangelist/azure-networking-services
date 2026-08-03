@@ -1,0 +1,22 @@
+{
+  "provider": "azure-networking-services",
+  "sources": [
+    "azure-networking-services-loadbalancers-api-openapi.yml",
+    "azure-networking-services-subnets-api-openapi.yml",
+    "azure-networking-services-subscriptions-api-openapi.yml",
+    "azure-networking-services-virtualnetworkpeerings-api-openapi.yml",
+    "azure-networking-services-virtualnetworks-api-openapi.yml"
+  ],
+  "outputs": [
+    "azure-networking-services-loadbalancers-api-openapi.yml",
+    "azure-networking-services-subnets-api-openapi.yml",
+    "azure-networking-services-subscriptions-api-openapi.yml",
+    "azure-networking-services-virtualnetworkpeerings-api-openapi.yml",
+    "azure-networking-services-virtualnetworks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
