@@ -41,16 +41,6 @@ apis:
     url: openapi/azure-networking-services-loadbalancers-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: X-NaftikoCapability
-    url: capabilities/load-balancer-loadbalancers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-general.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-subnets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworks.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 - aid: azure-networking-services:azure-networking-services-subnets-api
@@ -65,16 +55,6 @@ apis:
     url: openapi/azure-networking-services-subnets-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: X-NaftikoCapability
-    url: capabilities/load-balancer-loadbalancers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-general.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-subnets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworks.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 - aid: azure-networking-services:azure-networking-services-subscriptions-api
@@ -89,16 +69,6 @@ apis:
     url: openapi/azure-networking-services-subscriptions-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: X-NaftikoCapability
-    url: capabilities/load-balancer-loadbalancers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-general.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-subnets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworks.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 - aid: azure-networking-services:azure-networking-services-virtualnetworkpeerings-api
@@ -114,16 +84,6 @@ apis:
     url: openapi/azure-networking-services-virtualnetworkpeerings-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: X-NaftikoCapability
-    url: capabilities/load-balancer-loadbalancers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-general.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-subnets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworks.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 - aid: azure-networking-services:azure-networking-services-virtualnetworks-api
@@ -139,16 +99,6 @@ apis:
     url: openapi/azure-networking-services-virtualnetworks-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: X-NaftikoCapability
-    url: capabilities/load-balancer-loadbalancers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-general.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-subnets.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworkpeerings.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/virtual-network-virtualnetworks.yaml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 common:
