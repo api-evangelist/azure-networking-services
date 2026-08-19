@@ -1,0 +1,966 @@
+{
+  "item": [
+    {
+      "id": "c8a4e83e-a44f-46bf-996c-fb03b1ccd9f9",
+      "name": "VirtualNetworkPeerings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27011d4e-50eb-47b1-810f-099731e20061",
+          "name": "Azure Networking Services Virtual Network Peerings_ List",
+          "request": {
+            "name": "Azure Networking Services Virtual Network Peerings_ List",
+            "description": {
+              "content": "Gets all virtual network peerings in a virtual network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "virtualNetworkPeerings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a92ea2d5-b162-4761-8c86-6e4e59b19308",
+              "name": "Request successful. The operation returns a list of VirtualNetworkPeering resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer\",\n      \"name\": \"peer\",\n      \"properties\": {\n        \"allowForwardedTraffic\": true,\n        \"allowGatewayTransit\": false,\n        \"allowVirtualNetworkAccess\": true,\n        \"peeringState\": \"Initiated\",\n        \"provisioningState\": \"Succeeded\",\n        \"remoteAddressSpace\": {\n          \"addressPrefixes\": [\n            \"12.0.0.0/8\"\n          ]\n        },\n        \"remoteVirtualNetwork\": {\n          \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2\"\n        },\n        \"useRemoteGateways\": false\n      }\n    },\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer2\",\n      \"name\": \"peer\",\n      \"properties\": {\n        \"allowForwardedTraffic\": false,\n        \"allowGatewayTransit\": false,\n        \"allowVirtualNetworkAccess\": true,\n        \"peeringState\": \"Initiated\",\n        \"provisioningState\": \"Succeeded\",\n        \"remoteAddressSpace\": {\n          \"addressPrefixes\": [\n            \"13.0.0.0/8\"\n          ]\n        },\n        \"remoteVirtualNetwork\": {\n          \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet3\"\n        },\n        \"useRemoteGateways\": false\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "730c65b2-81a0-4310-87b0-89aef7744d21",
+          "name": "Azure Networking Services Virtual Network Peerings_ Delete",
+          "request": {
+            "name": "Azure Networking Services Virtual Network Peerings_ Delete",
+            "description": {
+              "content": "Deletes the specified virtual network peering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "virtualNetworkPeerings",
+                ":virtualNetworkPeeringName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkPeeringName",
+                  "description": "(Required) The name of the virtual network peering."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c080b039-4fc0-44ec-9c25-109eaec2a88c",
+              "name": "Delete successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the virtual network peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11364015-ed25-4ef5-9b64-53d26b9f53f5",
+              "name": "Accepted and the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the virtual network peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bff00a7a-6a31-4c1c-b7e2-7d91997f990f",
+              "name": "Delete successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the virtual network peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb324d1d-f614-49ca-801d-086fbb8d8e0d",
+          "name": "Azure Networking Services Virtual Network Peerings_ Get",
+          "request": {
+            "name": "Azure Networking Services Virtual Network Peerings_ Get",
+            "description": {
+              "content": "Gets the specified virtual network peering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "virtualNetworkPeerings",
+                ":virtualNetworkPeeringName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkPeeringName",
+                  "description": "(Required) The name of the virtual network peering."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbc28567-911f-48e5-a9d5-f486bf033a2b",
+              "name": "Request successful. The operation returns the resulting VirtualNetworkPeering resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the virtual network peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer\",\n  \"name\": \"peer\",\n  \"properties\": {\n    \"allowForwardedTraffic\": true,\n    \"allowGatewayTransit\": false,\n    \"allowVirtualNetworkAccess\": true,\n    \"peeringState\": \"Initiated\",\n    \"provisioningState\": \"Succeeded\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"12.0.0.0/8\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2\"\n    },\n    \"useRemoteGateways\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2e5ebb9-4cb2-4f73-88f9-d3de1ea166e2",
+          "name": "Azure Networking Services Virtual Network Peerings_ Create or Update",
+          "request": {
+            "name": "Azure Networking Services Virtual Network Peerings_ Create or Update",
+            "description": {
+              "content": "Creates or updates a peering in the specified virtual network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "virtualNetworkPeerings",
+                ":virtualNetworkPeeringName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkPeeringName",
+                  "description": "(Required) The name of the peering."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"allowForwardedTraffic\": \"<boolean>\",\n    \"allowGatewayTransit\": \"<boolean>\",\n    \"allowVirtualNetworkAccess\": \"<boolean>\",\n    \"peeringState\": \"<string>\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"<string>\"\n    },\n    \"useRemoteGateways\": \"<boolean>\"\n  },\n  \"id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5256b2f-4e33-4479-aea6-5c34a387e129",
+              "name": "Update successful. The operation returns the resulting VirtualNetworkPeering resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"allowForwardedTraffic\": \"<boolean>\",\n    \"allowGatewayTransit\": \"<boolean>\",\n    \"allowVirtualNetworkAccess\": \"<boolean>\",\n    \"peeringState\": \"<string>\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"<string>\"\n    },\n    \"useRemoteGateways\": \"<boolean>\"\n  },\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer\",\n  \"name\": \"peer\",\n  \"properties\": {\n    \"allowForwardedTraffic\": true,\n    \"allowGatewayTransit\": false,\n    \"allowVirtualNetworkAccess\": true,\n    \"peeringState\": \"Initiated\",\n    \"provisioningState\": \"Succeeded\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"12.0.0.0/8\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2\"\n    },\n    \"useRemoteGateways\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "00889066-a2e9-4b47-8a29-c91c813a19a7",
+              "name": "Create successful. The operation returns the resulting VirtualNetworkPeering resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "virtualNetworkPeerings",
+                    ":virtualNetworkPeeringName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkPeeringName",
+                      "description": "(Required) The name of the peering."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"allowForwardedTraffic\": \"<boolean>\",\n    \"allowGatewayTransit\": \"<boolean>\",\n    \"allowVirtualNetworkAccess\": \"<boolean>\",\n    \"peeringState\": \"<string>\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"<string>\"\n    },\n    \"useRemoteGateways\": \"<boolean>\"\n  },\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet1/virtualNetworkPeerings/peer\",\n  \"name\": \"peer\",\n  \"properties\": {\n    \"allowForwardedTraffic\": true,\n    \"allowGatewayTransit\": false,\n    \"allowVirtualNetworkAccess\": true,\n    \"peeringState\": \"Initiated\",\n    \"provisioningState\": \"Succeeded\",\n    \"remoteAddressSpace\": {\n      \"addressPrefixes\": [\n        \"12.0.0.0/8\"\n      ]\n    },\n    \"remoteVirtualNetwork\": {\n      \"id\": \"/subscriptions/subid/resourceGroups/peerTest/providers/Microsoft.Network/virtualNetworks/vnet2\"\n    },\n    \"useRemoteGateways\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8855170e-18ef-4789-b84f-f1382f767665",
+    "name": "NetworkManagementClient LoadBalancers VirtualNetworkPeerings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+      "type": "text/plain"
+    }
+  }
+}

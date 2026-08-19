@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NetworkManagementClient LoadBalancers Subnets API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subnets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all subnets in a virtual network."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              },
+              {
+                "name": "$expand",
+                "value": "example-value",
+                "type": "query",
+                "description": "Expands referenced resources."
+              }
+            ]
+          },
+          "docs": "Gets the specified subnet by virtual network and resource group."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ Create or Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Creates or updates a subnet in the specified virtual network."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Deletes the specified subnet."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

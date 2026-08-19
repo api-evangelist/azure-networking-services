@@ -1,0 +1,270 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NetworkManagementClient LoadBalancers Subscriptions API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Networking Services Virtual Networks_ Check I P Address Availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/CheckIPAddressAvailability",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "ipAddress",
+                "value": "example-value",
+                "type": "query",
+                "description": "The private IP address to be verified."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Checks whether a private IP address is available for use."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ Prepare Network Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName/PrepareNetworkPolicies",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Prepares a subnet by applying network intent policies."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Resource Navigation Links_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName/ResourceNavigationLinks",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets a list of resource navigation links for a subnet."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Service Association Links_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName/ServiceAssociationLinks",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets a list of service association links for a subnet."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Subnets_ Unprepare Network Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/subnets/:subnetName/UnprepareNetworkPolicies",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "subnetName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the subnet."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Unprepares a subnet by removing network intent policies."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Virtual Networks_ List Usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/virtualNetworks/:virtualNetworkName/usages",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "virtualNetworkName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the virtual network."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Lists usage stats."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

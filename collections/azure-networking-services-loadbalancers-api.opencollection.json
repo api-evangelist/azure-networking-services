@@ -1,0 +1,837 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NetworkManagementClient LoadBalancers API",
+    "version": "2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LoadBalancers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ List All",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Network/loadBalancers",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancers in a subscription."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancers in a resource group."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              },
+              {
+                "name": "$expand",
+                "value": "example-value",
+                "type": "query",
+                "description": "Expands referenced resources."
+              }
+            ]
+          },
+          "docs": "Gets the specified load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ Create or Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Creates or updates a load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ Update Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Updates a load balancer tags."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancers_ Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Deletes the specified load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Backend Address Pools_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/backendAddressPools",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancer backed address pools."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Backend Address Pools_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/backendAddressPools/:backendAddressPoolName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "backendAddressPoolName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the backend address pool."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets load balancer backend address pool."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Frontend I P Configurations_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/frontendIPConfigurations",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancer frontend IP configurations."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Frontend I P Configurations_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/frontendIPConfigurations/:frontendIPConfigurationName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "frontendIPConfigurationName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the frontend IP configuration."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets load balancer frontend IP configuration."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Inbound Nat Rules_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/inboundNatRules",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the inbound nat rules in a load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Inbound Nat Rules_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/inboundNatRules/:inboundNatRuleName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "inboundNatRuleName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the inbound nat rule."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              },
+              {
+                "name": "$expand",
+                "value": "example-value",
+                "type": "query",
+                "description": "Expands referenced resources."
+              }
+            ]
+          },
+          "docs": "Gets the specified load balancer inbound nat rule."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Inbound Nat Rules_ Create or Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/inboundNatRules/:inboundNatRuleName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "inboundNatRuleName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the inbound nat rule."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Creates or updates a load balancer inbound nat rule."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Inbound Nat Rules_ Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/inboundNatRules/:inboundNatRuleName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "inboundNatRuleName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the inbound nat rule."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Deletes the specified load balancer inbound nat rule."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Load Balancing Rules_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/loadBalancingRules",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancing rules in a load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Load Balancing Rules_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/loadBalancingRules/:loadBalancingRuleName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "loadBalancingRuleName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancing rule."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets the specified load balancer load balancing rule."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Network Interfaces_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/networkInterfaces",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets associated load balancer network interfaces."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Outbound Rules_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/outboundRules",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the outbound rules in a load balancer."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Outbound Rules_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/outboundRules/:outboundRuleName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "outboundRuleName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the outbound rule."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets the specified load balancer outbound rule."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Probes_ List",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/probes",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets all the load balancer probes."
+        },
+        {
+          "info": {
+            "name": "Azure Networking Services Load Balancer Probes_ Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Network/loadBalancers/:loadBalancerName/probes/:probeName",
+            "params": [
+              {
+                "name": "resourceGroupName",
+                "value": "my-resource-group",
+                "type": "path",
+                "description": "The name of the resource group."
+              },
+              {
+                "name": "loadBalancerName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the load balancer."
+              },
+              {
+                "name": "probeName",
+                "value": "example-value",
+                "type": "path",
+                "description": "The name of the probe."
+              },
+              {
+                "name": "api-version",
+                "value": "2019-06-01",
+                "type": "query",
+                "description": "Client API version."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "00000000-0000-0000-0000-000000000000",
+                "type": "path",
+                "description": "The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+              }
+            ]
+          },
+          "docs": "Gets load balancer probe."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

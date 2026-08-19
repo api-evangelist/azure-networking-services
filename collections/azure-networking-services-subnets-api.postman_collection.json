@@ -1,0 +1,976 @@
+{
+  "item": [
+    {
+      "id": "0fab82aa-1438-4742-a75d-74fd0ea0aec3",
+      "name": "Subnets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4184dcb8-36a6-401c-8742-1e0a592ef8ac",
+          "name": "Azure Networking Services Subnets_ List",
+          "request": {
+            "name": "Azure Networking Services Subnets_ List",
+            "description": {
+              "content": "Gets all subnets in a virtual network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "subnets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74d8d6d4-cfe0-427a-b04c-61e888ae125e",
+              "name": "Request successful. The operation returns a list of Subnet resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1\",\n      \"name\": \"subnet1\",\n      \"properties\": {\n        \"addressPrefix\": \"10.0.0.0/16\",\n        \"provisioningState\": \"Succeeded\"\n      }\n    },\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet2\",\n      \"name\": \"subnet2\",\n      \"properties\": {\n        \"addressPrefix\": \"10.0.0.0/16\",\n        \"provisioningState\": \"Succeeded\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2a76892-a6ef-4404-8d39-8562a26bfedb",
+          "name": "Azure Networking Services Subnets_ Delete",
+          "request": {
+            "name": "Azure Networking Services Subnets_ Delete",
+            "description": {
+              "content": "Deletes the specified subnet.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "subnets",
+                ":subnetName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subnetName",
+                  "description": "(Required) The name of the subnet."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49f72223-1b06-4c49-a4b9-a159c9616144",
+              "name": "Delete successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9413431-f17b-4ce2-ac7b-d46148f8b55b",
+              "name": "Accepted and the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8feea73f-e16a-41ac-aeb7-d722d9f06a5a",
+              "name": "Request successful. Resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d17a52cd-cd84-4917-9eab-94ff63f4ad9d",
+          "name": "Azure Networking Services Subnets_ Get",
+          "request": {
+            "name": "Azure Networking Services Subnets_ Get",
+            "description": {
+              "content": "Gets the specified subnet by virtual network and resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "subnets",
+                ":subnetName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Expands referenced resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subnetName",
+                  "description": "(Required) The name of the subnet."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e00829fc-342d-4d83-8e52-6b8aeacc2f07",
+              "name": "Request successful. The operation returns the resulting Subnet resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "example-value"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1\",\n  \"name\": \"subnet1\",\n  \"properties\": {\n    \"addressPrefix\": \"10.0.0.0/16\",\n    \"provisioningState\": \"Succeeded\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "becf949a-3e95-43f6-9436-40f801aef4e5",
+          "name": "Azure Networking Services Subnets_ Create or Update",
+          "request": {
+            "name": "Azure Networking Services Subnets_ Create or Update",
+            "description": {
+              "content": "Creates or updates a subnet in the specified virtual network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName",
+                "subnets",
+                ":subnetName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subnetName",
+                  "description": "(Required) The name of the subnet."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"addressPrefix\": \"<string>\",\n    \"addressPrefixes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"delegations\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"natGateway\": {\n      \"id\": \"<string>\"\n    },\n    \"networkSecurityGroup\": {\n      \"value\": \"reference ./networkSecurityGroup.json#/definitions/NetworkSecurityGroup not found in the OpenAPI spec\"\n    },\n    \"privateEndpointNetworkPolicies\": \"<string>\",\n    \"privateLinkServiceNetworkPolicies\": \"<string>\",\n    \"resourceNavigationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"routeTable\": {\n      \"value\": \"reference ./routeTable.json#/definitions/RouteTable not found in the OpenAPI spec\"\n    },\n    \"serviceAssociationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      }\n    ],\n    \"serviceEndpointPolicies\": [\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      }\n    ],\n    \"serviceEndpoints\": [\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      },\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8f1c37f5-0362-43bc-ab7f-a7ba0f3fb4a3",
+              "name": "Update successful. The operation returns the resulting Subnet resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"addressPrefix\": \"<string>\",\n    \"addressPrefixes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"delegations\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"natGateway\": {\n      \"id\": \"<string>\"\n    },\n    \"networkSecurityGroup\": {\n      \"value\": \"reference ./networkSecurityGroup.json#/definitions/NetworkSecurityGroup not found in the OpenAPI spec\"\n    },\n    \"privateEndpointNetworkPolicies\": \"<string>\",\n    \"privateLinkServiceNetworkPolicies\": \"<string>\",\n    \"resourceNavigationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"routeTable\": {\n      \"value\": \"reference ./routeTable.json#/definitions/RouteTable not found in the OpenAPI spec\"\n    },\n    \"serviceAssociationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      }\n    ],\n    \"serviceEndpointPolicies\": [\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      }\n    ],\n    \"serviceEndpoints\": [\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      },\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1\",\n  \"name\": \"subnet1\",\n  \"properties\": {\n    \"addressPrefix\": \"10.0.0.0/16\",\n    \"provisioningState\": \"Succeeded\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a19f734-f101-4062-8d60-b81666489348",
+              "name": "Create successful. The operation returns the resulting Subnet resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName",
+                    "subnets",
+                    ":subnetName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subnetName",
+                      "description": "(Required) The name of the subnet."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"addressPrefix\": \"<string>\",\n    \"addressPrefixes\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"delegations\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"actions\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceName\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"natGateway\": {\n      \"id\": \"<string>\"\n    },\n    \"networkSecurityGroup\": {\n      \"value\": \"reference ./networkSecurityGroup.json#/definitions/NetworkSecurityGroup not found in the OpenAPI spec\"\n    },\n    \"privateEndpointNetworkPolicies\": \"<string>\",\n    \"privateLinkServiceNetworkPolicies\": \"<string>\",\n    \"resourceNavigationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\"\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"routeTable\": {\n      \"value\": \"reference ./routeTable.json#/definitions/RouteTable not found in the OpenAPI spec\"\n    },\n    \"serviceAssociationLinks\": [\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowDelete\": \"<boolean>\",\n          \"link\": \"<string>\",\n          \"linkedResourceType\": \"<string>\",\n          \"locations\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"type\": \"<string>\",\n        \"id\": \"<string>\"\n      }\n    ],\n    \"serviceEndpointPolicies\": [\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy not found in the OpenAPI spec\"\n      }\n    ],\n    \"serviceEndpoints\": [\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      },\n      {\n        \"locations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"service\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/subnet-test/providers/Microsoft.Network/virtualNetworks/vnetname/subnets/subnet1\",\n  \"name\": \"subnet1\",\n  \"properties\": {\n    \"addressPrefix\": \"10.0.0.0/16\",\n    \"provisioningState\": \"Succeeded\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0e5d70c6-1f69-4990-861c-dc34553b1c92",
+    "name": "NetworkManagementClient LoadBalancers Subnets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+      "type": "text/plain"
+    }
+  }
+}

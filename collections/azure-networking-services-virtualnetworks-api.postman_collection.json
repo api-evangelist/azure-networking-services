@@ -1,0 +1,1160 @@
+{
+  "item": [
+    {
+      "id": "73b061bf-6155-4a29-b374-c3d205915c1b",
+      "name": "VirtualNetworks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a0acce06-7a46-4bb7-ba0a-64149f05c909",
+          "name": "Azure Networking Services Virtual Networks_ List All",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ List All",
+            "description": {
+              "content": "Gets all virtual networks in a subscription.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c8221d9d-0c45-4290-a38d-90d828d184af",
+              "name": "Request successful. The operation returns a list of VirtualNetwork resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnet1\",\n      \"location\": \"westus\",\n      \"name\": \"vnet1\",\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"10.0.0.0/8\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": []\n        },\n        \"provisioningState\": \"Succeeded\",\n        \"subnets\": [\n          {\n            \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/test-1\",\n            \"name\": \"test-1\",\n            \"properties\": {\n              \"addressPrefix\": \"10.0.0.0/24\",\n              \"provisioningState\": \"Succeeded\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": []\n      },\n      \"type\": \"Microsoft.Network/virtualNetworks\"\n    },\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/rg2/providers/Microsoft.Network/virtualNetworks/vnet2\",\n      \"location\": \"westus\",\n      \"name\": \"vnet2\",\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"10.0.0.0/16\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"8.8.8.8\"\n          ]\n        },\n        \"provisioningState\": \"Succeeded\",\n        \"subnets\": [],\n        \"virtualNetworkPeerings\": []\n      },\n      \"type\": \"Microsoft.Network/virtualNetworks\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5941dee-40f4-498a-8f67-56f3aa9c02b6",
+          "name": "Azure Networking Services Virtual Networks_ List",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ List",
+            "description": {
+              "content": "Gets all virtual networks in a resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "daab0dfa-98b2-404c-b221-7603e2e4bc9d",
+              "name": "Request successful. The operation returns a list of VirtualNetwork resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnet1\",\n      \"location\": \"westus\",\n      \"name\": \"vnet1\",\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"10.0.0.0/8\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": []\n        },\n        \"provisioningState\": \"Succeeded\",\n        \"subnets\": [\n          {\n            \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnet1/subnets/test-1\",\n            \"name\": \"test-1\",\n            \"properties\": {\n              \"addressPrefix\": \"10.0.0.0/24\",\n              \"provisioningState\": \"Succeeded\"\n            }\n          }\n        ],\n        \"virtualNetworkPeerings\": []\n      },\n      \"type\": \"Microsoft.Network/virtualNetworks\"\n    },\n    {\n      \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/vnet2\",\n      \"location\": \"westus\",\n      \"name\": \"vnet2\",\n      \"properties\": {\n        \"addressSpace\": {\n          \"addressPrefixes\": [\n            \"10.0.0.0/16\"\n          ]\n        },\n        \"dhcpOptions\": {\n          \"dnsServers\": [\n            \"8.8.8.8\"\n          ]\n        },\n        \"provisioningState\": \"Succeeded\",\n        \"subnets\": [],\n        \"virtualNetworkPeerings\": []\n      },\n      \"type\": \"Microsoft.Network/virtualNetworks\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e24465f-ba66-44d5-9416-f2df6c399397",
+          "name": "Azure Networking Services Virtual Networks_ Delete",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ Delete",
+            "description": {
+              "content": "Deletes the specified virtual network.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d87f10e5-437b-4e68-83a3-212a0283d5c5",
+              "name": "Delete successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e729e37-d95f-4c58-a740-c317869ce93a",
+              "name": "Accepted and the operation will complete asynchronously.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0cebf066-f972-4508-ac96-498ee8a26ade",
+              "name": "Delete successful.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "904405da-1e8e-477c-a346-43ed8fc1fe80",
+          "name": "Azure Networking Services Virtual Networks_ Get",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ Get",
+            "description": {
+              "content": "Gets the specified virtual network by resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                },
+                {
+                  "disabled": false,
+                  "key": "$expand",
+                  "value": "<string>",
+                  "description": "Expands referenced resources."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ac5ba02-97ca-4735-a0ff-5a5b81f7c9c4",
+              "name": "Request successful. The operation returns the resulting VirtualNetwork resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    },
+                    {
+                      "key": "$expand",
+                      "value": "example-value"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet\",\n  \"location\": \"westus\",\n  \"name\": \"test-vnet\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"10.0.0.0/16\"\n      ]\n    },\n    \"provisioningState\": \"Succeeded\",\n    \"subnets\": [\n      {\n        \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1\",\n        \"name\": \"subnet1\",\n        \"properties\": {\n          \"addressPrefix\": \"10.0.1.0/24\",\n          \"ipConfigurations\": [\n            {\n              \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/loadBalancers/lb/frontendIPConfigurations/fe\"\n            }\n          ],\n          \"provisioningState\": \"Succeeded\"\n        }\n      }\n    ],\n    \"virtualNetworkPeerings\": []\n  },\n  \"type\": \"Microsoft.Network/virtualNetworks\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cd66cc5-ead4-4798-9e05-dace2ab0b7c2",
+          "name": "Azure Networking Services Virtual Networks_ Update Tags",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ Update Tags",
+            "description": {
+              "content": "Updates a virtual network tags.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e5b7ea57-27f3-4ac5-97aa-7f2a8c51efce",
+              "name": "Update successful. The operation returns the resulting VirtualNetwork resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet\",\n  \"location\": \"westus\",\n  \"name\": \"test-vnet\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"10.0.0.0/16\"\n      ]\n    },\n    \"provisioningState\": \"Succeeded\",\n    \"subnets\": [],\n    \"virtualNetworkPeerings\": []\n  },\n  \"tags\": {\n    \"tag1\": \"value1\",\n    \"tag2\": \"value2\"\n  },\n  \"type\": \"Microsoft.Network/virtualNetworks\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e4c16b1-1bd9-4b9e-b9af-6278cfe26e91",
+          "name": "Azure Networking Services Virtual Networks_ Create or Update",
+          "request": {
+            "name": "Azure Networking Services Virtual Networks_ Create or Update",
+            "description": {
+              "content": "Creates or updates a virtual network in the specified resource group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Network",
+                "virtualNetworks",
+                ":virtualNetworkName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "<string>",
+                  "description": "(Required) Client API version."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) The name of the resource group."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "virtualNetworkName",
+                  "description": "(Required) The name of the virtual network."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"bgpCommunities\": {\n      \"virtualNetworkCommunity\": \"<string>\"\n    },\n    \"ddosProtectionPlan\": {\n      \"id\": \"<string>\"\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"enableDdosProtection\": false,\n    \"enableVmProtection\": false,\n    \"resourceGuid\": \"<string>\",\n    \"subnets\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ebe76152-0d99-4b79-a34c-11f1df999475",
+              "name": "Update successful. The operation returns the resulting VirtualNetwork resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"bgpCommunities\": {\n      \"virtualNetworkCommunity\": \"<string>\"\n    },\n    \"ddosProtectionPlan\": {\n      \"id\": \"<string>\"\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"enableDdosProtection\": false,\n    \"enableVmProtection\": false,\n    \"resourceGuid\": \"<string>\",\n    \"subnets\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet\",\n  \"location\": \"eastus\",\n  \"name\": \"test-vnet\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"10.0.0.0/16\"\n      ]\n    },\n    \"provisioningState\": \"Succeeded\",\n    \"subnets\": [],\n    \"virtualNetworkPeerings\": []\n  },\n  \"type\": \"Microsoft.Network/virtualNetworks\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b5e48af4-a3ce-4cd4-8be8-56250329d815",
+              "name": "Create successful. The operation returns the resulting VirtualNetwork resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Network",
+                    "virtualNetworks",
+                    ":virtualNetworkName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2019-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) The name of the resource group."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "virtualNetworkName",
+                      "description": "(Required) The name of the virtual network."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"bgpCommunities\": {\n      \"virtualNetworkCommunity\": \"<string>\"\n    },\n    \"ddosProtectionPlan\": {\n      \"id\": \"<string>\"\n    },\n    \"dhcpOptions\": {\n      \"dnsServers\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"enableDdosProtection\": false,\n    \"enableVmProtection\": false,\n    \"resourceGuid\": \"<string>\",\n    \"subnets\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"addressPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"addressPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"delegations\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"natGateway\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"networkSecurityGroup\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateEndpointNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"privateLinkServiceNetworkPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"resourceNavigationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"routeTable\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceAssociationLinks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpointPolicies\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"serviceEndpoints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ],\n    \"virtualNetworkPeerings\": [\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      },\n      {\n        \"etag\": \"<string>\",\n        \"name\": \"<string>\",\n        \"properties\": {\n          \"allowForwardedTraffic\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowGatewayTransit\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowVirtualNetworkAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"peeringState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteAddressSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"remoteVirtualNetwork\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRemoteGateways\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"id\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet\",\n  \"location\": \"eastus\",\n  \"name\": \"test-vnet\",\n  \"properties\": {\n    \"addressSpace\": {\n      \"addressPrefixes\": [\n        \"10.0.0.0/16\"\n      ]\n    },\n    \"provisioningState\": \"Succeeded\",\n    \"subnets\": [],\n    \"virtualNetworkPeerings\": []\n  },\n  \"type\": \"Microsoft.Network/virtualNetworks\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://management.azure.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e99ae675-488c-4862-9271-9ea312a47acf",
+    "name": "NetworkManagementClient LoadBalancers VirtualNetworks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+      "type": "text/plain"
+    }
+  }
+}
