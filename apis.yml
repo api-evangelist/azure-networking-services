@@ -3,6 +3,18 @@ name: Azure Networking Services
 description: A comprehensive collection of Azure networking APIs for managing virtual networks, load balancers, application
   gateways, VPN gateways, DNS, and other networking resources in the Microsoft Azure cloud.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
