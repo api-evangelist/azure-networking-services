@@ -122,6 +122,9 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 common:
+- type: CapabilityMap
+  url: capabilities/azure-networking-services-capability-edges.yml
+  name: Azure Networking Services Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/azure-networking-services/overview
 - type: AgenticAccess

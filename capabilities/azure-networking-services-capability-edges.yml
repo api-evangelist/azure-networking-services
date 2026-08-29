@@ -1,0 +1,61 @@
+slug: azure-networking-services
+provider: Azure Networking Services
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: LoadBalancers
+  spec_file: azure-networking-services-loadbalancers-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: LoadBalancers_CreateOrUpdate ... LoadBalancerBackendAddressPools_List, InboundNatRules_Delete
+  reason: Provisioning and configuration of cloud load balancers, backend pools and NAT rules — datacentre/cloud
+    network infrastructure management, not telecom carrier network operations.
+- tag: Subnets
+  spec_file: azure-networking-services-subnets-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: Subnets_CreateOrUpdate ... /virtualNetworks/{virtualNetworkName}/subnets/{subnetName}
+  reason: Creation and deletion of virtual network subnets in Azure — cloud network infrastructure configuration
+    under IT Infrastructure Management.
+- tag: VirtualNetworkPeerings
+  spec_file: azure-networking-services-virtualnetworkpeerings-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: 'VirtualNetworkPeerings_CreateOrUpdate ... schemas: VirtualNetworkPeering, AddressSpace'
+  reason: Configuration of peering between Azure virtual networks — cloud network infrastructure management
+    (BC-600.50), distinct from telecom interconnect/peering between operators.
+- tag: VirtualNetworks
+  spec_file: azure-networking-services-virtualnetworks-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: 'VirtualNetworks_CreateOrUpdate ... schemas: VirtualNetwork, AddressSpace, DhcpOptions'
+  reason: Lifecycle management of Azure virtual networks and address spaces — cloud network infrastructure
+    provisioning.
+- tag: Subscriptions
+  spec_file: azure-networking-services-subscriptions-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: VirtualNetworks_CheckIPAddressAvailability; Subnets_PrepareNetworkPolicies; VirtualNetworks_ListUsage
+  reason: Despite the 'Subscriptions' tag (a homograph for the ARM subscription path segment), the operations
+    manage IP availability, subnet network policies and vnet usage — cloud network infrastructure, not
+    commercial subscriptions.
