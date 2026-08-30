@@ -47,7 +47,7 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Load Balancer
+  - LoadBalancers
   tags_raw:
   - LoadBalancers
   properties:
@@ -94,7 +94,7 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Virtual Network Peerings
+  - VirtualNetworkPeerings
   tags_raw:
   - VirtualNetworkPeerings
   properties:
@@ -111,7 +111,7 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Virtual Networks
+  - VirtualNetworks
   tags_raw:
   - VirtualNetworks
   properties:
