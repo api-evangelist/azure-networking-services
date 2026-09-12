@@ -1,4 +1,4 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.
   title: NetworkManagementClient LoadBalancers Subnets API
@@ -16,13 +16,8 @@ info:
   x-tags:
   - Azure
   - Microsoft
-host: management.azure.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://management.azure.com
 security:
 - azure_auth:
   - user_impersonation
@@ -38,31 +33,37 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Request successful. The operation returns a list of Subnet resources.
-          schema:
-            $ref: '#/definitions/SubnetListResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubnetListResult'
       tags:
       - Subnets
       x-ms-examples:
@@ -101,32 +102,37 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Delete successful.
@@ -163,43 +169,51 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       - description: Expands referenced resources.
         in: query
         name: $expand
         required: false
-        type: string
         example: example-value
+        schema:
+          type: string
       responses:
         '200':
           description: Request successful. The operation returns the resulting Subnet resource.
-          schema:
-            $ref: '#/definitions/Subnet'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subnet'
       tags:
       - Subnets
       x-ms-examples:
@@ -253,48 +267,50 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
-      - description: Parameters supplied to the create or update subnet operation.
-        in: body
-        name: subnetParameters
-        required: true
         schema:
-          $ref: '#/definitions/Subnet'
-        example: example-value
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Update successful. The operation returns the resulting Subnet resource.
-          schema:
-            $ref: '#/definitions/Subnet'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subnet'
         '201':
           description: Create successful. The operation returns the resulting Subnet resource.
-          schema:
-            $ref: '#/definitions/Subnet'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subnet'
       tags:
       - Subnets
       x-ms-examples:
@@ -410,281 +426,290 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
-definitions:
-  SubnetPropertiesFormat:
-    description: Properties of the subnet.
-    properties:
-      addressPrefix:
-        description: The address prefix for the subnet.
-        type: string
-      addressPrefixes:
-        description: List of address prefixes for the subnet.
-        items:
-          type: string
-        type: array
-      delegations:
-        description: An array of references to the delegations on the subnet.
-        items:
-          allOf:
-          - description: Reference to another subresource.
-            properties:
-              id:
-                description: Resource ID.
-                type: string
-            x-ms-azure-resource: true
-          description: Details the service to which the subnet is delegated.
-          properties:
-            etag:
-              description: A unique read-only string that changes whenever the resource is updated.
-              type: string
-            name:
-              description: The name of the resource that is unique within a subnet. This name can be used to access the resource.
-              type: string
-            properties:
-              description: Properties of a service delegation.
-              properties:
-                actions:
-                  description: Describes the actions permitted to the service upon delegation.
-                  items:
-                    type: string
-                  type: array
-                provisioningState:
-                  description: The current provisioning state.
-                  enum:
-                  - Succeeded
-                  - Updating
-                  - Deleting
-                  - Failed
-                  readOnly: true
-                  type: string
-                  x-ms-enum:
-                    modelAsString: true
-                    name: ProvisioningState
-                serviceName:
-                  description: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
-                  type: string
-        type: array
-      ipConfigurationProfiles:
-        description: Array of IP configuration profiles which reference this subnet.
-        items:
-          $ref: ./networkProfile.json#/definitions/IPConfigurationProfile
-        readOnly: true
-        type: array
-      ipConfigurations:
-        description: An array of references to the network interface IP configurations using subnet.
-        items:
-          $ref: ./networkInterface.json#/definitions/IPConfiguration
-        readOnly: true
-        type: array
-      natGateway:
-        description: Reference to another subresource.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subnet'
+        description: Parameters supplied to the create or update subnet operation.
+        required: true
+components:
+  schemas:
+    Subnet:
+      allOf:
+      - description: Reference to another subresource.
         properties:
           id:
             description: Resource ID.
             type: string
         x-ms-azure-resource: true
-      networkSecurityGroup:
-        $ref: ./networkSecurityGroup.json#/definitions/NetworkSecurityGroup
-        description: The reference of the NetworkSecurityGroup resource.
-      privateEndpointNetworkPolicies:
-        description: Enable or Disable apply network policies on private end point in the subnet.
-        type: string
-      privateEndpoints:
-        description: An array of references to private endpoints.
-        items:
-          $ref: ./privateEndpoint.json#/definitions/PrivateEndpoint
-        readOnly: true
-        type: array
-      privateLinkServiceNetworkPolicies:
-        description: Enable or Disable apply network policies on private link service in the subnet.
-        type: string
-      provisioningState:
-        description: The current provisioning state.
-        enum:
-        - Succeeded
-        - Updating
-        - Deleting
-        - Failed
-        readOnly: true
-        type: string
-        x-ms-enum:
-          modelAsString: true
-          name: ProvisioningState
-      purpose:
-        description: A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.
-        readOnly: true
-        type: string
-      resourceNavigationLinks:
-        description: An array of references to the external resources using subnet.
-        items:
-          allOf:
-          - description: Reference to another subresource.
-            properties:
-              id:
-                description: Resource ID.
-                type: string
-            x-ms-azure-resource: true
-          description: ResourceNavigationLink resource.
-          properties:
-            etag:
-              description: A unique read-only string that changes whenever the resource is updated.
-              readOnly: true
-              type: string
-            id:
-              description: Resource navigation link identifier.
-              readOnly: true
-              type: string
-            name:
-              description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
-              type: string
-            properties:
-              description: Properties of ResourceNavigationLink.
-              properties:
-                link:
-                  description: Link to the external resource.
-                  type: string
-                linkedResourceType:
-                  description: Resource type of the linked resource.
-                  type: string
-                provisioningState:
-                  description: The current provisioning state.
-                  enum:
-                  - Succeeded
-                  - Updating
-                  - Deleting
-                  - Failed
-                  readOnly: true
-                  type: string
-                  x-ms-enum:
-                    modelAsString: true
-                    name: ProvisioningState
-            type:
-              description: Resource type.
-              readOnly: true
-              type: string
-        type: array
-      routeTable:
-        $ref: ./routeTable.json#/definitions/RouteTable
-        description: The reference of the RouteTable resource.
-      serviceAssociationLinks:
-        description: An array of references to services injecting into this subnet.
-        items:
-          allOf:
-          - description: Reference to another subresource.
-            properties:
-              id:
-                description: Resource ID.
-                type: string
-            x-ms-azure-resource: true
-          description: ServiceAssociationLink resource.
-          properties:
-            etag:
-              description: A unique read-only string that changes whenever the resource is updated.
-              readOnly: true
-              type: string
-            name:
-              description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
-              type: string
-            properties:
-              description: Properties of ServiceAssociationLink.
-              properties:
-                allowDelete:
-                  description: If true, the resource can be deleted.
-                  type: boolean
-                link:
-                  description: Link to the external resource.
-                  type: string
-                linkedResourceType:
-                  description: Resource type of the linked resource.
-                  type: string
-                locations:
-                  description: A list of locations.
-                  items:
-                    type: string
-                  type: array
-                provisioningState:
-                  description: The current provisioning state.
-                  enum:
-                  - Succeeded
-                  - Updating
-                  - Deleting
-                  - Failed
-                  readOnly: true
-                  type: string
-                  x-ms-enum:
-                    modelAsString: true
-                    name: ProvisioningState
-            type:
-              description: Resource type.
-              type: string
-        type: array
-      serviceEndpointPolicies:
-        description: An array of service endpoint policies.
-        items:
-          $ref: ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy
-        type: array
-      serviceEndpoints:
-        description: An array of service endpoints.
-        items:
-          description: The service endpoint properties.
-          properties:
-            locations:
-              description: A list of locations.
-              items:
-                type: string
-              type: array
-            provisioningState:
-              description: The current provisioning state.
-              enum:
-              - Succeeded
-              - Updating
-              - Deleting
-              - Failed
-              readOnly: true
-              type: string
-              x-ms-enum:
-                modelAsString: true
-                name: ProvisioningState
-            service:
-              description: The type of the endpoint service.
-              type: string
-        type: array
-  Subnet:
-    allOf:
-    - description: Reference to another subresource.
+      description: Subnet in a virtual network resource.
       properties:
-        id:
-          description: Resource ID.
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
           type: string
-      x-ms-azure-resource: true
-    description: Subnet in a virtual network resource.
-    properties:
-      etag:
-        description: A unique read-only string that changes whenever the resource is updated.
-        type: string
-      name:
-        description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
-        type: string
+        name:
+          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          $ref: '#/components/schemas/SubnetPropertiesFormat'
+          description: Properties of the subnet.
+          x-ms-client-flatten: true
+    SubnetPropertiesFormat:
+      description: Properties of the subnet.
       properties:
-        $ref: '#/definitions/SubnetPropertiesFormat'
-        description: Properties of the subnet.
-        x-ms-client-flatten: true
-  SubnetListResult:
-    description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
-    properties:
-      nextLink:
-        description: The URL to get the next set of results.
-        type: string
-      value:
-        description: The subnets in a virtual network.
-        items:
-          $ref: '#/definitions/Subnet'
-        type: array
-securityDefinitions:
-  azure_auth:
-    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
-    description: Azure Active Directory OAuth2 Flow.
-    flow: implicit
-    scopes:
-      user_impersonation: impersonate your user account
-    type: oauth2
+        addressPrefix:
+          description: The address prefix for the subnet.
+          type: string
+        addressPrefixes:
+          description: List of address prefixes for the subnet.
+          items:
+            type: string
+          type: array
+        delegations:
+          description: An array of references to the delegations on the subnet.
+          items:
+            allOf:
+            - description: Reference to another subresource.
+              properties:
+                id:
+                  description: Resource ID.
+                  type: string
+              x-ms-azure-resource: true
+            description: Details the service to which the subnet is delegated.
+            properties:
+              etag:
+                description: A unique read-only string that changes whenever the resource is updated.
+                type: string
+              name:
+                description: The name of the resource that is unique within a subnet. This name can be used to access the resource.
+                type: string
+              properties:
+                description: Properties of a service delegation.
+                properties:
+                  actions:
+                    description: Describes the actions permitted to the service upon delegation.
+                    items:
+                      type: string
+                    type: array
+                  provisioningState:
+                    description: The current provisioning state.
+                    enum:
+                    - Succeeded
+                    - Updating
+                    - Deleting
+                    - Failed
+                    readOnly: true
+                    type: string
+                    x-ms-enum:
+                      modelAsString: true
+                      name: ProvisioningState
+                  serviceName:
+                    description: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
+                    type: string
+          type: array
+        ipConfigurationProfiles:
+          description: Array of IP configuration profiles which reference this subnet.
+          items:
+            $ref: ./networkProfile.json#/definitions/IPConfigurationProfile
+          readOnly: true
+          type: array
+        ipConfigurations:
+          description: An array of references to the network interface IP configurations using subnet.
+          items:
+            $ref: ./networkInterface.json#/definitions/IPConfiguration
+          readOnly: true
+          type: array
+        natGateway:
+          description: Reference to another subresource.
+          properties:
+            id:
+              description: Resource ID.
+              type: string
+          x-ms-azure-resource: true
+        networkSecurityGroup:
+          $ref: ./networkSecurityGroup.json#/definitions/NetworkSecurityGroup
+          description: The reference of the NetworkSecurityGroup resource.
+        privateEndpointNetworkPolicies:
+          description: Enable or Disable apply network policies on private end point in the subnet.
+          type: string
+        privateEndpoints:
+          description: An array of references to private endpoints.
+          items:
+            $ref: ./privateEndpoint.json#/definitions/PrivateEndpoint
+          readOnly: true
+          type: array
+        privateLinkServiceNetworkPolicies:
+          description: Enable or Disable apply network policies on private link service in the subnet.
+          type: string
+        provisioningState:
+          description: The current provisioning state.
+          enum:
+          - Succeeded
+          - Updating
+          - Deleting
+          - Failed
+          readOnly: true
+          type: string
+          x-ms-enum:
+            modelAsString: true
+            name: ProvisioningState
+        purpose:
+          description: A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.
+          readOnly: true
+          type: string
+        resourceNavigationLinks:
+          description: An array of references to the external resources using subnet.
+          items:
+            allOf:
+            - description: Reference to another subresource.
+              properties:
+                id:
+                  description: Resource ID.
+                  type: string
+              x-ms-azure-resource: true
+            description: ResourceNavigationLink resource.
+            properties:
+              etag:
+                description: A unique read-only string that changes whenever the resource is updated.
+                readOnly: true
+                type: string
+              id:
+                description: Resource navigation link identifier.
+                readOnly: true
+                type: string
+              name:
+                description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+                type: string
+              properties:
+                description: Properties of ResourceNavigationLink.
+                properties:
+                  link:
+                    description: Link to the external resource.
+                    type: string
+                  linkedResourceType:
+                    description: Resource type of the linked resource.
+                    type: string
+                  provisioningState:
+                    description: The current provisioning state.
+                    enum:
+                    - Succeeded
+                    - Updating
+                    - Deleting
+                    - Failed
+                    readOnly: true
+                    type: string
+                    x-ms-enum:
+                      modelAsString: true
+                      name: ProvisioningState
+              type:
+                description: Resource type.
+                readOnly: true
+                type: string
+          type: array
+        routeTable:
+          $ref: ./routeTable.json#/definitions/RouteTable
+          description: The reference of the RouteTable resource.
+        serviceAssociationLinks:
+          description: An array of references to services injecting into this subnet.
+          items:
+            allOf:
+            - description: Reference to another subresource.
+              properties:
+                id:
+                  description: Resource ID.
+                  type: string
+              x-ms-azure-resource: true
+            description: ServiceAssociationLink resource.
+            properties:
+              etag:
+                description: A unique read-only string that changes whenever the resource is updated.
+                readOnly: true
+                type: string
+              name:
+                description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+                type: string
+              properties:
+                description: Properties of ServiceAssociationLink.
+                properties:
+                  allowDelete:
+                    description: If true, the resource can be deleted.
+                    type: boolean
+                  link:
+                    description: Link to the external resource.
+                    type: string
+                  linkedResourceType:
+                    description: Resource type of the linked resource.
+                    type: string
+                  locations:
+                    description: A list of locations.
+                    items:
+                      type: string
+                    type: array
+                  provisioningState:
+                    description: The current provisioning state.
+                    enum:
+                    - Succeeded
+                    - Updating
+                    - Deleting
+                    - Failed
+                    readOnly: true
+                    type: string
+                    x-ms-enum:
+                      modelAsString: true
+                      name: ProvisioningState
+              type:
+                description: Resource type.
+                type: string
+          type: array
+        serviceEndpointPolicies:
+          description: An array of service endpoint policies.
+          items:
+            $ref: ./serviceEndpointPolicy.json#/definitions/ServiceEndpointPolicy
+          type: array
+        serviceEndpoints:
+          description: An array of service endpoints.
+          items:
+            description: The service endpoint properties.
+            properties:
+              locations:
+                description: A list of locations.
+                items:
+                  type: string
+                type: array
+              provisioningState:
+                description: The current provisioning state.
+                enum:
+                - Succeeded
+                - Updating
+                - Deleting
+                - Failed
+                readOnly: true
+                type: string
+                x-ms-enum:
+                  modelAsString: true
+                  name: ProvisioningState
+              service:
+                description: The type of the endpoint service.
+                type: string
+          type: array
+    SubnetListResult:
+      description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: The subnets in a virtual network.
+          items:
+            $ref: '#/components/schemas/Subnet'
+          type: array
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            user_impersonation: impersonate your user account
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+      description: Azure Active Directory OAuth2 Flow.

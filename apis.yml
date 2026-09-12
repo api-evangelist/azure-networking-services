@@ -1,5 +1,6 @@
 aid: azure-networking-services
 name: Azure Networking Services
+x-parent: microsoft-azure
 description: A comprehensive collection of Azure networking APIs for managing virtual networks, load balancers, application gateways, VPN gateways, DNS, and other networking resources in the Microsoft Azure cloud.
 type: Index
 deliveryModel:
@@ -34,7 +35,7 @@ tags:
 - Infrastructure
 - Microsoft
 - Networking
-url: https://raw.githubusercontent.com/api-evangelist/azure-networking-services/refs/heads/main/apis.yml
+url: https://learn.microsoft.com/en-us/azure/networking/
 created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.23'
