@@ -1,45 +1,39 @@
 ---
 kin_checks:
   slug: azure-networking-services
-  schema_version: 0.21.0
-  scored_at: '2026-09-12'
-  run_ts: 2026-09-12T080032
+  schema_version: 0.22.0
+  scored_at: '2026-09-15'
+  run_ts: 2026-09-15T230249
   note: Actionable checks only (missed + partial). earned/na are every other check
-    in rubric/scoring-0.21.0.yml; counts below let you verify that.
+    in rubric/scoring-0.22.0.yml; counts below let you verify that.
   counts:
     total: 136
-    earned: 45
-    partial: 12
-    missed: 53
+    earned: 47
+    partial: 18
+    missed: 45
     na: 26
   checks:
+  - id: maintainer_present
+    status: missed
   - id: multiple_apis
     status: missed
   - id: well_known_published
     status: missed
-  - id: apis_json_self_hosted
-    status: missed
   - id: openapi_3_2
     status: missed
-    detail: 0 of 5 openapi documents pass
+    detail: 0 of 13 openapi documents pass
   - id: openapi_3_1
     status: missed
-    detail: 0 of 5 openapi documents pass
+    detail: 0 of 13 openapi documents pass
   - id: openapi_3_0
     status: missed
-    detail: 0 of 5 openapi documents pass
-  - id: info_complete
-    status: missed
-    detail: 0 of 5 openapi documents pass
-  - id: error_responses_documented
-    status: missed
-    detail: 0 of 5 openapi documents pass
+    detail: 0 of 13 openapi documents pass
   - id: oauth_flows_current
     status: missed
-    detail: 0 of 5 openapi documents pass
+    detail: 0 of 13 openapi documents pass
   - id: webhooks_or_callbacks
     status: missed
-    detail: 0 of 5 openapi documents pass
+    detail: 0 of 13 openapi documents pass
   - id: asyncapi_present
     status: missed
   - id: json_schema_present
@@ -54,23 +48,15 @@ kin_checks:
     status: missed
   - id: overlay_published
     status: missed
-  - id: change_log_present
-    status: missed
   - id: deprecation_policy
     status: missed
-  - id: security_disclosure
-    status: missed
   - id: webhooks_advertised
-    status: missed
-  - id: github_org_present
     status: missed
   - id: roadmap_present
     status: missed
   - id: examples_published
     status: missed
   - id: api_reference_present
-    status: missed
-  - id: sdk_count_1
     status: missed
   - id: sdk_count_3
     status: missed
@@ -79,10 +65,6 @@ kin_checks:
   - id: console_or_sandbox
     status: missed
   - id: agent_skill_present
-    status: missed
-  - id: pricing_link
-    status: missed
-  - id: sign_up_present
     status: missed
   - id: compliance_published
     status: missed
@@ -126,10 +108,21 @@ kin_checks:
     status: missed
   - id: agentic_commerce
     status: missed
+  - id: info_complete
+    status: partial
+    earned: 2.15
+    detail: 7 of 13 openapi documents pass
+  - id: error_responses_documented
+    status: partial
+    earned: 1.85
+    detail: 6 of 13 openapi documents pass
+  - id: examples_present
+    status: partial
+    earned: 1.85
   - id: components_reuse
     status: partial
-    earned: 1.8
-    detail: 3 of 5 openapi documents pass
+    earned: 1.15
+    detail: 5 of 13 openapi documents pass
   - id: rules_present
     status: partial
     earned: 2.5
@@ -145,6 +138,10 @@ kin_checks:
   - id: rate_limits_rich
     status: partial
     earned: 1.0
+  - id: github_org_present
+    status: partial
+    earned: 1.0
+    detail: pointer liveness 0.5
   - id: postman_present
     status: partial
     earned: 0.5
@@ -154,6 +151,10 @@ kin_checks:
   - id: plans_multiple
     status: partial
     earned: 1.0
+  - id: sign_up_present
+    status: partial
+    earned: 2.5
+    detail: pointer liveness 0.5
   - id: agentic_access
     status: partial
     earned: 2.5
@@ -162,6 +163,10 @@ kin_checks:
     status: partial
     earned: 3.5
     detail: 'grade: bearer'
+  - id: openapi_examples
+    status: partial
+    earned: 3.5
+    detail: 'grade: partial'
   - id: rate_limit_signal
     status: partial
     earned: 3.5
