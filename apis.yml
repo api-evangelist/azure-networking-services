@@ -40,23 +40,6 @@ created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 apis:
-- aid: azure-networking-services:azure-networking-services-loadbalancers-api
-  name: Azure Networking Services LoadBalancers API
-  description: >-
-    The LoadBalancers API from Azure Networking Services — 16 operation(s) for loadbalancers.
-  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
-  baseURL: https://management.azure.com
-  tags:
-  - Load Balancer
-  tags_raw:
-  - LoadBalancers
-  properties:
-  - type: OpenAPI
-    url: openapi/azure-networking-services-loadbalancers-api-openapi.yml
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 - aid: azure-networking-services:azure-networking-services-subnets-api
   name: Azure Networking Services Subnets API
   description: The Subnets API from Azure Networking Services — 2 operation(s) for subnets.
@@ -100,23 +83,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/azure-networking-services-virtualnetworkpeerings-api-openapi.yml
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
-  - type: Documentation
-    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
-- aid: azure-networking-services:azure-networking-services-virtualnetworks-api
-  name: Azure Networking Services VirtualNetworks API
-  description: >-
-    The VirtualNetworks API from Azure Networking Services — 3 operation(s) for virtualnetworks.
-  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
-  baseURL: https://management.azure.com
-  tags:
-  - Virtual Networks
-  tags_raw:
-  - VirtualNetworks
-  properties:
-  - type: OpenAPI
-    url: openapi/azure-networking-services-virtualnetworks-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
   - type: Documentation
@@ -593,6 +559,21 @@ apis:
   - type: GettingStarted
     url: >-
       https://learn.microsoft.com/en-us/azure/virtual-network/quickstart-create-virtual-network
+- aid: azure-networking-services:azure-networking-services-load-balancers-api
+  name: Azure Networking Services Load Balancers API
+  description: >-
+    The Load Balancers API from Azure Networking Services — 16 operation(s) for load balancers.
+  humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
+  baseURL: https://management.azure.com
+  tags:
+  - Load Balancers
+  properties:
+  - type: OpenAPI
+    url: openapi/azure-networking-services-load-balancers-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/virtual-network/
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 common:
 - type: Website
   url: https://www.microsoft.com/
