@@ -14,7 +14,8 @@ capability_model:
 edge_count: 5
 edges:
 - tag: LoadBalancers
-  spec_file: azure-networking-services-loadbalancers-api-openapi.yml
+  spec_file: azure-networking-services-load-balancers-api-openapi.yml
+  reanchored_from: azure-networking-services-loadbalancers-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
@@ -41,7 +42,8 @@ edges:
   reason: Configuration of peering between Azure virtual networks — cloud network infrastructure management
     (BC-600.50), distinct from telecom interconnect/peering between operators.
 - tag: VirtualNetworks
-  spec_file: azure-networking-services-virtualnetworks-api-openapi.yml
+  spec_file: azure-networking-services-virtual-networks-api-openapi.yml
+  reanchored_from: azure-networking-services-virtualnetworks-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
