@@ -1,22 +1,50 @@
 {
   "provider": "azure-networking-services",
   "sources": [
-    "azure-networking-services-loadbalancers-api-openapi.yml",
-    "azure-networking-services-subnets-api-openapi.yml",
-    "azure-networking-services-subscriptions-api-openapi.yml",
-    "azure-networking-services-virtualnetworkpeerings-api-openapi.yml",
-    "azure-networking-services-virtualnetworks-api-openapi.yml"
+    "_original/azure-networking-services-load-balancer-openapi.yaml",
+    "_original/azure-networking-services-virtual-network-openapi.yaml",
+    "azure-networking-services-operations-api-openapi.yml",
+    "azure-networking-services-virtual-networks-api-openapi.yml"
   ],
   "outputs": [
     "azure-networking-services-loadbalancers-api-openapi.yml",
     "azure-networking-services-subnets-api-openapi.yml",
     "azure-networking-services-subscriptions-api-openapi.yml",
     "azure-networking-services-virtualnetworkpeerings-api-openapi.yml",
-    "azure-networking-services-virtualnetworks-api-openapi.yml"
+    "azure-networking-services-virtualnetworks-api-openapi.yml",
+    "azure-networking-services-operations-api-openapi.yml",
+    "azure-networking-services-virtual-networks-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
-  "warnings": [],
-  "notes": [],
-  "skipped": []
+  "warnings": [
+    "azure-networking-services-operations-api-openapi.yml: previously refined output kept for 1 operation(s) no archived document covers (e.g. /providers/Microsoft.Network/operations get); its other 0 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth.",
+    "azure-networking-services-virtual-networks-api-openapi.yml: previously refined output kept for 4 operation(s) no archived document covers (e.g. /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{name} delete, /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{name} get, /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{name} patch); its other 6 operation(s) came from the archive and were dropped from it. The archive is incomplete for this provider \u2014 re-harvest to restore _original/ as the full source of truth."
+  ],
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "azure-networking-services-load-balancer-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "azure-networking-services-load-balancer-openapi.yaml: declared missing tag: LoadBalancers",
+    "azure-networking-services-virtual-network-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/CheckIPAddressAvailability -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths POST /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/PrepareNetworkPolicies -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/ResourceNavigationLinks -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/ServiceAssociationLinks -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths POST /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/UnprepareNetworkPolicies -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: tagged paths GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/usages -> Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: declared missing tag: Subnets",
+    "azure-networking-services-virtual-network-openapi.yaml: declared missing tag: Subscriptions",
+    "azure-networking-services-virtual-network-openapi.yaml: declared missing tag: VirtualNetworkPeerings",
+    "azure-networking-services-virtual-network-openapi.yaml: declared missing tag: VirtualNetworks",
+    "superseded outputs removed: azure-networking-services-load-balancers-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 25 total)"
+  ],
+  "skipped": [
+    "azure-networking-services-load-balancers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-networking-services-subnets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-networking-services-subscriptions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "azure-networking-services-virtualnetworkpeerings-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

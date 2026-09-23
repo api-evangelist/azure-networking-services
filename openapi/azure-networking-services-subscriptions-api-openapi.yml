@@ -1,28 +1,24 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   description: The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.
-  title: NetworkManagementClient LoadBalancers Subscriptions API
-  version: '2.0'
+  title: NetworkManagementClient Subscriptions API
+  version: '2019-08-01'
   x-apisguru-categories:
   - cloud
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png
   x-origin:
   - format: swagger
-    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/network/resource-manager/Microsoft.Network/stable/2019-08-01/loadBalancer.json
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/network/resource-manager/Microsoft.Network/stable/2019-08-01/virtualNetwork.json
+    version: '2.0'
   x-preferred: true
   x-providerName: azure.com
-  x-serviceName: network-loadBalancer
+  x-serviceName: network-virtualNetwork
   x-tags:
   - Azure
   - Microsoft
-host: management.azure.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://management.azure.com
 security:
 - azure_auth:
   - user_impersonation
@@ -38,37 +34,44 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The private IP address to be verified.
         in: query
         name: ipAddress
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Private IP address availability and list of other free addresses if the requested one is not available.
-          schema:
-            $ref: '#/definitions/IPAddressAvailabilityResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IPAddressAvailabilityResult'
       x-ms-examples:
         Check IP address availability:
           parameters:
@@ -102,39 +105,37 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
-      - description: Parameters supplied to prepare subnet by applying network intent policies.
-        in: body
-        name: prepareNetworkPoliciesRequestParameters
-        required: true
         schema:
-          $ref: '#/definitions/PrepareNetworkPoliciesRequest'
-        example: example-value
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Preparing subnet by applying network intent policies is successful.
@@ -160,6 +161,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrepareNetworkPoliciesRequest'
+        description: Parameters supplied to prepare subnet by applying network intent policies.
+        required: true
       tags:
       - Subscriptions
   ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}/ResourceNavigationLinks
@@ -171,37 +179,44 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Request successful. The operation returns a list of resource navigation links for the subnet.
-          schema:
-            $ref: '#/definitions/ResourceNavigationLinksListResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNavigationLinksListResult'
       x-ms-examples:
         Get Resource Navigation Links:
           parameters:
@@ -237,37 +252,44 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Request successful. The operation returns a list of service association links for the subnet.
-          schema:
-            $ref: '#/definitions/ServiceAssociationLinksListResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceAssociationLinksListResult'
       x-ms-examples:
         Get Service Association Links:
           parameters:
@@ -305,39 +327,37 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: The name of the subnet.
         in: path
         name: subnetName
         required: true
-        type: string
         example: example-value
-      - description: Parameters supplied to unprepare subnet to remove network intent policies.
-        in: body
-        name: unprepareNetworkPoliciesRequestParameters
-        required: true
         schema:
-          $ref: '#/definitions/UnprepareNetworkPoliciesRequest'
-        example: example-value
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Unpreparing subnet by removing network intent policies is successful.
@@ -363,6 +383,13 @@ paths:
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnprepareNetworkPoliciesRequest'
+        description: Parameters supplied to unprepare subnet to remove network intent policies.
+        required: true
       tags:
       - Subscriptions
   ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/usages
@@ -374,31 +401,37 @@ paths:
         in: path
         name: resourceGroupName
         required: true
-        type: string
         example: my-resource-group
+        schema:
+          type: string
       - description: The name of the virtual network.
         in: path
         name: virtualNetworkName
         required: true
-        type: string
         example: example-value
+        schema:
+          type: string
       - description: Client API version.
         in: query
         name: api-version
         required: true
-        type: string
         example: '2019-06-01'
+        schema:
+          type: string
       - description: The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
         in: path
         name: subscriptionId
         required: true
-        type: string
         example: 00000000-0000-0000-0000-000000000000
+        schema:
+          type: string
       responses:
         '200':
           description: Usage stats for vnet.
-          schema:
-            $ref: '#/definitions/VirtualNetworkListUsageResult'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VirtualNetworkListUsageResult'
       x-ms-examples:
         VnetGetUsage:
           parameters:
@@ -432,245 +465,247 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Subscriptions
-definitions:
-  PrepareNetworkPoliciesRequest:
-    description: Details of PrepareNetworkPolicies for Subnet.
-    properties:
-      networkIntentPolicyConfigurations:
-        description: A list of NetworkIntentPolicyConfiguration.
-        items:
-          $ref: '#/definitions/NetworkIntentPolicyConfiguration'
-        type: array
-      serviceName:
-        description: The name of the service for which subnet is being prepared for.
-        type: string
-  VirtualNetworkListUsageResult:
-    description: Response for the virtual networks GetUsage API service call.
-    properties:
-      nextLink:
-        description: The URL to get the next set of results.
-        type: string
-      value:
-        description: VirtualNetwork usage stats.
-        items:
-          $ref: '#/definitions/VirtualNetworkUsage'
-        readOnly: true
-        type: array
-  ServiceAssociationLink:
-    allOf:
-    - description: Reference to another subresource.
+components:
+  schemas:
+    VirtualNetworkUsageName:
+      description: Usage strings container.
       properties:
-        id:
-          description: Resource ID.
-          type: string
-      x-ms-azure-resource: true
-    description: ServiceAssociationLink resource.
-    properties:
-      etag:
-        description: A unique read-only string that changes whenever the resource is updated.
-        readOnly: true
-        type: string
-      name:
-        description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
-        type: string
-      properties:
-        description: Properties of ServiceAssociationLink.
-        properties:
-          allowDelete:
-            description: If true, the resource can be deleted.
-            type: boolean
-          link:
-            description: Link to the external resource.
-            type: string
-          linkedResourceType:
-            description: Resource type of the linked resource.
-            type: string
-          locations:
-            description: A list of locations.
-            items:
-              type: string
-            type: array
-          provisioningState:
-            description: The current provisioning state.
-            enum:
-            - Succeeded
-            - Updating
-            - Deleting
-            - Failed
-            readOnly: true
-            type: string
-            x-ms-enum:
-              modelAsString: true
-              name: ProvisioningState
-      type:
-        description: Resource type.
-        type: string
-  UnprepareNetworkPoliciesRequest:
-    description: Details of UnprepareNetworkPolicies for Subnet.
-    properties:
-      serviceName:
-        description: The name of the service for which subnet is being unprepared for.
-        type: string
-  ResourceNavigationLink:
-    allOf:
-    - description: Reference to another subresource.
-      properties:
-        id:
-          description: Resource ID.
-          type: string
-      x-ms-azure-resource: true
-    description: ResourceNavigationLink resource.
-    properties:
-      etag:
-        description: A unique read-only string that changes whenever the resource is updated.
-        readOnly: true
-        type: string
-      id:
-        description: Resource navigation link identifier.
-        readOnly: true
-        type: string
-      name:
-        description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
-        type: string
-      properties:
-        description: Properties of ResourceNavigationLink.
-        properties:
-          link:
-            description: Link to the external resource.
-            type: string
-          linkedResourceType:
-            description: Resource type of the linked resource.
-            type: string
-          provisioningState:
-            description: The current provisioning state.
-            enum:
-            - Succeeded
-            - Updating
-            - Deleting
-            - Failed
-            readOnly: true
-            type: string
-            x-ms-enum:
-              modelAsString: true
-              name: ProvisioningState
-      type:
-        description: Resource type.
-        readOnly: true
-        type: string
-  NetworkIntentPolicy:
-    allOf:
-    - description: Common resource representation.
-      properties:
-        id:
-          description: Resource ID.
-          type: string
-        location:
-          description: Resource location.
-          type: string
-        name:
-          description: Resource name.
+        localizedValue:
+          description: Localized subnet size and usage string.
           readOnly: true
           type: string
-        tags:
-          additionalProperties:
+        value:
+          description: Subnet size and usage string.
+          readOnly: true
+          type: string
+    ServiceAssociationLink:
+      allOf:
+      - description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
             type: string
-          description: Resource tags.
-          type: object
+        x-ms-azure-resource: true
+      description: ServiceAssociationLink resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          readOnly: true
+          type: string
+        name:
+          description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          description: Properties of ServiceAssociationLink.
+          properties:
+            allowDelete:
+              description: If true, the resource can be deleted.
+              type: boolean
+            link:
+              description: Link to the external resource.
+              type: string
+            linkedResourceType:
+              description: Resource type of the linked resource.
+              type: string
+            locations:
+              description: A list of locations.
+              items:
+                type: string
+              type: array
+            provisioningState:
+              description: The current provisioning state.
+              enum:
+              - Succeeded
+              - Updating
+              - Deleting
+              - Failed
+              readOnly: true
+              type: string
+              x-ms-enum:
+                modelAsString: true
+                name: ProvisioningState
+        type:
+          description: Resource type.
+          type: string
+    VirtualNetworkUsage:
+      description: Usage details for subnet.
+      properties:
+        currentValue:
+          description: Indicates number of IPs used from the Subnet.
+          format: double
+          readOnly: true
+          type: number
+        id:
+          description: Subnet identifier.
+          readOnly: true
+          type: string
+        limit:
+          description: Indicates the size of the subnet.
+          format: double
+          readOnly: true
+          type: number
+        name:
+          $ref: '#/components/schemas/VirtualNetworkUsageName'
+          description: The name containing common and localized value for usage.
+          readOnly: true
+        unit:
+          description: Usage units. Returns 'Count'.
+          readOnly: true
+          type: string
+    ServiceAssociationLinksListResult:
+      description: Response for ServiceAssociationLinks_List operation.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          readOnly: true
+          type: string
+        value:
+          description: The service association links in a subnet.
+          items:
+            $ref: '#/components/schemas/ServiceAssociationLink'
+          type: array
+    NetworkIntentPolicy:
+      allOf:
+      - description: Common resource representation.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+          location:
+            description: Resource location.
+            type: string
+          name:
+            description: Resource name.
+            readOnly: true
+            type: string
+          tags:
+            additionalProperties:
+              type: string
+            description: Resource tags.
+            type: object
+          type:
+            description: Resource type.
+            readOnly: true
+            type: string
+        x-ms-azure-resource: true
+      description: Network Intent Policy resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          type: string
+    IPAddressAvailabilityResult:
+      description: Response for CheckIPAddressAvailability API service call.
+      properties:
+        available:
+          description: Private IP address availability.
+          type: boolean
+        availableIPAddresses:
+          description: Contains other available private IP addresses if the asked for address is taken.
+          items:
+            type: string
+          type: array
+    VirtualNetworkListUsageResult:
+      description: Response for the virtual networks GetUsage API service call.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: VirtualNetwork usage stats.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkUsage'
+          readOnly: true
+          type: array
+    PrepareNetworkPoliciesRequest:
+      description: Details of PrepareNetworkPolicies for Subnet.
+      properties:
+        networkIntentPolicyConfigurations:
+          description: A list of NetworkIntentPolicyConfiguration.
+          items:
+            $ref: '#/components/schemas/NetworkIntentPolicyConfiguration'
+          type: array
+        serviceName:
+          description: The name of the service for which subnet is being prepared for.
+          type: string
+    ResourceNavigationLink:
+      allOf:
+      - description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+        x-ms-azure-resource: true
+      description: ResourceNavigationLink resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          readOnly: true
+          type: string
+        id:
+          description: Resource navigation link identifier.
+          readOnly: true
+          type: string
+        name:
+          description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          description: Properties of ResourceNavigationLink.
+          properties:
+            link:
+              description: Link to the external resource.
+              type: string
+            linkedResourceType:
+              description: Resource type of the linked resource.
+              type: string
+            provisioningState:
+              description: The current provisioning state.
+              enum:
+              - Succeeded
+              - Updating
+              - Deleting
+              - Failed
+              readOnly: true
+              type: string
+              x-ms-enum:
+                modelAsString: true
+                name: ProvisioningState
         type:
           description: Resource type.
           readOnly: true
           type: string
-      x-ms-azure-resource: true
-    description: Network Intent Policy resource.
-    properties:
-      etag:
-        description: A unique read-only string that changes whenever the resource is updated.
-        type: string
-  IPAddressAvailabilityResult:
-    description: Response for CheckIPAddressAvailability API service call.
-    properties:
-      available:
-        description: Private IP address availability.
-        type: boolean
-      availableIPAddresses:
-        description: Contains other available private IP addresses if the asked for address is taken.
-        items:
+    ResourceNavigationLinksListResult:
+      description: Response for ResourceNavigationLinks_List operation.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          readOnly: true
           type: string
-        type: array
-  NetworkIntentPolicyConfiguration:
-    description: Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest.
-    properties:
-      networkIntentPolicyName:
-        description: The name of the Network Intent Policy for storing in target subscription.
-        type: string
-      sourceNetworkIntentPolicy:
-        $ref: '#/definitions/NetworkIntentPolicy'
-        description: Source network intent policy.
-  VirtualNetworkUsage:
-    description: Usage details for subnet.
-    properties:
-      currentValue:
-        description: Indicates number of IPs used from the Subnet.
-        format: double
-        readOnly: true
-        type: number
-      id:
-        description: Subnet identifier.
-        readOnly: true
-        type: string
-      limit:
-        description: Indicates the size of the subnet.
-        format: double
-        readOnly: true
-        type: number
-      name:
-        $ref: '#/definitions/VirtualNetworkUsageName'
-        description: The name containing common and localized value for usage.
-        readOnly: true
-      unit:
-        description: Usage units. Returns 'Count'.
-        readOnly: true
-        type: string
-  ResourceNavigationLinksListResult:
-    description: Response for ResourceNavigationLinks_List operation.
-    properties:
-      nextLink:
-        description: The URL to get the next set of results.
-        readOnly: true
-        type: string
-      value:
-        description: The resource navigation links in a subnet.
-        items:
-          $ref: '#/definitions/ResourceNavigationLink'
-        type: array
-  VirtualNetworkUsageName:
-    description: Usage strings container.
-    properties:
-      localizedValue:
-        description: Localized subnet size and usage string.
-        readOnly: true
-        type: string
-      value:
-        description: Subnet size and usage string.
-        readOnly: true
-        type: string
-  ServiceAssociationLinksListResult:
-    description: Response for ServiceAssociationLinks_List operation.
-    properties:
-      nextLink:
-        description: The URL to get the next set of results.
-        readOnly: true
-        type: string
-      value:
-        description: The service association links in a subnet.
-        items:
-          $ref: '#/definitions/ServiceAssociationLink'
-        type: array
-securityDefinitions:
-  azure_auth:
-    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
-    description: Azure Active Directory OAuth2 Flow.
-    flow: implicit
-    scopes:
-      user_impersonation: impersonate your user account
-    type: oauth2
+        value:
+          description: The resource navigation links in a subnet.
+          items:
+            $ref: '#/components/schemas/ResourceNavigationLink'
+          type: array
+    NetworkIntentPolicyConfiguration:
+      description: Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest.
+      properties:
+        networkIntentPolicyName:
+          description: The name of the Network Intent Policy for storing in target subscription.
+          type: string
+        sourceNetworkIntentPolicy:
+          $ref: '#/components/schemas/NetworkIntentPolicy'
+          description: Source network intent policy.
+    UnprepareNetworkPoliciesRequest:
+      description: Details of UnprepareNetworkPolicies for Subnet.
+      properties:
+        serviceName:
+          description: The name of the service for which subnet is being unprepared for.
+          type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          scopes:
+            user_impersonation: impersonate your user account
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+      description: Azure Active Directory OAuth2 Flow.
