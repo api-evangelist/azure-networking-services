@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Azure Networking Azure Load Balancer Backend Address Pools……
+  title: Azure Networking Azure Load Balancer Backend Address…
   description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
   version: '2024-05-01'
   contact:
@@ -42,18 +42,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-            target:
-              type: string
     Operation:
       type: object
       properties:
@@ -72,6 +60,18 @@ components:
               type: string
         isDataAction:
           type: boolean
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            target:
+              type: string
     OperationList:
       type: object
       properties:

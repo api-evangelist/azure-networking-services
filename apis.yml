@@ -5,15 +5,19 @@ description: A comprehensive collection of Azure networking APIs for managing vi
 type: Index
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - azure/azure-rest-api-specs
+  open_source: unknown
   commercial: true
   callable_host: true
   label: Hosted service · you call their endpoint
-  confidence: high
+  confidence: low
   source:
   - openapi
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -566,8 +570,6 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Load Balancer
-  tags_raw:
   - Load Balancers
   properties:
   - type: OpenAPI

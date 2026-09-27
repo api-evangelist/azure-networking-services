@@ -478,6 +478,108 @@ components:
           description: Subnet size and usage string.
           readOnly: true
           type: string
+    NetworkIntentPolicyConfiguration:
+      description: Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest.
+      properties:
+        networkIntentPolicyName:
+          description: The name of the Network Intent Policy for storing in target subscription.
+          type: string
+        sourceNetworkIntentPolicy:
+          $ref: '#/components/schemas/NetworkIntentPolicy'
+          description: Source network intent policy.
+    ResourceNavigationLink:
+      allOf:
+      - description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+        x-ms-azure-resource: true
+      description: ResourceNavigationLink resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          readOnly: true
+          type: string
+        id:
+          description: Resource navigation link identifier.
+          readOnly: true
+          type: string
+        name:
+          description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          description: Properties of ResourceNavigationLink.
+          properties:
+            link:
+              description: Link to the external resource.
+              type: string
+            linkedResourceType:
+              description: Resource type of the linked resource.
+              type: string
+            provisioningState:
+              description: The current provisioning state.
+              enum:
+              - Succeeded
+              - Updating
+              - Deleting
+              - Failed
+              readOnly: true
+              type: string
+              x-ms-enum:
+                modelAsString: true
+                name: ProvisioningState
+        type:
+          description: Resource type.
+          readOnly: true
+          type: string
+    UnprepareNetworkPoliciesRequest:
+      description: Details of UnprepareNetworkPolicies for Subnet.
+      properties:
+        serviceName:
+          description: The name of the service for which subnet is being unprepared for.
+          type: string
+    VirtualNetworkListUsageResult:
+      description: Response for the virtual networks GetUsage API service call.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: VirtualNetwork usage stats.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkUsage'
+          readOnly: true
+          type: array
+    NetworkIntentPolicy:
+      allOf:
+      - description: Common resource representation.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+          location:
+            description: Resource location.
+            type: string
+          name:
+            description: Resource name.
+            readOnly: true
+            type: string
+          tags:
+            additionalProperties:
+              type: string
+            description: Resource tags.
+            type: object
+          type:
+            description: Resource type.
+            readOnly: true
+            type: string
+        x-ms-azure-resource: true
+      description: Network Intent Policy resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          type: string
     ServiceAssociationLink:
       allOf:
       - description: Reference to another subresource.
@@ -552,70 +654,6 @@ components:
           description: Usage units. Returns 'Count'.
           readOnly: true
           type: string
-    ServiceAssociationLinksListResult:
-      description: Response for ServiceAssociationLinks_List operation.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          readOnly: true
-          type: string
-        value:
-          description: The service association links in a subnet.
-          items:
-            $ref: '#/components/schemas/ServiceAssociationLink'
-          type: array
-    NetworkIntentPolicy:
-      allOf:
-      - description: Common resource representation.
-        properties:
-          id:
-            description: Resource ID.
-            type: string
-          location:
-            description: Resource location.
-            type: string
-          name:
-            description: Resource name.
-            readOnly: true
-            type: string
-          tags:
-            additionalProperties:
-              type: string
-            description: Resource tags.
-            type: object
-          type:
-            description: Resource type.
-            readOnly: true
-            type: string
-        x-ms-azure-resource: true
-      description: Network Intent Policy resource.
-      properties:
-        etag:
-          description: A unique read-only string that changes whenever the resource is updated.
-          type: string
-    IPAddressAvailabilityResult:
-      description: Response for CheckIPAddressAvailability API service call.
-      properties:
-        available:
-          description: Private IP address availability.
-          type: boolean
-        availableIPAddresses:
-          description: Contains other available private IP addresses if the asked for address is taken.
-          items:
-            type: string
-          type: array
-    VirtualNetworkListUsageResult:
-      description: Response for the virtual networks GetUsage API service call.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: VirtualNetwork usage stats.
-          items:
-            $ref: '#/components/schemas/VirtualNetworkUsage'
-          readOnly: true
-          type: array
     PrepareNetworkPoliciesRequest:
       description: Details of PrepareNetworkPolicies for Subnet.
       properties:
@@ -626,52 +664,6 @@ components:
           type: array
         serviceName:
           description: The name of the service for which subnet is being prepared for.
-          type: string
-    ResourceNavigationLink:
-      allOf:
-      - description: Reference to another subresource.
-        properties:
-          id:
-            description: Resource ID.
-            type: string
-        x-ms-azure-resource: true
-      description: ResourceNavigationLink resource.
-      properties:
-        etag:
-          description: A unique read-only string that changes whenever the resource is updated.
-          readOnly: true
-          type: string
-        id:
-          description: Resource navigation link identifier.
-          readOnly: true
-          type: string
-        name:
-          description: Name of the resource that is unique within a resource group. This name can be used to access the resource.
-          type: string
-        properties:
-          description: Properties of ResourceNavigationLink.
-          properties:
-            link:
-              description: Link to the external resource.
-              type: string
-            linkedResourceType:
-              description: Resource type of the linked resource.
-              type: string
-            provisioningState:
-              description: The current provisioning state.
-              enum:
-              - Succeeded
-              - Updating
-              - Deleting
-              - Failed
-              readOnly: true
-              type: string
-              x-ms-enum:
-                modelAsString: true
-                name: ProvisioningState
-        type:
-          description: Resource type.
-          readOnly: true
           type: string
     ResourceNavigationLinksListResult:
       description: Response for ResourceNavigationLinks_List operation.
@@ -685,21 +677,29 @@ components:
           items:
             $ref: '#/components/schemas/ResourceNavigationLink'
           type: array
-    NetworkIntentPolicyConfiguration:
-      description: Details of NetworkIntentPolicyConfiguration for PrepareNetworkPoliciesRequest.
+    ServiceAssociationLinksListResult:
+      description: Response for ServiceAssociationLinks_List operation.
       properties:
-        networkIntentPolicyName:
-          description: The name of the Network Intent Policy for storing in target subscription.
+        nextLink:
+          description: The URL to get the next set of results.
+          readOnly: true
           type: string
-        sourceNetworkIntentPolicy:
-          $ref: '#/components/schemas/NetworkIntentPolicy'
-          description: Source network intent policy.
-    UnprepareNetworkPoliciesRequest:
-      description: Details of UnprepareNetworkPolicies for Subnet.
+        value:
+          description: The service association links in a subnet.
+          items:
+            $ref: '#/components/schemas/ServiceAssociationLink'
+          type: array
+    IPAddressAvailabilityResult:
+      description: Response for CheckIPAddressAvailability API service call.
       properties:
-        serviceName:
-          description: The name of the service for which subnet is being unprepared for.
-          type: string
+        available:
+          description: Private IP address availability.
+          type: boolean
+        availableIPAddresses:
+          description: Contains other available private IP addresses if the asked for address is taken.
+          items:
+            type: string
+          type: array
   securitySchemes:
     azure_auth:
       type: oauth2
