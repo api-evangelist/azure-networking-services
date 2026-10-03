@@ -376,6 +376,45 @@ paths:
         required: true
 components:
   schemas:
+    AddressSpace:
+      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
+      properties:
+        addressPrefixes:
+          description: A list of address blocks reserved for this virtual network in CIDR notation.
+          items:
+            type: string
+          type: array
+    VirtualNetworkPeeringListResult:
+      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: The peerings in a virtual network.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkPeering'
+          type: array
+    VirtualNetworkPeering:
+      allOf:
+      - description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+        x-ms-azure-resource: true
+      description: Peerings in a virtual network resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          type: string
+        name:
+          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          $ref: '#/components/schemas/VirtualNetworkPeeringPropertiesFormat'
+          description: Properties of the virtual network peering.
+          x-ms-client-flatten: true
     VirtualNetworkPeeringPropertiesFormat:
       description: Properties of the virtual network peering.
       properties:
@@ -423,45 +462,6 @@ components:
         useRemoteGateways:
           description: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
           type: boolean
-    AddressSpace:
-      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
-      properties:
-        addressPrefixes:
-          description: A list of address blocks reserved for this virtual network in CIDR notation.
-          items:
-            type: string
-          type: array
-    VirtualNetworkPeering:
-      allOf:
-      - description: Reference to another subresource.
-        properties:
-          id:
-            description: Resource ID.
-            type: string
-        x-ms-azure-resource: true
-      description: Peerings in a virtual network resource.
-      properties:
-        etag:
-          description: A unique read-only string that changes whenever the resource is updated.
-          type: string
-        name:
-          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
-          type: string
-        properties:
-          $ref: '#/components/schemas/VirtualNetworkPeeringPropertiesFormat'
-          description: Properties of the virtual network peering.
-          x-ms-client-flatten: true
-    VirtualNetworkPeeringListResult:
-      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: The peerings in a virtual network.
-          items:
-            $ref: '#/components/schemas/VirtualNetworkPeering'
-          type: array
   securitySchemes:
     azure_auth:
       type: oauth2

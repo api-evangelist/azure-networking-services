@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Azure Networking Azure Load Balancer Backend Address…
+  title: Azure Networking Azure Load Balancer Backend Address……
   description: Distribute traffic across multiple virtual machines and services with Azure Load Balancer. This API provides operations for creating, configuring, and managing load balancers including frontend IP configurations, backend address pools, health probes, load balancing rules, inbound NAT rules, and outbound rules.
   version: '2024-05-01'
   contact:
@@ -1088,19 +1088,29 @@ paths:
         description: Parameters supplied to the create or update virtual network operation.
         required: true
 components:
+  parameters:
+    resourceGroupName:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-            target:
-              type: string
     Resource:
       type: object
       properties:
@@ -1123,51 +1133,46 @@ components:
         properties:
           type: object
           description: Resource-specific properties.
-    VirtualNetwork:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            target:
+              type: string
+    AddressSpace:
+      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
+      properties:
+        addressPrefixes:
+          description: A list of address blocks reserved for this virtual network in CIDR notation.
+          items:
+            type: string
+          type: array
+    VirtualNetworkPeering:
       allOf:
-      - description: Common resource representation.
+      - description: Reference to another subresource.
         properties:
           id:
             description: Resource ID.
             type: string
-          location:
-            description: Resource location.
-            type: string
-          name:
-            description: Resource name.
-            readOnly: true
-            type: string
-          tags:
-            additionalProperties:
-              type: string
-            description: Resource tags.
-            type: object
-          type:
-            description: Resource type.
-            readOnly: true
-            type: string
         x-ms-azure-resource: true
-      description: Virtual Network resource.
+      description: Peerings in a virtual network resource.
       properties:
         etag:
           description: A unique read-only string that changes whenever the resource is updated.
           type: string
+        name:
+          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
         properties:
-          $ref: '#/components/schemas/VirtualNetworkPropertiesFormat'
-          description: Properties of the virtual network.
+          $ref: '#/components/schemas/VirtualNetworkPeeringPropertiesFormat'
+          description: Properties of the virtual network peering.
           x-ms-client-flatten: true
-    VirtualNetworkBgpCommunities:
-      description: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
-      properties:
-        regionalCommunity:
-          description: The BGP community associated with the region of the virtual network
-          readOnly: true
-          type: string
-        virtualNetworkCommunity:
-          description: The BGP community associated with the virtual network
-          type: string
-      required:
-      - virtualNetworkCommunity
     VirtualNetworkPropertiesFormat:
       description: Properties of the virtual network.
       properties:
@@ -1220,42 +1225,6 @@ components:
           items:
             $ref: '#/components/schemas/VirtualNetworkPeering'
           type: array
-    DhcpOptions:
-      description: DhcpOptions contains an array of DNS servers available to VMs deployed in the virtual network. Standard DHCP option for a subnet overrides VNET DHCP options.
-      properties:
-        dnsServers:
-          description: The list of DNS servers IP addresses.
-          items:
-            type: string
-          type: array
-    AddressSpace:
-      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
-      properties:
-        addressPrefixes:
-          description: A list of address blocks reserved for this virtual network in CIDR notation.
-          items:
-            type: string
-          type: array
-    VirtualNetworkPeering:
-      allOf:
-      - description: Reference to another subresource.
-        properties:
-          id:
-            description: Resource ID.
-            type: string
-        x-ms-azure-resource: true
-      description: Peerings in a virtual network resource.
-      properties:
-        etag:
-          description: A unique read-only string that changes whenever the resource is updated.
-          type: string
-        name:
-          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
-          type: string
-        properties:
-          $ref: '#/components/schemas/VirtualNetworkPeeringPropertiesFormat'
-          description: Properties of the virtual network peering.
-          x-ms-client-flatten: true
     Subnet:
       allOf:
       - description: Reference to another subresource.
@@ -1276,6 +1245,26 @@ components:
           $ref: '#/components/schemas/SubnetPropertiesFormat'
           description: Properties of the subnet.
           x-ms-client-flatten: true
+    DhcpOptions:
+      description: DhcpOptions contains an array of DNS servers available to VMs deployed in the virtual network. Standard DHCP option for a subnet overrides VNET DHCP options.
+      properties:
+        dnsServers:
+          description: The list of DNS servers IP addresses.
+          items:
+            type: string
+          type: array
+    VirtualNetworkBgpCommunities:
+      description: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
+      properties:
+        regionalCommunity:
+          description: The BGP community associated with the region of the virtual network
+          readOnly: true
+          type: string
+        virtualNetworkCommunity:
+          description: The BGP community associated with the virtual network
+          type: string
+      required:
+      - virtualNetworkCommunity
     VirtualNetworkPeeringPropertiesFormat:
       description: Properties of the virtual network peering.
       properties:
@@ -1323,6 +1312,50 @@ components:
         useRemoteGateways:
           description: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
           type: boolean
+    VirtualNetwork:
+      allOf:
+      - description: Common resource representation.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+          location:
+            description: Resource location.
+            type: string
+          name:
+            description: Resource name.
+            readOnly: true
+            type: string
+          tags:
+            additionalProperties:
+              type: string
+            description: Resource tags.
+            type: object
+          type:
+            description: Resource type.
+            readOnly: true
+            type: string
+        x-ms-azure-resource: true
+      description: Virtual Network resource.
+      properties:
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
+          type: string
+        properties:
+          $ref: '#/components/schemas/VirtualNetworkPropertiesFormat'
+          description: Properties of the virtual network.
+          x-ms-client-flatten: true
+    VirtualNetworkListResult:
+      description: Response for the ListVirtualNetworks API service call.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: A list of VirtualNetwork resources in a resource group.
+          items:
+            $ref: '#/components/schemas/VirtualNetwork'
+          type: array
     SubnetPropertiesFormat:
       description: Properties of the subnet.
       properties:
@@ -1561,39 +1594,6 @@ components:
                 description: The type of the endpoint service.
                 type: string
           type: array
-    VirtualNetworkListResult:
-      description: Response for the ListVirtualNetworks API service call.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: A list of VirtualNetwork resources in a resource group.
-          items:
-            $ref: '#/components/schemas/VirtualNetwork'
-          type: array
-  parameters:
-    subscriptionId:
-      name: subscriptionId
-      in: path
-      required: true
-      description: The ID of the target subscription.
-      schema:
-        type: string
-    apiVersion:
-      name: api-version
-      in: query
-      required: true
-      description: The API version to use for this operation.
-      schema:
-        type: string
-    resourceGroupName:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
   securitySchemes:
     OAuth2Auth:
       type: oauth2
