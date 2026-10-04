@@ -436,26 +436,17 @@ paths:
         required: true
 components:
   schemas:
-    Subnet:
-      allOf:
-      - description: Reference to another subresource.
-        properties:
-          id:
-            description: Resource ID.
-            type: string
-        x-ms-azure-resource: true
-      description: Subnet in a virtual network resource.
+    SubnetListResult:
+      description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
       properties:
-        etag:
-          description: A unique read-only string that changes whenever the resource is updated.
+        nextLink:
+          description: The URL to get the next set of results.
           type: string
-        name:
-          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
-          type: string
-        properties:
-          $ref: '#/components/schemas/SubnetPropertiesFormat'
-          description: Properties of the subnet.
-          x-ms-client-flatten: true
+        value:
+          description: The subnets in a virtual network.
+          items:
+            $ref: '#/components/schemas/Subnet'
+          type: array
     SubnetPropertiesFormat:
       description: Properties of the subnet.
       properties:
@@ -694,17 +685,26 @@ components:
                 description: The type of the endpoint service.
                 type: string
           type: array
-    SubnetListResult:
-      description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
+    Subnet:
+      allOf:
+      - description: Reference to another subresource.
+        properties:
+          id:
+            description: Resource ID.
+            type: string
+        x-ms-azure-resource: true
+      description: Subnet in a virtual network resource.
       properties:
-        nextLink:
-          description: The URL to get the next set of results.
+        etag:
+          description: A unique read-only string that changes whenever the resource is updated.
           type: string
-        value:
-          description: The subnets in a virtual network.
-          items:
-            $ref: '#/components/schemas/Subnet'
-          type: array
+        name:
+          description: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+          type: string
+        properties:
+          $ref: '#/components/schemas/SubnetPropertiesFormat'
+          description: Properties of the subnet.
+          x-ms-client-flatten: true
   securitySchemes:
     azure_auth:
       type: oauth2

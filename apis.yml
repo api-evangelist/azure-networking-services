@@ -575,8 +575,6 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
-  - Load Balancer
-  tags_raw:
   - Load Balancers
   properties:
   - type: OpenAPI

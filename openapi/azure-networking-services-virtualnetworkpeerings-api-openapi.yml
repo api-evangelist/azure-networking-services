@@ -384,17 +384,6 @@ components:
           items:
             type: string
           type: array
-    VirtualNetworkPeeringListResult:
-      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: The peerings in a virtual network.
-          items:
-            $ref: '#/components/schemas/VirtualNetworkPeering'
-          type: array
     VirtualNetworkPeering:
       allOf:
       - description: Reference to another subresource.
@@ -462,6 +451,17 @@ components:
         useRemoteGateways:
           description: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
           type: boolean
+    VirtualNetworkPeeringListResult:
+      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: The peerings in a virtual network.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkPeering'
+          type: array
   securitySchemes:
     azure_auth:
       type: oauth2
