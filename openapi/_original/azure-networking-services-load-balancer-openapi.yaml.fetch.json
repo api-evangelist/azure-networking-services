@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/network/resource-manager/Microsoft.Network/stable/2019-08-01/loadBalancer.json",
+ "requested_url": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/network/resource-manager/Microsoft.Network/stable/2019-08-01/loadBalancer.json",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 67388,
+ "sha256": "1f22be52f2ddcc9fbf368299521b548db717f3c1eca4638b498734feece5f4e9",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
