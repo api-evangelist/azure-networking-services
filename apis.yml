@@ -584,6 +584,10 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/load-balancer/
 common:
+- type: RateLimits
+  url: rate-limits/azure-networking-services-rate-limits.yml
+- type: FinOps
+  url: finops/azure-networking-services-finops.yml
 - type: Plans
   url: plans/azure-networking-services-plans-pricing.yml
 - type: Website
