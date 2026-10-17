@@ -376,14 +376,6 @@ paths:
         required: true
 components:
   schemas:
-    AddressSpace:
-      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
-      properties:
-        addressPrefixes:
-          description: A list of address blocks reserved for this virtual network in CIDR notation.
-          items:
-            type: string
-          type: array
     VirtualNetworkPeering:
       allOf:
       - description: Reference to another subresource.
@@ -404,6 +396,17 @@ components:
           $ref: '#/components/schemas/VirtualNetworkPeeringPropertiesFormat'
           description: Properties of the virtual network peering.
           x-ms-client-flatten: true
+    VirtualNetworkPeeringListResult:
+      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: The peerings in a virtual network.
+          items:
+            $ref: '#/components/schemas/VirtualNetworkPeering'
+          type: array
     VirtualNetworkPeeringPropertiesFormat:
       description: Properties of the virtual network peering.
       properties:
@@ -451,16 +454,13 @@ components:
         useRemoteGateways:
           description: If remote gateways can be used on this virtual network. If the flag is set to true, and allowGatewayTransit on remote peering is also true, virtual network will use gateways of remote virtual network for transit. Only one peering can have this flag set to true. This flag cannot be set if virtual network already has a gateway.
           type: boolean
-    VirtualNetworkPeeringListResult:
-      description: Response for ListSubnets API service call. Retrieves all subnets that belong to a virtual network.
+    AddressSpace:
+      description: AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.
       properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: The peerings in a virtual network.
+        addressPrefixes:
+          description: A list of address blocks reserved for this virtual network in CIDR notation.
           items:
-            $ref: '#/components/schemas/VirtualNetworkPeering'
+            type: string
           type: array
   securitySchemes:
     azure_auth:

@@ -436,17 +436,6 @@ paths:
         required: true
 components:
   schemas:
-    SubnetListResult:
-      description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
-      properties:
-        nextLink:
-          description: The URL to get the next set of results.
-          type: string
-        value:
-          description: The subnets in a virtual network.
-          items:
-            $ref: '#/components/schemas/Subnet'
-          type: array
     SubnetPropertiesFormat:
       description: Properties of the subnet.
       properties:
@@ -705,6 +694,17 @@ components:
           $ref: '#/components/schemas/SubnetPropertiesFormat'
           description: Properties of the subnet.
           x-ms-client-flatten: true
+    SubnetListResult:
+      description: Response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network.
+      properties:
+        nextLink:
+          description: The URL to get the next set of results.
+          type: string
+        value:
+          description: The subnets in a virtual network.
+          items:
+            $ref: '#/components/schemas/Subnet'
+          type: array
   securitySchemes:
     azure_auth:
       type: oauth2
