@@ -34,6 +34,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/azure-networking-services.png
 tags:
+- Microsoft Azure
+- Cloud
+- Infrastructure
+- Microsoft
+- Networking
+tags_raw:
 - Azure
 - Cloud
 - Infrastructure
@@ -575,6 +581,8 @@ apis:
   humanURL: https://azure.microsoft.com/en-us/services/virtual-network/
   baseURL: https://management.azure.com
   tags:
+  - Load Balancer
+  tags_raw:
   - Load Balancers
   properties:
   - type: OpenAPI
